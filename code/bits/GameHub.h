@@ -5,7 +5,7 @@
 
 #include "StartScene.h"
 
-namespace xy {
+namespace tlw {
 
   struct GameHub : gf::GameManager {
     GameHub();

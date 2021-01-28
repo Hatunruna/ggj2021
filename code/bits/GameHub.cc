@@ -2,10 +2,10 @@
 
 #include "config.h"
 
-namespace xy {
+namespace tlw {
 
   GameHub::GameHub()
-  : GameManager("undefined", { GAME_DATA_DIR })
+  : GameManager("The Lost Will", { GAME_DATA_DIR })
   , start(*this)
   {
     pushScene(start);

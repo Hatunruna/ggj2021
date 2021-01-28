@@ -3,7 +3,9 @@
 
 #include <gf/Scene.h>
 
-namespace xy {
+#include "TitleEntity.h"
+
+namespace tlw {
 
   struct GameHub;
 
@@ -13,6 +15,8 @@ namespace xy {
 
   private:
     GameHub& m_game;
+
+    TitleEntity m_title;
   };
 
 }

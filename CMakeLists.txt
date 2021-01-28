@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(GAME undefined)
+set(GAME TheLostWill)
 
 project(${GAME}
   VERSION 0.1.0
@@ -17,6 +17,7 @@ add_executable(${GAME}
   code/main.cc
   code/bits/GameHub.cc
   code/bits/StartScene.cc
+  code/bits/TitleEntity.cc
 )
 
 target_include_directories(${GAME}
