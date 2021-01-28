@@ -1,6 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define GAME_DATA_DIR "@GAME_DATA_DIR@"
+#define GAME_DATADIR    "@GAME_DATADIR@"
+#define GAME_LOCALEDIR  "@CMAKE_INSTALL_FULL_LOCALEDIR@"
 
 #endif // CONFIG_H

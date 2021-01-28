@@ -2,6 +2,7 @@
 #define START_SCENE_H
 
 #include <gf/Scene.h>
+#include <gf/Action.h>
 
 #include "TitleEntity.h"
 
@@ -14,9 +15,14 @@ namespace tlw {
     StartScene(GameHub& game);
 
   private:
+    void doHandleActions(gf::Window& window) override;
+
+  private:
     GameHub& m_game;
 
-    TitleEntity m_title;
+    gf::Action m_startAction;
+
+    TitleEntity m_titleEntity;
   };
 
 }

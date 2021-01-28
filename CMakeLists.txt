@@ -8,14 +8,21 @@ project(${GAME}
 
 include(GNUInstallDirs)
 
-find_package(gf REQUIRED COMPONENTS graphics)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/extras/cmake")
 
-set(GAME_DATA_DIR "${CMAKE_INSTALL_PREFIX}/share/games/${GAME}")
+find_package(L10N)
+find_package(gf REQUIRED COMPONENTS graphics)
+find_package(Boost REQUIRED COMPONENTS locale)
+
+add_subdirectory("data/raw/i18n")
+
+set(GAME_DATADIR "${CMAKE_INSTALL_PREFIX}/share/games/${GAME}")
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/code/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h @ONLY)
 
 add_executable(${GAME}
   code/main.cc
   code/bits/GameHub.cc
+  code/bits/IntroductionScene.cc
   code/bits/StartScene.cc
   code/bits/TitleEntity.cc
 )
@@ -27,8 +34,9 @@ target_include_directories(${GAME}
 )
 
 target_link_libraries(${GAME}
-  PUBLIC
+  PRIVATE
     gf::graphics
+    Boost::locale
 )
 
 install(

@@ -6,9 +6,7 @@
 #include <gf/Sprite.h>
 #include <gf/Text.h>
 
-namespace {
-  constexpr int LogoHeight = 776;
-}
+#include "I18N.h"
 
 namespace tlw {
 
@@ -23,13 +21,15 @@ namespace tlw {
 
   void TitleEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
-    float screenHeight = coords.getRelativeSize(gf::vec(1.0f, 1.0f)).y;
+
+    float backgroundHeight = coords.getRelativeSize(gf::vec(0.0f, 0.8f)).height;
+    float backgroundScale = backgroundHeight / m_backgroundTexture.getSize().height;
 
     gf::Sprite background(m_backgroundTexture);
     background.setColor(gf::Color::Opaque(0.25));
     background.setPosition(coords.getCenter());
     background.setAnchor(gf::Anchor::Center);
-    background.setScale(screenHeight / LogoHeight * 0.80f);
+    background.setScale(backgroundScale);
     target.draw(background, states);
 
     unsigned titleCharacterSize = coords.getRelativeCharacterSize(0.1f);
@@ -42,7 +42,7 @@ namespace tlw {
 
     unsigned subtitleCharacterSize = coords.getRelativeCharacterSize(0.05f);
 
-    gf::Text subtitle("A game by Hatunruna", m_font, subtitleCharacterSize);
+    gf::Text subtitle(_("An investigation by Raymond Adupif"), m_font, subtitleCharacterSize);
     subtitle.setColor(gf::Color::White);
     subtitle.setPosition(coords.getRelativePoint({ 0.5f, 0.6f }));
     subtitle.setAnchor(gf::Anchor::Center);

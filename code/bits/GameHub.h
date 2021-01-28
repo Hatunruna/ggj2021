@@ -4,6 +4,7 @@
 #include <gf/GameManager.h>
 
 #include "StartScene.h"
+#include "IntroductionScene.h"
 
 namespace tlw {
 
@@ -11,6 +12,7 @@ namespace tlw {
     GameHub();
 
     StartScene start;
+    IntroductionScene introduction;
 
   };
 

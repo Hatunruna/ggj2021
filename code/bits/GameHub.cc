@@ -5,8 +5,9 @@
 namespace tlw {
 
   GameHub::GameHub()
-  : GameManager("The Lost Will", { GAME_DATA_DIR })
+  : GameManager("The Lost Will", { GAME_DATADIR })
   , start(*this)
+  , introduction(*this)
   {
     pushScene(start);
   }
