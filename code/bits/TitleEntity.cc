@@ -48,7 +48,13 @@ namespace tlw {
     subtitle.setAnchor(gf::Anchor::Center);
     target.draw(subtitle, states);
 
+    unsigned instructionsCharacterSize = coords.getRelativeCharacterSize(0.025f);
 
+    gf::Text instructions(_("Press a button to start"), m_font, instructionsCharacterSize);
+    instructions.setColor(gf::Color::White);
+    instructions.setPosition(coords.getRelativePoint({ 0.5f, 0.95f }));
+    instructions.setAnchor(gf::Anchor::Center);
+    target.draw(instructions, states);
   }
 
 }

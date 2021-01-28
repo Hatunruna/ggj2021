@@ -3,6 +3,8 @@
 
 #include <gf/Scene.h>
 
+#include "StoryEntity.h"
+
 namespace tlw {
 
   struct GameHub;
@@ -13,6 +15,8 @@ namespace tlw {
 
   private:
     GameHub& m_game;
+
+    StoryEntity m_storyEntity;
   };
 
 }
