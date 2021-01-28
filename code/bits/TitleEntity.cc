@@ -1,13 +1,20 @@
 #include "TitleEntity.h"
 
 #include <gf/Coordinates.h>
+#include <gf/Log.h>
 #include <gf/RenderTarget.h>
+#include <gf/Sprite.h>
 #include <gf/Text.h>
+
+namespace {
+  constexpr int LogoHeight = 776;
+}
 
 namespace tlw {
 
   TitleEntity::TitleEntity(gf::ResourceManager& resources)
   : m_font(resources.getFont("Tippa.ttf"))
+  , m_backgroundTexture(resources.getTexture("logo.png"))
   {
   }
 
@@ -16,6 +23,14 @@ namespace tlw {
 
   void TitleEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
+    float screenHeight = coords.getRelativeSize(gf::vec(1.0f, 1.0f)).y;
+
+    gf::Sprite background(m_backgroundTexture);
+    background.setColor(gf::Color::Opaque(0.25));
+    background.setPosition(coords.getCenter());
+    background.setAnchor(gf::Anchor::Center);
+    background.setScale(screenHeight / LogoHeight * 0.80f);
+    target.draw(background, states);
 
     unsigned titleCharacterSize = coords.getRelativeCharacterSize(0.1f);
 
@@ -37,4 +52,3 @@ namespace tlw {
   }
 
 }
-

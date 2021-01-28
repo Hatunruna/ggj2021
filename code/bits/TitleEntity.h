@@ -15,6 +15,7 @@ namespace tlw {
 
   private:
     gf::Font& m_font;
+    gf::Texture& m_backgroundTexture;
   };
 
 
