@@ -34,7 +34,7 @@ namespace tlw {
       m_game.replaceScene(m_game.introduction, m_game.blackout, gf::seconds(2));
     }
     if (m_memoryAction.isActive()) {
-        m_game.replaceScene(m_game.memory, m_game.blackout, gf::seconds(2));
+        m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(2));
     }
   }
 

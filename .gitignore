@@ -1,1 +1,12 @@
 build/
+.vs/CMake Overview
+*.db
+*.db-shm
+*.ipch
+*.json
+.vs/slnx.sqlite
+.vs/ggj2021/v16/Browse.VC.db-wal
+.vs/ggj2021/v16/.suo
+data/raw/i18n/TheLostWill.pot
+*.pot
+.vs/ggj2021/v16/Browse.VC.opendb

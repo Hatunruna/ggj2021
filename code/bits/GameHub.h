@@ -8,7 +8,7 @@
 #include "GameScene.h"
 #include "GameState.h"
 #include "IntroductionScene.h"
-#include "Memory.h"
+#include "StreakChallenge.h"
 #include "StartScene.h"
 
 namespace tlw {
@@ -22,7 +22,7 @@ namespace tlw {
     StartScene start;
     IntroductionScene introduction;
 
-    Memory memory;
+    StreakChallenge streakChallenge;
     GameScene game;
 
     gf::BlackoutSegueEffect blackout;
