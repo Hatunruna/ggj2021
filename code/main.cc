@@ -19,6 +19,8 @@ int main() {
   // game
 
   tlw::GameHub hub;
+  hub.getWindow().setFullscreen();
   hub.run();
+
   return EXIT_SUCCESS;
 }

@@ -13,6 +13,7 @@ namespace tlw {
   public:
     IntroductionScene(GameHub& game);
 
+
   private:
     GameHub& m_game;
 

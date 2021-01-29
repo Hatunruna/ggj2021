@@ -7,6 +7,7 @@
 #include "GameData.h"
 #include "GameState.h"
 #include "IntroductionScene.h"
+#include "Memory.h"
 #include "StartScene.h"
 
 namespace tlw {
@@ -19,7 +20,8 @@ namespace tlw {
 
     StartScene start;
     IntroductionScene introduction;
-
+    Memory memory;
+    
     gf::BlackoutSegueEffect blackout;
   };
 

@@ -21,6 +21,7 @@ namespace tlw {
     GameHub& m_game;
 
     gf::Action m_startAction;
+    gf::Action m_memoryAction;
 
     TitleEntity m_titleEntity;
   };

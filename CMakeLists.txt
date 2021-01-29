@@ -28,6 +28,7 @@ add_executable(${GAME}
   code/bits/StartScene.cc
   code/bits/StoryEntity.cc
   code/bits/TitleEntity.cc
+  code/bits/Memory.cc
 )
 
 target_include_directories(${GAME}
