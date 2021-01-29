@@ -5,6 +5,7 @@
 #include <gf/SegueEffects.h>
 
 #include "GameData.h"
+#include "GameScene.h"
 #include "GameState.h"
 #include "IntroductionScene.h"
 #include "StartScene.h"
@@ -19,6 +20,7 @@ namespace tlw {
 
     StartScene start;
     IntroductionScene introduction;
+    GameScene game;
 
     gf::BlackoutSegueEffect blackout;
   };
