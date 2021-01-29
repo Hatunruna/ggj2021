@@ -1,6 +1,7 @@
 #ifndef INTRODUCTION_SCENE_H
 #define INTRODUCTION_SCENE_H
 
+#include <gf/Action.h>
 #include <gf/Scene.h>
 
 #include "StoryEntity.h"
@@ -15,9 +16,14 @@ namespace tlw {
 
 
   private:
+    void doHandleActions(gf::Window& window) override;
+
+  private:
     GameHub& m_game;
 
     StoryEntity m_storyEntity;
+
+    gf::Action m_skipAction;
   };
 
 }

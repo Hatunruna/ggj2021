@@ -9,6 +9,7 @@ namespace tlw {
   , start(*this)
   , introduction(*this)
   , memory(*this)
+  , game(*this)
   {
     pushScene(start);
   }
