@@ -1,6 +1,7 @@
 #ifndef GAME_SCENE_H
 #define GAME_SCENE_H
 
+#include <gf/Action.h>
 #include <gf/Scene.h>
 
 namespace tlw {
@@ -12,7 +13,13 @@ namespace tlw {
     GameScene(GameHub& game);
 
   private:
+    virtual void doProcessEvent(gf::Event& event) override;
+
+  private:
     GameHub& m_game;
+
+    // Actions
+    gf::Action m_moveXAction;
   };
 }
 

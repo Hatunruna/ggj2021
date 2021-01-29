@@ -10,7 +10,7 @@ namespace tlw {
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , m_storyEntity(game.resources, game.data, game.state)
-  , m_skipAction("Start")
+  , m_skipAction("Skip")
   {
     setClearColor(gf::Color::Black);
 
