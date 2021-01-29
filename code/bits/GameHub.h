@@ -2,6 +2,7 @@
 #define GAME_HUB_H
 
 #include <gf/GameManager.h>
+#include <gf/SegueEffects.h>
 
 #include "GameData.h"
 #include "GameState.h"
@@ -19,6 +20,7 @@ namespace tlw {
     StartScene start;
     IntroductionScene introduction;
 
+    gf::BlackoutSegueEffect blackout;
   };
 
 }
