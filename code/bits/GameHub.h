@@ -5,7 +5,7 @@
 #include <gf/SegueEffects.h>
 
 #include "GameData.h"
-#include "GameScene.h"
+#include "WorldScene.h"
 #include "GameState.h"
 #include "IntroductionScene.h"
 #include "StreakChallenge.h"
@@ -21,9 +21,8 @@ namespace tlw {
 
     StartScene start;
     IntroductionScene introduction;
-
+    WorldScene world;
     StreakChallenge streakChallenge;
-    GameScene game;
 
     gf::BlackoutSegueEffect blackout;
   };

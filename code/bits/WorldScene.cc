@@ -1,11 +1,11 @@
-#include "GameScene.h"
+#include "WorldScene.h"
 
 #include <gf/Log.h>
 
 #include "GameHub.h"
 
 namespace tlw {
-  GameScene::GameScene(GameHub& game)
+  WorldScene::WorldScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , m_moveXAction("MoveX")
@@ -17,7 +17,7 @@ namespace tlw {
     // addAction(m_moveXAction);
   }
 
-  void GameScene::doProcessEvent(gf::Event& event) {
+  void WorldScene::doProcessEvent(gf::Event& event) {
     switch (event.type) {
       case gf::EventType::GamepadAxisMoved: {
         const gf::GamepadAxisEvent& gamepadEvent = event.gamepadAxis;

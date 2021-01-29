@@ -23,13 +23,13 @@ add_executable(${GAME}
   code/main.cc
   code/bits/GameData.cc
   code/bits/GameHub.cc
-  code/bits/GameScene.cc
   code/bits/GameState.cc
   code/bits/IntroductionScene.cc
   code/bits/StartScene.cc
   code/bits/StoryEntity.cc
-  code/bits/TitleEntity.cc
   code/bits/StreakChallenge.cc
+  code/bits/TitleEntity.cc
+  code/bits/WorldScene.cc
 )
 
 target_include_directories(${GAME}

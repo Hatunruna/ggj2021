@@ -8,8 +8,8 @@ namespace tlw {
   : GameManager("The Lost Will", { GAME_DATADIR })
   , start(*this)
   , introduction(*this)
+  , world(*this)
   , streakChallenge(*this)
-  , game(*this)
   {
     pushScene(start);
   }

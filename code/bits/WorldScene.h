@@ -1,5 +1,5 @@
-#ifndef GAME_SCENE_H
-#define GAME_SCENE_H
+#ifndef WORLD_SCENE_H
+#define WORLD_SCENE_H
 
 #include <gf/Action.h>
 #include <gf/Scene.h>
@@ -8,9 +8,9 @@ namespace tlw {
 
   struct GameHub;
 
-  class GameScene : public gf::Scene {
+  class WorldScene : public gf::Scene {
   public:
-    GameScene(GameHub& game);
+    WorldScene(GameHub& game);
 
   private:
     virtual void doProcessEvent(gf::Event& event) override;
@@ -23,4 +23,4 @@ namespace tlw {
   };
 }
 
-#endif // GAME_SCENE_H
+#endif // WORLD_SCENE_H

@@ -25,7 +25,7 @@ namespace tlw {
 
   void IntroductionScene::doHandleActions([[maybe_unused]] gf::Window& window) {
     if (m_skipAction.isActive()) {
-      m_game.replaceScene(m_game.game, m_game.blackout, gf::seconds(2));
+      m_game.replaceScene(m_game.world, m_game.blackout, gf::seconds(2));
     }
   }
 
