@@ -9,7 +9,7 @@ namespace tlw {
   IntroductionScene::IntroductionScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
-  , m_storyEntity(game.resources)
+  , m_storyEntity(game.resources, game.data, game.state)
   {
     setClearColor(gf::Color::Black);
 
