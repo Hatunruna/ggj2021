@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Monday."
-msgstr ""
+msgstr "Lundi."
 
 msgid ""
 "I have been called by Ms Dread to handle a very particular situation. Ms "
@@ -24,12 +24,16 @@ msgid ""
 "her last will. My mission is to find it.\n"
 "I don't know exactly where to start but I should see Ms Dread first. She may "
 "have valuable information for me."
-msgstr ""
+
+msgstr "J'ai été démarché par Mme Dread à propos d'une situation particulière."
+"Mme Dread est la notaire d'une certaine Mme Wood. Mme Wood est morte hier et personne n'a pu retrouvé son testament."
+"Ma mission est de le retrouver. Je ne sais pas exactement par où démarrer mais je devrais commencer par parler à Mme Dread. "
+"Elle a peut-être des informations importante pour moi."
 
 msgid ""
 "Good evening Ms Dread. I am Raymond Adupif, at your service. Can you tell me "
 "more about the situation?"
-msgstr ""
+msgstr "Bonjour Mme Dread. Je suis Raymond Adupif, à votre service. Pouvez-vous m'en dire un peu plus sur la situation actuelle?"
 
 msgid "Raymond"
 msgstr "Raymond"
@@ -37,7 +41,7 @@ msgstr "Raymond"
 msgid ""
 "Good evening M. Adupif. I'm glad you're here. The situation is terrible. The "
 "last will of Ms Wood is lost!"
-msgstr ""
+msgstr "Bonjour Monsieur Adupif. Je suis contente de vous voir ici. La situation est terrible. Le testament de Mme Wood a disparu."
 
 msgid "Ms Dread"
 msgstr "Madame Dread"
@@ -45,105 +49,107 @@ msgstr "Madame Dread"
 msgid ""
 "Ms Wood has no child. She has designated someone to be her heir in her last "
 "will. Until we find this last will, the case is open."
-msgstr ""
+msgstr "Mme Wood n'avait pas d'enfant. Elle avait désignée quelqu'un comme son successeur dans son testament. Jusqu'à ce qu'ont le retrouve, l'affaire reste ouverte. "
 
 msgid "I see. So let's start simply: do you know where she lived?"
-msgstr ""
+msgstr "Je vois. Commençons simplenent: savez-vous où est-ce qu'elle vivait?"
 
 msgid "She lived in the beautiful house in the north of the main place."
-msgstr ""
+msgstr "Elle vivait dans une magnifique maise au nord de la place principale."
 
 msgid ""
-"I will stay here until you have found something. I want to stay informed "
+"I will stay here until you have found something. I want to stay informed."
 "about your progress so come here regularly for reports."
-msgstr ""
+msgstr "Je vais rester ici jusqu'à ce que vous ayez trouvé quelque chose. Je veux rester informé de votre avancement."
 
 msgid "Maybe she knows something more about Ms Wood. I should ask her."
-msgstr ""
+msgstr "Peut-être qu'elle sait quelque chose de plus sur Mme Wood. Je devrais lui demander."
 
 msgid "Can you tell me something more about Ms Wood that could help me?"
-msgstr ""
+msgstr "Pouvez vous me dire quelque chose d'autre à propos de Mme Wood qui pourrait m'aider?"
 
 msgid ""
 "If I remember well, Ms Wood had a cat and a dog. She considered them as her "
 "children."
-msgstr ""
+msgstr "Si je me souviens bien, Mme Wood avait un chat et un chie. Elle les considérait comme ses enfants."
 
 msgid "I see! I take note of this fact."
-msgstr ""
+msgstr "Je vois! Je prends note de ce fait."
 
 msgid ""
 "I am afraid I can not tell you more than what I have already told you. Sorry."
-msgstr ""
+msgstr "Je suis désolé mais je n'ai pas plus de chose à vous dire à ce sujet."
 
 msgid "No problem, I have to find other clues."
-msgstr ""
+msgstr "Pas de problème, je vais cherche d'autres indices."
 
 msgid "Nona"
 msgstr "Nona"
 
 msgid "Who are you, young stranger?"
-msgstr ""
+msgstr "Qui êtes-vous, jeune étranger?"
 
 msgid "Decima"
 msgstr "Decima"
 
 msgid "Do not talk to him, Nona, he seems weird."
-msgstr ""
+msgstr "Ne lui parle pas, Nona, il à l'air étrange."
 
 msgid "I agree with Decima."
-msgstr ""
+msgstr "Je suis d'accord avec Decima."
 
 msgid "Morta"
 msgstr "Morta"
 
 msgid "Sorry, I did not want to bother you, ladies."
-msgstr ""
+msgstr "Désole, je ne voulais pas vous déranger, Mesdames."
 
 msgid "You again?"
-msgstr ""
+msgstr "Encore vous?"
 
 msgid "What do you want at the end?"
-msgstr ""
+msgstr "Qu'est-ce que vous voulez à la fin?"
 
 msgid "Definitely, we should not talk to him."
-msgstr ""
+msgstr "Assurément, nous ne devrions pas lui parler."
 
 msgid "Do you want to buy some flowers?"
-msgstr ""
+msgstr "Voulez-vous acheter des fleurs?"
 
 msgid "Ms Bouquet"
-msgstr ""
+msgstr "Madame Bouquet"
 
 msgid "No, thank you. Maybe another day!"
-msgstr ""
+msgstr "Non merci. Peut-être un autre jour!"
 
 msgid "Ms Gustavo"
-msgstr ""
+msgstr "Mr Gustavo"
 
 msgid "You seem to be a friend of animals! Want to buy some food for them?"
-msgstr ""
+msgstr "Vous avez l'air d'un ami des animaux! Vous voulez acheter de la nourriture pour eux?"
 
 msgid "Well, my cat is already too fat. Sorry."
-msgstr ""
+msgstr "Eh bien, mon chat est déjà trop gros, désolé."
 
 msgid "Do you have any news for me?."
-msgstr ""
+msgstr "Est-ce qu'il y a du nouveau?."
 
 msgid "Not yet, I must continue my investigation."
-msgstr ""
+msgstr "Pas encore, je dois continuer mon investigation."
 
 msgid ""
 "Yes, I found some interesting things. It seems Ms Wood had animals in her "
 "house but they have disappearred. We should find them, they may be able to "
 "tell us what happened to this last will."
-msgstr ""
+msgstr "Oui, j'ai trouvé quelques faits intéressant. Il semblerait que Mme avait des animaus dans sa maison "
+"mais que ceux si aient disparu. Nous devrions les trouver, ils pourraient peut-être nous en apprendre plus "
+" sur ce qui est arrivé au testament de Mme Wood."
 
 msgid "Failed"
-msgstr ""
+msgstr "Échec"
 
 msgid "Success"
-msgstr ""
+msgstr "Succès"
 
 msgid "An investigation by Raymond Adupif"
 msgstr "Une enquête de Raymond Adupif"
