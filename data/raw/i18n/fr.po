@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Lost Will\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 14:51+0100\n"
+"POT-Creation-Date: 2021-01-30 15:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 
 msgid "Raymond"
-msgstr ""
+msgstr "Raymond"
 
 msgid ""
 "Good evening M. Adupif. I'm glad you're here. The situation is terrible. The "
@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 
 msgid "Ms Dread"
-msgstr ""
+msgstr "Madame Dread"
 
 msgid ""
 "Ms Wood has no child. She has designated someone to be her heir in her last "
@@ -58,14 +58,20 @@ msgid ""
 "about your progress so come here regularly for reports."
 msgstr ""
 
-msgid "Nona"
+msgid "Maybe she knows something more about Ms Wood. I should ask her."
 msgstr ""
+
+msgid "Can you tell me something more about Ms Wood that could help me?"
+msgstr ""
+
+msgid "Nona"
+msgstr "Nona"
 
 msgid "Who are you, young stranger?"
 msgstr ""
 
 msgid "Decima"
-msgstr ""
+msgstr "Decima"
 
 msgid "Do not talk to him, Nona, he seems weird."
 msgstr ""
@@ -74,7 +80,7 @@ msgid "I agree with Decima."
 msgstr ""
 
 msgid "Morta"
-msgstr ""
+msgstr "Morta"
 
 msgid "Sorry, I did not want to bother you, ladies."
 msgstr ""

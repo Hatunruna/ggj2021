@@ -16,11 +16,21 @@ namespace tlw {
     gf::Vector2i pos = {0, 0};
   };
 
+  enum class ChallengeResult {
+    None,
+    Success,
+    Failure,
+  };
+
   struct GameState {
     std::size_t chapter = 0;
 
     gf::Id currentDialog = gf::InvalidId;
     std::size_t currentLine = 0;
+    gf::Id nextDialogSuccess = gf::InvalidId;
+    gf::Id nextDialogFailure = gf::InvalidId;
+
+    ChallengeResult result = ChallengeResult::None;
 
     Hero hero;
   };

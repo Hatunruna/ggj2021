@@ -28,6 +28,8 @@ namespace tlw {
   struct Dialog {
     DialogType type;
     std::vector<DialogLine> lines;
+    DialogLine thoughts;
+    DialogLine question;
   };
 
   struct GameData {

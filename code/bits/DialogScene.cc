@@ -8,6 +8,18 @@ using namespace gf::literals;
 
 namespace tlw {
 
+  namespace {
+
+    std::size_t isDialogFinished(const Dialog& dialog, std::size_t line) {
+      if (dialog.type == DialogType::Normal) {
+        return line == dialog.lines.size();
+      }
+
+      return line == dialog.lines.size() + 2;
+    }
+
+  }
+
   DialogScene::DialogScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
@@ -30,7 +42,7 @@ namespace tlw {
 
       ++m_game.state.currentLine;
 
-      if (m_game.state.currentLine == currentDialog.lines.size()) {
+      if (isDialogFinished(currentDialog, m_game.state.currentLine)) {
         m_game.state.currentDialog = gf::InvalidId;
         m_game.state.currentLine = 0;
         m_game.plot.onDialogEnd(currentId);

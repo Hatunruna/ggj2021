@@ -20,13 +20,19 @@ namespace tlw {
        */
       {
         "Chap1Dread1"_id, {
-          DialogType::Normal, {
+          DialogType::Investigation, {
             { _("Raymond"),   _("Good evening Ms Dread. I am Raymond Adupif, at your service. Can you tell me more about the situation?") },
             { _("Ms Dread"),  _("Good evening M. Adupif. I'm glad you're here. The situation is terrible. The last will of Ms Wood is lost!") },
             { _("Ms Dread"),  _("Ms Wood has no child. She has designated someone to be her heir in her last will. Until we find this last will, the case is open.") },
             { _("Raymond"),   _("I see. So let's start simply: do you know where she lived?") },
             { _("Ms Dread"),  _("She lived in the beautiful house in the north of the main place.") },
             { _("Ms Dread"),  _("I will stay here until you have found something. I want to stay informed about your progress so come here regularly for reports.") },
+          },
+          {
+            _("Raymond"),   _("Maybe she knows something more about Ms Wood. I should ask her.")
+          },
+          {
+            _("Raymond"),   _("Can you tell me something more about Ms Wood that could help me?")
           }
         }
       },
