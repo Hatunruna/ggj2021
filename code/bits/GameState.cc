@@ -11,10 +11,10 @@ namespace tlw {
         { gf::InvalidId, gf::vec(15, 30), CharacterVisibility::Visible }
       },
       { CharacterType::Florist,
-        { gf::InvalidId, gf::vec(32, 12), CharacterVisibility::Visible }
+        { gf::InvalidId, gf::vec(32, 13), CharacterVisibility::Visible }
       },
       { CharacterType::Moirai,
-        { gf::InvalidId, gf::vec(32, 19), CharacterVisibility::Visible }
+        { gf::InvalidId, gf::vec(32, 20), CharacterVisibility::Visible }
       },
       { CharacterType::Dread,
         { gf::InvalidId, gf::vec(15, 23), CharacterVisibility::Visible }

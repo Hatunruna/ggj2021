@@ -40,10 +40,12 @@ namespace tlw {
 
         case CharacterType::Florist:
           sprite.setTexture(m_floristTexture);
+          sprite.setOrigin(gf::projy(TileSize));
           break;
 
         case CharacterType::Moirai:
           sprite.setTexture(m_moiraiTexture);
+          sprite.setOrigin(gf::projy(TileSize));
           break;
 
         case CharacterType::Dread:
@@ -52,6 +54,7 @@ namespace tlw {
 
         case CharacterType::DogPack:
           sprite.setTexture(m_dogPackTexture);
+          sprite.setOrigin(gf::projy(TileSize));
           break;
         }
 
