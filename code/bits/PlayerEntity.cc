@@ -4,13 +4,15 @@
 #include <gf/Sprite.h>
 
 #include "GameState.h"
+#include "GameData.h"
 #include "Constants.h"
 
 namespace tlw {
 
-  PlayerEntity::PlayerEntity(gf::ResourceManager& resources, GameState& state)
+  PlayerEntity::PlayerEntity(gf::ResourceManager& resources, GameState& state, const GameData& data)
   : m_playerTexture(resources.getTexture("images/player.png"))
   , m_state(state)
+  , m_data(data)
   , m_cooldownMove(0.f)
   {
     m_playerTexture.setSmooth(true);
@@ -30,13 +32,14 @@ namespace tlw {
   {
     //cooldown move in seconds
     constexpr float cooldownMove = 0.25f;
+    constexpr int moveValue = 1;
 
-    if (m_cooldownMove > cooldownMove)
+    gf::Vector2i nextPos = m_state.hero.pos + gf::displacement(dir) * moveValue;
+
+    if (m_cooldownMove > cooldownMove && m_data.tiles(nextPos) == TileState::Walkable)
     {
       m_cooldownMove = 0.f;
-
-      constexpr int moveValue = 1;
-      m_state.hero.pos += gf::displacement(dir) * moveValue;
+      m_state.hero.pos = nextPos;
     }
   }
 }

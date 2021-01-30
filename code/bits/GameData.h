@@ -6,6 +6,8 @@
 #include <vector>
 
 #include <gf/Id.h>
+#include <gf/Array2D.h>
+#include <gf/Vector.h>
 
 namespace tlw {
 
@@ -32,11 +34,18 @@ namespace tlw {
     DialogLine question;
   };
 
+  enum TileState {
+    Walkable,
+    NoWalkable
+  };
+
   struct GameData {
     GameData();
 
     std::vector<Chapter> chapters;
     std::map<gf::Id, Dialog> dialogs;
+
+    gf::Array2D<TileState, int> tiles;
   };
 
 }

@@ -13,9 +13,9 @@ namespace tlw {
   , m_moveXNegAction("MoveXNegative")
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
-  , m_playerEntity(game.resources, game.state)
+  , m_playerEntity(game.resources, game.state, game.data)
   , m_characterEntity(game.resources, game.state)
-  , m_mapEntity(game.resources)
+  , m_mapEntity(game.resources, game.data)
   {
     setClearColor(gf::Color::White);
 
@@ -46,25 +46,7 @@ namespace tlw {
     setWorldViewSize(TileSize * gf::Vector2f(8.f, 8.f));
   }
 
-  void WorldScene::doProcessEvent(gf::Event& event) {
-    /*switch (event.type) {
-      case gf::EventType::GamepadAxisMoved: {
-        const gf::GamepadAxisEvent& gamepadEvent = event.gamepadAxis;
-        std::string gamepadName = gf::Gamepad::getName(gamepadEvent.id);
-        int32_t eventID = static_cast<int32_t>(gamepadEvent.id);
-        std::string axisName = gf::Gamepad::getAxisName(gamepadEvent.axis);
-        int16_t value = gamepadEvent.value;
-
-        gf::Log::debug("gamepad: %s\n", gamepadName.c_str());
-        gf::Log::debug("eventID: %d\n", eventID);
-        gf::Log::debug("axisName: %s\n", axisName.c_str());
-        gf::Log::debug("axisName: %d\n", value);
-        break;
-      }
-
-      default:
-        break;
-    }*/
+  void WorldScene::doProcessEvent([[maybe_unused]] gf::Event& event) {
   }
 
   void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {

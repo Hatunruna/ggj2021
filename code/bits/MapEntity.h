@@ -7,6 +7,7 @@
 #include <gf/ResourceManager.h>
 
 namespace tlw {
+  struct GameData;
 
   class LayersMaker : public gf::TmxVisitor {
   public:
@@ -22,7 +23,7 @@ namespace tlw {
 
   class MapEntity : public gf::Entity {
   public:
-    MapEntity(gf::ResourceManager& resources);
+    MapEntity(gf::ResourceManager& resources, GameData& data);
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
 
