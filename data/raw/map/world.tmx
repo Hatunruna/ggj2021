@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" source="ground.tsx"/>
+ <layer id="1" name="Calque de Tuiles 1" width="50" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztmIkKxCAMRN3L/v8fLwtbkOCRSZNUMQMDhRbxJcZUUwqFQp56KPlu/ebwZDr/XT7ntB5Hiy045HOu+QpDboxpzfFmuDbnF+Dg2IOjXLccjnNvLesA5bColat7ksSWHDTOK3KU/XdlDiQftCdI2Herj1p8W3HjxBPJFfrdiEM7fnQetXo6wDE5+QgOew5kXc1cH7vtVygH0gNm7h+e/yReHFrnQW4+NTlasdLg+BB7/bf3OCR7W43DQggH997tTo4zjqN80P6XUz9Xnhz0/k+zPrzufZB8SDk8NFrr0rPibPe7PQ7Ou1k4NBwKhXT0BUohCHw=
+  </data>
+ </layer>
+</map>
