@@ -24,6 +24,7 @@ namespace tlw {
   void Plot::onDialogEnd(gf::Id dialogId) {
     switch (dialogId) {
       case "Chap1Dread1"_id:
+        m_game.state.characters[CharacterType::Dread].dialog = "Chap1Dread_NotFinished"_id;
         m_game.state.nextDialogSuccess = "Chap1Dread_Success"_id;
         m_game.state.nextDialogFailure = "Chap1Dread_Failure"_id;
         m_game.state.result = ChallengeResult::None;
@@ -57,6 +58,9 @@ namespace tlw {
       assert(m_game.state.result != ChallengeResult::Failure);
       m_game.state.currentDialog = m_game.state.nextDialogFailure;
     }
+
+    m_game.popScene();
+    m_game.pushScene(m_game.dialog);
   }
 
 }
