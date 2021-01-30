@@ -48,9 +48,13 @@ namespace tlw {
       bool hit = m_sliderEntity.stopCursor();
       if (hit) {
         gf::Log::debug("Target hit!\n");
+        m_game.state.result = ChallengeResult::Success;
       } else {
         gf::Log::debug("Target missed... Loser!\n");
+        m_game.state.result = ChallengeResult::Failure;
       }
+
+      m_game.plot.onSliderChallengeEnd();
     }
 
     if (m_increaseSpeedAction.isActive()) {
