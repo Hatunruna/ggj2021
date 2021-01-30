@@ -97,7 +97,6 @@ namespace tlw {
   }
 
   void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {
-    //TODO: do offset to point in the middle of the tile
-    setWorldViewCenter(m_game.state.hero.pos * TileSize);
+    setWorldViewCenter((m_game.state.hero.pos + 0.5f) * TileSize);
   }
 }
