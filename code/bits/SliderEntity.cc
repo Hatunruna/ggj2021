@@ -8,6 +8,10 @@
 #include "Constants.h"
 
 namespace {
+  constexpr gf::Vector2f SliderRelativeSize = gf::vec(0.40f, 0.025f);
+  constexpr gf::Vector2f CursorRelativeSize = gf::vec(0.01f, 0.03f);
+  constexpr gf::Vector2f GoalRelativeSize = gf::vec(CursorRelativeSize.x * 3.0f, SliderRelativeSize.y);
+
   namespace ga = gf::activity;
 
   auto createActivity(int delay, float& cursorPosition) {
@@ -15,8 +19,8 @@ namespace {
       // ga::delay(gf::seconds(tlw::TransitionDelay)), // TODO: Comment to test
       ga::repeat(
         ga::sequence(
-          ga::value(0.0f, 1.0f, cursorPosition, gf::seconds(delay), gf::Ease::expoInOut),
-          ga::value(1.0f, 0.0f, cursorPosition, gf::seconds(delay), gf::Ease::expoInOut)
+          ga::value(0.0f, 1.0f, cursorPosition, gf::seconds(delay), gf::Ease::quartInOut),
+          ga::value(1.0f, 0.0f, cursorPosition, gf::seconds(delay), gf::Ease::quartInOut)
         )
       )
     );
@@ -39,6 +43,12 @@ namespace tlw {
     m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
   }
 
+  bool SliderEntity::stopCursor() const {
+    float upperBounds = 0.5f + GoalRelativeSize.width;
+    float lowerBounds = 0.5f - GoalRelativeSize.width;
+    return m_cursorPosition >= lowerBounds && m_cursorPosition <= upperBounds;
+  }
+
   void SliderEntity::increaseSpeed() {
     --m_easeDelay;
     m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
@@ -58,13 +68,19 @@ namespace tlw {
   void SliderEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
 
-    gf::RectF sliderBox = gf::RectF::fromCenterSize(coords.getCenter(), coords.getRelativeSize(gf::vec(0.40f, 0.025f)));
+    gf::RectF sliderBox = gf::RectF::fromCenterSize(coords.getCenter(), coords.getRelativeSize(SliderRelativeSize));
 
     gf::RectangleShape slider(sliderBox);
     slider.setColor(gf::Color::Violet);
     target.draw(slider, states);
 
-    gf::RectangleShape cursor(coords.getRelativeSize(gf::vec(0.01f, 0.03f)));
+    gf::RectangleShape goals(coords.getRelativeSize(GoalRelativeSize));
+    goals.setAnchor(gf::Anchor::Center);
+    goals.setPosition(coords.getCenter());
+    goals.setColor(gf::Color::Green);
+    target.draw(goals, states);
+
+    gf::RectangleShape cursor(coords.getRelativeSize(CursorRelativeSize));
     cursor.setAnchor(gf::Anchor::Center);
     auto cursorPosition = gf::vec(sliderBox.getTopLeft().x + sliderBox.getSize().width * m_cursorPosition, coords.getCenter().y);
     cursor.setPosition(cursorPosition);

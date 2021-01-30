@@ -18,6 +18,7 @@ namespace tlw {
     SliderEntity();
 
     void setDifficulty(SliderChallengeDifficulty difficulty);
+    bool stopCursor() const;
 
     // TODO: To debug and test functions, remove it later
     void increaseSpeed();
@@ -25,6 +26,7 @@ namespace tlw {
 
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
+
 
   private:
     int m_easeDelay;

@@ -1,15 +1,24 @@
 #include "SliderChallengeScene.h"
 
+#include <gf/Log.h>
+
 #include "GameHub.h"
 
 namespace tlw {
   SliderChallengeScene::SliderChallengeScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
+  , m_stopCursorAction("StopCursor")
   , m_increaseSpeedAction("IncreaseSpeed")
   , m_decreaseSpeedAction("DecreaseSpeed")
   {
     setClearColor(gf::Color::Black);
+
+    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
+    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
+    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
+    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
+    addAction(m_stopCursorAction);
 
     m_increaseSpeedAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::RightBumper);
     addAction(m_increaseSpeedAction);
@@ -24,6 +33,15 @@ namespace tlw {
   void SliderChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {
     if (!isActive()) {
       return;
+    }
+
+    if (m_stopCursorAction.isActive()) {
+      bool hit = m_sliderEntity.stopCursor();
+      if (hit) {
+        gf::Log::debug("Target hit!\n");
+      } else {
+        gf::Log::debug("Target missed... Loser!\n");
+      }
     }
 
     if (m_increaseSpeedAction.isActive()) {

@@ -21,6 +21,7 @@ namespace tlw {
     GameHub& m_game;
     SliderEntity m_sliderEntity;
 
+    gf::Action m_stopCursorAction;
     // TODO: To debug and test actions, remove it later
     gf::Action m_increaseSpeedAction;
     gf::Action m_decreaseSpeedAction;
