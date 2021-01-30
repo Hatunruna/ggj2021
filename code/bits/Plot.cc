@@ -12,25 +12,23 @@ namespace tlw {
 //     m_game.state.currentDialog = "Chap1Dread1"_id;
 
     m_game.state.characters[CharacterType::Florist].dialog = "Chap1Bouquet1"_id;
+    m_game.state.characters[CharacterType::Moirai].dialog = "Chap1Elders1"_id;
 
   }
 
   void Plot::onDialogEnd(gf::Id dialogId) {
     switch (dialogId) {
-      case "Chap1Dread1"_id:
-        m_game.state.currentDialog = "Chap1Elders1"_id;
+      case "Chap1Elders1"_id:
+        m_game.state.characters[CharacterType::Moirai].dialog = "Chap1Elders2"_id;
         break;
 
-      case "Chap1Elders1"_id:
-        m_game.state.currentDialog = "Chap1Dread_NotFinished"_id;
+      case "Chap1Dread1"_id:
         break;
 
       case "Chap1Dread_NotFinished"_id:
-        m_game.state.currentDialog = "Chap1Dread_Finished"_id;
         break;
 
       case "Chap1Dread_Finished"_id:
-        m_game.state.currentDialog = "Chap1Dread1"_id;
         break;
 
       default:

@@ -63,6 +63,16 @@ namespace tlw {
         }
       },
       {
+        "Chap1Elders2"_id, {
+          DialogType::Normal, {
+            { _("Decima"),    _("You again?") },
+            { _("Nona"),      _("What do you want at the end?") },
+            { _("Morta"),     _("Definitely, we should not talk to him.") },
+            { _("Raymond"),   _("Sorry, I did not want to bother you, ladies.") },
+          }
+        }
+      },
+      {
         "Chap1Bouquet1"_id, {
           DialogType::Normal, {
             { _("Ms Bouquet"),  _("Do you want to buy some flowers?") },

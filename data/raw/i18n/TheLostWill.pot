@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 18:07+0100\n"
+"POT-Creation-Date: 2021-01-30 19:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,6 +100,15 @@ msgid "Morta"
 msgstr ""
 
 msgid "Sorry, I did not want to bother you, ladies."
+msgstr ""
+
+msgid "You again?"
+msgstr ""
+
+msgid "What do you want at the end?"
+msgstr ""
+
+msgid "Definitely, we should not talk to him."
 msgstr ""
 
 msgid "Do you want to buy some flowers?"
