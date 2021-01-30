@@ -106,7 +106,7 @@ namespace tlw {
           if (m_game.state.hero.pos == search.pos) {
             m_game.state.currSearch = i;
             m_game.streakChallenge.reset();
-            m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(1.5));
+            m_game.pushScene(m_game.streakChallenge);
             break;
           }
         }

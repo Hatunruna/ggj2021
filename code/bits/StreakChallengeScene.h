@@ -28,6 +28,7 @@ namespace tlw {
   private:
     virtual void doProcessEvent(gf::Event& event) override;
     virtual void doHandleActions(gf::Window& window) override;
+    virtual void doUpdate(gf::Time time) override;
     void generateStreak();
 
   private:
@@ -39,6 +40,8 @@ namespace tlw {
     gf::Action m_buttonB;
     gf::Action m_buttonX;
     gf::Action m_buttonY;
+    bool m_gameEnd;
+    float m_endTimer;
   };
 
 }

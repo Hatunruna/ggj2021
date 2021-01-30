@@ -12,6 +12,8 @@ namespace tlw {
   , m_buttonB("B")
   , m_buttonX("X")
   , m_buttonY("Y")
+  , m_gameEnd(false)
+  , m_endTimer(0.f)
   {
     generateStreak();
     m_streakEntity.updateStreak(m_streak);
@@ -37,6 +39,8 @@ namespace tlw {
   {
     m_streakEntity.reset();
     m_streakPlayer.clear();
+    m_gameEnd = false;
+    m_endTimer = 0.f;
     generateStreak();
     m_streakEntity.updateStreak(m_streak);
   }
@@ -52,7 +56,11 @@ namespace tlw {
   void StreakChallengeScene::doProcessEvent([[maybe_unused]] gf::Event& event) {
   }
 
-  void StreakChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {  
+  void StreakChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {
+    if (!isActive()) {
+      return;
+    }
+
     if (m_streakEntity.canPlay()) {
       if (m_streakPlayer.size() == m_streak.size()) {
         if (m_streak == m_streakPlayer) {
@@ -64,7 +72,7 @@ namespace tlw {
 
         m_game.state.searchs[m_game.state.currSearch].done = true;
         m_game.state.currSearch = InvalidSearch;
-        m_game.replaceScene(m_game.world, m_game.blackout, gf::seconds(5));
+        m_gameEnd = true;
       }
 
       if (m_buttonA.isActive()) {
@@ -92,6 +100,18 @@ namespace tlw {
         gf::Log::info("Y Pressed \n");
 
         m_streakEntity.displayPlayerAnswer(gf::GamepadButton::Y);
+      }
+    }
+  }
+
+  void StreakChallengeScene::doUpdate([[maybe_unused]] gf::Time time) {
+    if (m_gameEnd) {
+      m_endTimer += time.asSeconds();
+
+      //Time in seconds before vanish of the scene
+      constexpr float timeBeforeVanish = 3.f;
+      if (m_endTimer >= timeBeforeVanish) {
+        m_game.popScene();
       }
     }
   }
