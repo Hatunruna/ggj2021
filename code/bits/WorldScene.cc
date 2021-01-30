@@ -76,8 +76,6 @@ namespace tlw {
       m_playerEntity.move(gf::Direction::Up);
     }
 
-    // gf::Log::debug("New player position: %dx%d\n", m_game.state.hero.pos.x, m_game.state.hero.pos.y);
-
     if (m_talkOrSearchAction.isActive()) {
       for (auto & [ characterType, character ] : m_game.state.characters) {
         if (character.visibility != CharacterVisibility::Visible) {

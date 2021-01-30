@@ -38,11 +38,22 @@ namespace tlw {
             TileState tile;
             switch (tileLayer.getTile({x, y}))
             {
-              case 1: {
+              case 1:
+              case 7:
+              case 8:
+              case 9:
+              case 10:
+              case 11:
+              case 12:
+              case 13:
+              case 14:
+              case 15:
+              case 16:
+              {
                 tile = TileState::Walkable;
                 break;
               }
-            
+
               default:
               {
                 tile = TileState::NoWalkable;
