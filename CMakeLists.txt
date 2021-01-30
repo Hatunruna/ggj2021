@@ -27,6 +27,7 @@ add_executable(${GAME}
   code/bits/GameHub.cc
   code/bits/GameState.cc
   code/bits/IntroductionScene.cc
+  code/bits/Plot.cc
   code/bits/StartScene.cc
   code/bits/StoryEntity.cc
   code/bits/StreakChallenge.cc

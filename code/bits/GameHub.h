@@ -8,6 +8,7 @@
 #include "GameData.h"
 #include "GameState.h"
 #include "IntroductionScene.h"
+#include "Plot.h"
 #include "StreakChallenge.h"
 #include "StartScene.h"
 #include "WorldScene.h"
@@ -19,6 +20,7 @@ namespace tlw {
 
     GameData data;
     GameState state;
+    Plot plot;
 
     StartScene start;
     IntroductionScene introduction;
