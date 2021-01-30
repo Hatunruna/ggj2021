@@ -2,14 +2,22 @@
 #define GAME_STATE_H
 
 #include <cstddef>
+#include <map>
 
 #include <gf/Id.h>
 #include <gf/Vector.h>
 
 namespace tlw {
 
+  enum class CharacterType : int {
+    BadCat,
+  };
+
   struct Character {
     gf::Id dialog = gf::InvalidId;
+
+    gf::Vector2i pos;
+    bool visible = false;
   };
 
   struct Hero {
@@ -23,6 +31,8 @@ namespace tlw {
   };
 
   struct GameState {
+    GameState();
+
     std::size_t chapter = 0;
 
     gf::Id currentDialog = gf::InvalidId;
@@ -33,6 +43,7 @@ namespace tlw {
     ChallengeResult result = ChallengeResult::None;
 
     Hero hero;
+    std::map<CharacterType, Character> characters;
   };
 
 }

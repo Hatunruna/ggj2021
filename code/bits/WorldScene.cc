@@ -13,6 +13,7 @@ namespace tlw {
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
   , m_playerEntity(game.state)
+  , m_characterEntity(game.resources, game.state)
   , m_mapEntity(game.resources)
   {
     setClearColor(gf::Color::White);
@@ -39,6 +40,7 @@ namespace tlw {
 
     addWorldEntity(m_mapEntity);
     addWorldEntity(m_playerEntity);
+    addWorldEntity(m_characterEntity);
 
     setWorldViewSize(game.getRenderer().getSize());
     setWorldViewCenter(game.getRenderer().getSize() / 2);
@@ -66,7 +68,7 @@ namespace tlw {
   }
 
   void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {
-    
+
     //Actions for moving player
     if (m_moveXPosAction.isActive()) {
       m_playerEntity.move(gf::Direction::Right);
