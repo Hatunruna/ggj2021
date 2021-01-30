@@ -73,6 +73,11 @@ namespace tlw {
     gf::Log::debug("Decrease speed: new delay = %d\n", m_easeDelay);
   }
 
+  void SliderEntity::reset() {
+    m_played = false;
+    gf::Log::debug("Reset\n");
+  }
+
   void SliderEntity::update(gf::Time time) {
     if (!m_played) {
       m_activity.run(time);

@@ -12,6 +12,7 @@ namespace tlw {
   , m_stopCursorAction("StopCursor")
   , m_increaseSpeedAction("IncreaseSpeed")
   , m_decreaseSpeedAction("DecreaseSpeed")
+  , m_resetAction("Reset")
   {
     setClearColor(gf::Color::Black);
 
@@ -24,11 +25,18 @@ namespace tlw {
     m_increaseSpeedAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::RightBumper);
     addAction(m_increaseSpeedAction);
 
-    // Sequence scene
     m_decreaseSpeedAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::LeftBumper);
     addAction(m_decreaseSpeedAction);
 
+    m_resetAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Start);
+    m_resetAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Back);
+    addAction(m_resetAction);
+
     addHudEntity(m_sliderEntity);
+  }
+
+  void SliderChallengeScene::reset(SliderChallengeDifficulty difficulty) {
+    m_sliderEntity.setDifficulty(difficulty);
   }
 
   void SliderChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {
@@ -51,6 +59,10 @@ namespace tlw {
 
     if (m_decreaseSpeedAction.isActive()) {
       m_sliderEntity.decreaseSpeed();
+    }
+
+    if (m_resetAction.isActive()) {
+      m_sliderEntity.reset();
     }
   }
 

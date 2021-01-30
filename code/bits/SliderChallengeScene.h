@@ -14,6 +14,8 @@ namespace tlw {
   public:
     SliderChallengeScene(GameHub& game);
 
+    void reset(SliderChallengeDifficulty difficulty);
+
   private:
     void doHandleActions([[maybe_unused]] gf::Window& window) override;
 
@@ -25,6 +27,7 @@ namespace tlw {
     // TODO: To debug and test actions, remove it later
     gf::Action m_increaseSpeedAction;
     gf::Action m_decreaseSpeedAction;
+    gf::Action m_resetAction;
   };
 }
 

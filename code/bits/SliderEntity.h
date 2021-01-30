@@ -24,6 +24,7 @@ namespace tlw {
     // TODO: To debug and test functions, remove it later
     void increaseSpeed();
     void decreaseSpeed();
+    void reset();
 
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
