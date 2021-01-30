@@ -5,6 +5,11 @@
 #include "GameHub.h"
 #include "Constants.h"
 
+namespace {
+  //Vision of player in number of tiles
+  constexpr gf::Vector2f VisionPlayer(8.f, 8.f);
+}
+
 namespace tlw {
   WorldScene::WorldScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
@@ -54,7 +59,7 @@ namespace tlw {
     addWorldEntity(m_characterEntity);
     addWorldEntity(m_playerEntity);
 
-    setWorldViewSize(TileSize * gf::Vector2f(8.f, 8.f));
+    setWorldViewSize(TileSize * VisionPlayer);
   }
 
   void WorldScene::doProcessEvent([[maybe_unused]] gf::Event& event) {
