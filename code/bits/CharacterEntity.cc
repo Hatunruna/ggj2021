@@ -23,7 +23,11 @@ namespace tlw {
 
         switch (characterType) {
         case CharacterType::BadCat:
-          sprite.setTexture(m_resources.getTexture("images/cat.png"));
+          sprite.setTexture(m_resources.getTexture("images/wood_cat.png"));
+          break;
+
+        case CharacterType::GoodDog:
+          sprite.setTexture(m_resources.getTexture("images/wood_dog.png"));
           break;
         }
 

@@ -11,6 +11,7 @@ namespace tlw {
 
   enum class CharacterType : int {
     BadCat,
+    GoodDog,
   };
 
   struct Character {
