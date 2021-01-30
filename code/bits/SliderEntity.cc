@@ -2,6 +2,7 @@
 
 #include <gf/Coordinates.h>
 #include <gf/RenderTarget.h>
+#include <gf/Log.h>
 #include <gf/Shapes.h>
 
 #include "Constants.h"
@@ -9,13 +10,13 @@
 namespace {
   namespace ga = gf::activity;
 
-  auto createActivity(float& cursorPosition) {
+  auto createActivity(int delay, float& cursorPosition) {
     return ga::sequence(
-      ga::delay(gf::seconds(tlw::TransitionDelay)),
+      // ga::delay(gf::seconds(tlw::TransitionDelay)), // TODO: Comment to test
       ga::repeat(
         ga::sequence(
-          ga::value(0.0f, 1.0f, cursorPosition, gf::seconds(4.6f), gf::Ease::expoInOut),
-          ga::value(1.0f, 0.0f, cursorPosition, gf::seconds(4.6f), gf::Ease::expoInOut)
+          ga::value(0.0f, 1.0f, cursorPosition, gf::seconds(delay), gf::Ease::expoInOut),
+          ga::value(1.0f, 0.0f, cursorPosition, gf::seconds(delay), gf::Ease::expoInOut)
         )
       )
     );
@@ -25,14 +26,33 @@ namespace {
 
 namespace tlw {
   SliderEntity::SliderEntity()
-  : m_cursorPosition(0.0f)
-  , m_activity(createActivity(m_cursorPosition))
+  : m_easeDelay(static_cast<int>(SliderChallengeDifficulty::Medium))
+  , m_cursorPosition(0.0f)
+  , m_activity(std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition)))
   {
 
   }
 
+  void SliderEntity::setDifficulty(SliderChallengeDifficulty difficulty) {
+    m_easeDelay = static_cast<int>(difficulty);
+    m_cursorPosition = 0.0f;
+    m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
+  }
+
+  void SliderEntity::increaseSpeed() {
+    --m_easeDelay;
+    m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
+    gf::Log::debug("Increase speed: new delay = %d\n", m_easeDelay);
+  }
+
+  void SliderEntity::decreaseSpeed() {
+    ++m_easeDelay;
+    m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
+    gf::Log::debug("Decrease speed: new delay = %d\n", m_easeDelay);
+  }
+
   void SliderEntity::update(gf::Time time) {
-    m_activity.run(time);
+    m_activity->run(time);
   }
 
   void SliderEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {

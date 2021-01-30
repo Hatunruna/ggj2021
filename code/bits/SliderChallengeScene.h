@@ -1,6 +1,7 @@
 #ifndef SLIDER_CHALLENGE_SCENE_H
 #define SLIDER_CHALLENGE_SCENE_H
 
+#include <gf/Action.h>
 #include <gf/Scene.h>
 
 #include "SliderEntity.h"
@@ -14,8 +15,15 @@ namespace tlw {
     SliderChallengeScene(GameHub& game);
 
   private:
+    void doHandleActions([[maybe_unused]] gf::Window& window) override;
+
+  private:
     GameHub& m_game;
     SliderEntity m_sliderEntity;
+
+    // TODO: To debug and test actions, remove it later
+    gf::Action m_increaseSpeedAction;
+    gf::Action m_decreaseSpeedAction;
   };
 }
 
