@@ -2,6 +2,9 @@
 
 #include <gf/RenderTarget.h>
 #include <gf/Log.h>
+#include <gf/Array2D.h>
+
+#include "GameData.h"
 
 namespace tlw {
 
@@ -18,11 +21,41 @@ namespace tlw {
     layers.emplace_back(gf::makeTileLayer(map, layer, m_resources));
   }
 
-  MapEntity::MapEntity(gf::ResourceManager& resources)
+  MapEntity::MapEntity(gf::ResourceManager& resources, GameData& data)
   : m_layersMaker(resources)
   {
     if (m_mapLayers.loadFromFile(resources.getAbsolutePath("map/world.tmx"))) {
       m_mapLayers.visitLayers(m_layersMaker);
+
+      if (m_layersMaker.layers.size() > 0) {
+        gf::TileLayer& tileLayer = m_layersMaker.layers[0];
+        gf::Array2D<TileState, int> currTiles(tileLayer.getMapSize());
+        int mapSizeX = tileLayer.getMapSize().x;
+        int mapSizeY = tileLayer.getMapSize().y;
+
+        for (int x = 0; x < mapSizeX; ++x) {
+          for (int y = 0; y < mapSizeY; ++y) {
+            TileState tile;
+            switch (tileLayer.getTile({x, y}))
+            {
+              case 1: {
+                tile = TileState::Walkable;
+                break;
+              }
+            
+              default:
+              {
+                tile = TileState::NoWalkable;
+                break;
+              }
+            }
+
+            currTiles({x, y}) = tile;
+          }
+        }
+
+        data.tiles = currTiles;
+      }
     }
   }
 

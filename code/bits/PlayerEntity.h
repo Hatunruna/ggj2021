@@ -7,10 +7,11 @@
 
 namespace tlw {
   struct GameState;
+  struct GameData;
 
   class PlayerEntity : public gf::Entity {
   public:
-    PlayerEntity(gf::ResourceManager& resources, GameState& state);
+    PlayerEntity(gf::ResourceManager& resources, GameState& state, const GameData& data);
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
     void move(gf::Direction dir);
@@ -18,6 +19,7 @@ namespace tlw {
   private:
     GameState& m_state;
     gf::Texture& m_playerTexture;
+    const GameData& m_data;
     float m_cooldownMove;
   };
 
