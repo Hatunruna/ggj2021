@@ -13,9 +13,10 @@ namespace tlw {
   , m_moveXNegAction("MoveXNegative")
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
-  , m_playerEntity(game.resources, game.state, game.data)
-  , m_characterEntity(game.resources, game.state)
   , m_mapEntity(game.resources, game.data)
+  , m_buildingEntity(game.resources, game.data)
+  , m_characterEntity(game.resources, game.state)
+  , m_playerEntity(game.resources, game.state, game.data)
   {
     setClearColor(gf::Color::White);
 
@@ -40,8 +41,9 @@ namespace tlw {
     addAction(m_moveYNegAction);
 
     addWorldEntity(m_mapEntity);
-    addWorldEntity(m_playerEntity);
+    addWorldEntity(m_buildingEntity);
     addWorldEntity(m_characterEntity);
+    addWorldEntity(m_playerEntity);
 
     setWorldViewSize(TileSize * gf::Vector2f(8.f, 8.f));
   }
@@ -61,7 +63,7 @@ namespace tlw {
       m_playerEntity.move(gf::Direction::Up);
     }
 
-    // gf::Log::debug("New player position: %dx%d\n", m_game.state.hero.pos.x, m_game.state.hero.pos.y);
+    gf::Log::debug("New player position: %dx%d\n", m_game.state.hero.pos.x, m_game.state.hero.pos.y);
   }
 
   void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {

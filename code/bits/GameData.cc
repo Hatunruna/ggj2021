@@ -105,6 +105,13 @@ namespace tlw {
        * Chapter 4
        */
     };
+
+    buildings = {
+      {
+        BuildingType::FloristShop,
+        { gf::vec(31, 9) }
+      },
+    };
   }
 
 }

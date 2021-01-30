@@ -16,7 +16,6 @@ namespace tlw {
     std::string text;
   };
 
-
   enum DialogType {
     Normal,
     Investigation,
@@ -34,9 +33,17 @@ namespace tlw {
     DialogLine question;
   };
 
-  enum TileState {
+  enum class TileState {
     Walkable,
-    NoWalkable
+    NoWalkable,
+  };
+
+  enum class BuildingType {
+    FloristShop,
+  };
+
+  struct Building {
+    gf::Vector2i pos;
   };
 
   struct GameData {
@@ -44,8 +51,8 @@ namespace tlw {
 
     std::vector<Chapter> chapters;
     std::map<gf::Id, Dialog> dialogs;
-
     gf::Array2D<TileState, int> tiles;
+    std::map<BuildingType, Building> buildings;
   };
 
 }

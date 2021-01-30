@@ -4,6 +4,7 @@
 #include <gf/Action.h>
 #include <gf/Scene.h>
 
+#include "BuildingEntity.h"
 #include "CharacterEntity.h"
 #include "PlayerEntity.h"
 #include "MapEntity.h"
@@ -32,9 +33,10 @@ namespace tlw {
     gf::Action m_moveYPosAction;
     gf::Action m_moveYNegAction;
 
-    PlayerEntity m_playerEntity;
-    CharacterEntity m_characterEntity;
     MapEntity m_mapEntity;
+    BuildingEntity m_buildingEntity;
+    CharacterEntity m_characterEntity;
+    PlayerEntity m_playerEntity;
   };
 }
 

@@ -21,6 +21,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/code/config.h.in ${CMAKE_CURRENT_BINA
 
 add_executable(${GAME}
   code/main.cc
+  code/bits/BuildingEntity.cc
   code/bits/CharacterEntity.cc
   code/bits/DialogEntity.cc
   code/bits/DialogScene.cc
