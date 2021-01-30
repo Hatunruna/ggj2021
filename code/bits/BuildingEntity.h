@@ -16,6 +16,10 @@ namespace tlw {
   private:
     GameData& m_data;
     gf::Texture& m_floristShopTexture;
+    gf::Texture& m_woodHouseTexture;
+    gf::Texture& m_benchUpTexture;
+    gf::Texture& m_benchDownTexture;
+    gf::Texture& m_benchLeftTexture;
   };
 }
 

@@ -40,9 +40,14 @@ namespace tlw {
 
   enum class BuildingType {
     FloristShop,
+    WoodHouse,
+    BenchUp,
+    BenchDown,
+    BenchLeft,
   };
 
   struct Building {
+    BuildingType type;
     gf::Vector2i pos;
   };
 
@@ -52,7 +57,7 @@ namespace tlw {
     std::vector<Chapter> chapters;
     std::map<gf::Id, Dialog> dialogs;
     gf::Array2D<TileState, int> tiles;
-    std::map<BuildingType, Building> buildings;
+    std::vector<Building> buildings;
   };
 
 }
