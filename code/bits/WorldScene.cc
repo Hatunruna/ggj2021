@@ -8,17 +8,33 @@ namespace tlw {
   WorldScene::WorldScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
-  , m_moveXAction("MoveX")
+  , m_moveXPosAction("MoveXPositive")
+  , m_moveXNegAction("MoveXNegative")
+  , m_moveYPosAction("MoveYPositive")
+  , m_moveYNegAction("MoveYNegative")
   {
     setClearColor(gf::Color::White);
 
-    // m_moveXAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftX, gf::GamepadAxisDirection::Negative);
-    // m_moveXAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftY, gf::GamepadAxisDirection::Negative);
-    // addAction(m_moveXAction);
+    m_moveXPosAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftX, gf::GamepadAxisDirection::Positive);
+    addAction(m_moveXPosAction);
+
+    m_moveXNegAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftX, gf::GamepadAxisDirection::Negative);
+    addAction(m_moveXNegAction);
+
+    m_moveYPosAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftY, gf::GamepadAxisDirection::Positive);
+    addAction(m_moveYPosAction);
+
+    m_moveYNegAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftY, gf::GamepadAxisDirection::Negative);
+    addAction(m_moveYNegAction);
+
+    addWorldEntity(m_playerEntity);
+
+    setWorldViewSize(game.getRenderer().getSize());
+    setWorldViewCenter(game.getRenderer().getSize() / 2);
   }
 
   void WorldScene::doProcessEvent(gf::Event& event) {
-    switch (event.type) {
+    /*switch (event.type) {
       case gf::EventType::GamepadAxisMoved: {
         const gf::GamepadAxisEvent& gamepadEvent = event.gamepadAxis;
         std::string gamepadName = gf::Gamepad::getName(gamepadEvent.id);
@@ -35,6 +51,31 @@ namespace tlw {
 
       default:
         break;
+    }*/
+  }
+
+  void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {
+    
+    //Actions for moving player
+    if (m_moveXPosAction.isActive() || m_moveXNegAction.isActive())
+    {
+      if (m_moveXPosAction.isActive()) {
+        m_playerEntity.moveX(gf::GamepadAxisDirection::Positive);
+      }
+
+      if (m_moveXNegAction.isActive()) {
+        m_playerEntity.moveX(gf::GamepadAxisDirection::Negative);
+      }
+    }
+    else
+    {
+      if (m_moveYPosAction.isActive()) {
+        m_playerEntity.moveY(gf::GamepadAxisDirection::Positive);
+      }
+
+      if (m_moveYNegAction.isActive()) {
+        m_playerEntity.moveY(gf::GamepadAxisDirection::Negative);
+      }
     }
   }
 }

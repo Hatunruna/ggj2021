@@ -33,6 +33,7 @@ add_executable(${GAME}
   code/bits/StreakChallenge.cc
   code/bits/TitleEntity.cc
   code/bits/WorldScene.cc
+  code/bits/PlayerEntity.cc
 )
 
 target_include_directories(${GAME}
