@@ -37,7 +37,8 @@ namespace tlw {
     }
 
     if (m_startAction.isActive()) {
-      m_game.replaceScene(m_game.introduction, m_game.blackout, gf::seconds(2));
+      //m_game.replaceScene(m_game.introduction, m_game.blackout, gf::seconds(2));
+      m_game.replaceScene(m_game.world);
     }
 
     if (m_memoryAction.isActive()) {
