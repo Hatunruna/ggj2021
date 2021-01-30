@@ -61,6 +61,13 @@ namespace tlw {
 
     gf::Coordinates coords(target);
 
+    gf::Vector2f backgroundSize = coords.getRelativeSize({ 1.0f, 0.35f });
+
+    gf::RectangleShape background(backgroundSize);
+    background.setColor(gf::Color::Black * gf::Color::Opaque(0.7f));
+    background.setPosition(coords.getRelativePoint({ 0.0, 0.65 }));
+    background.setAnchor(gf::Anchor::TopLeft);
+    target.draw(background, states);
     // TODO background
 
     auto it = m_data.dialogs.find(m_state.currentDialog);
@@ -72,7 +79,7 @@ namespace tlw {
 
       gf::Text speaker(line.speaker, m_speakerFont, speakerCharacterSize);
       speaker.setColor(color);
-      speaker.setPosition(coords.getRelativePoint({ 0.2, 0.6 }));
+      speaker.setPosition(coords.getRelativePoint({ 0.2, 0.7 }));
       speaker.setAnchor(gf::Anchor::TopLeft);
       target.draw(speaker, states);
 
@@ -83,7 +90,7 @@ namespace tlw {
       words.setParagraphWidth(wordsWidth);
       words.setAlignment(gf::Alignment::Justify);
       words.setColor(color);
-      words.setPosition(coords.getRelativePoint({ 0.2, 0.7 }));
+      words.setPosition(coords.getRelativePoint({ 0.2, 0.8 }));
       words.setAnchor(gf::Anchor::TopLeft);
       target.draw(words, states);
     };
