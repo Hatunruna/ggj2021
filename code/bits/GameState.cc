@@ -19,6 +19,9 @@ namespace tlw {
       { CharacterType::Dread,
         { gf::InvalidId, gf::vec(15, 23), CharacterVisibility::Visible }
       },
+      { CharacterType::DogPack,
+        { gf::InvalidId, gf::vec(22, 32), CharacterVisibility::Visible }
+      },
     };
   }
 
