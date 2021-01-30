@@ -32,10 +32,11 @@ add_executable(${GAME}
   code/bits/SliderEntity.cc
   code/bits/StartScene.cc
   code/bits/StoryEntity.cc
-  code/bits/StreakChallenge.cc
+  code/bits/StreakChallengeScene.cc
   code/bits/TitleEntity.cc
   code/bits/WorldScene.cc
   code/bits/PlayerEntity.cc
+  code/bits/StreakEntity.cc
 )
 
 target_include_directories(${GAME}

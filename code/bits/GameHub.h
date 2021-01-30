@@ -10,7 +10,7 @@
 #include "IntroductionScene.h"
 #include "Plot.h"
 #include "SliderChallengeScene.h"
-#include "StreakChallenge.h"
+#include "StreakChallengeScene.h"
 #include "StartScene.h"
 #include "WorldScene.h"
 
@@ -26,8 +26,8 @@ namespace tlw {
     StartScene start;
     IntroductionScene introduction;
     WorldScene world;
-    StreakChallenge streakChallenge;
     SliderChallengeScene sliderChallenge;
+    StreakChallengeScene streakChallenge;
     DialogScene dialog;
 
     gf::BlackoutSegueEffect blackout;

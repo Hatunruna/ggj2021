@@ -11,8 +11,8 @@ namespace tlw {
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , m_startAction("Start")
-  , m_memoryAction("Memory")
   , m_sliderAction("Slider")
+  , m_streakAction("Streak")
   , m_dialogAction("Dialog")
   , m_titleEntity(game.resources)
   {
@@ -22,8 +22,8 @@ namespace tlw {
     addAction(m_startAction);
 
     // Sequence scene
-    m_memoryAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
-    addAction(m_memoryAction);
+    m_streakAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
+    addAction(m_streakAction);
 
     m_sliderAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
     addAction(m_sliderAction);
@@ -44,12 +44,12 @@ namespace tlw {
       m_game.replaceScene(m_game.world);
     }
 
-    if (m_memoryAction.isActive()) {
-      m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(TransitionDelay));
-    }
 
     if (m_sliderAction.isActive()) {
-      m_game.replaceScene(m_game.sliderChallenge, m_game.blackout, gf::seconds(TransitionDelay));
+        m_game.replaceScene(m_game.sliderChallenge, m_game.blackout, gf::seconds(TransitionDelay));
+    }
+    if (m_streakAction.isActive()) {
+      m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(2));
     }
 
     if (m_dialogAction.isActive()) {
