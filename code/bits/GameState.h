@@ -3,11 +3,14 @@
 
 #include <cstddef>
 #include <map>
+#include <vector>
 
 #include <gf/Id.h>
 #include <gf/Vector.h>
 
 namespace tlw {
+
+  constexpr int InvalidSearch = -1;
 
   enum class CharacterType : int {
     BadCat,
@@ -41,6 +44,12 @@ namespace tlw {
     Failure,
   };
 
+  struct Search {
+    gf::Vector2i pos;
+    std::size_t chapter;
+    bool done = false;
+  };
+
   struct GameState {
     GameState();
 
@@ -55,6 +64,9 @@ namespace tlw {
 
     Hero hero;
     std::map<CharacterType, Character> characters;
+
+    std::vector<Search> searchs;
+    int currSearch = InvalidSearch;
   };
 
 }

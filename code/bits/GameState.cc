@@ -26,6 +26,11 @@ namespace tlw {
         { gf::InvalidId, gf::vec(38, 29), CharacterVisibility::Visible }
       },
     };
-  }
 
+    searchs = {
+      {gf::vec(11, 18), 0},
+      {gf::vec(10, 18), 0},
+      {gf::vec(9, 18), 0},
+    };
+  }
 }

@@ -77,6 +77,7 @@ namespace tlw {
     }
 
     if (m_talkOrSearchAction.isActive()) {
+      bool searched = false;
       for (auto & [ characterType, character ] : m_game.state.characters) {
         if (character.visibility != CharacterVisibility::Visible) {
           continue;
@@ -86,6 +87,27 @@ namespace tlw {
           if (character.dialog != gf::InvalidId) {
             m_game.state.currentDialog = character.dialog;
             m_game.pushScene(m_game.dialog);
+            searched = true;
+            break;
+          }
+        }
+      }
+
+      //Check if we are on search position
+      if (!searched && m_game.state.currSearch == InvalidSearch)
+      {
+        for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
+          Search &search = m_game.state.searchs[i];
+
+          if (search.chapter != m_game.state.chapter || search.done) {
+            continue;
+          }
+
+          if (m_game.state.hero.pos == search.pos) {
+            m_game.state.currSearch = i;
+            m_game.streakChallenge.reset();
+            m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(1.5));
+            break;
           }
         }
       }
