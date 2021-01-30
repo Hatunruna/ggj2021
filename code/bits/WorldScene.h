@@ -5,6 +5,7 @@
 #include <gf/Scene.h>
 
 #include "PlayerEntity.h"
+#include "MapEntity.h"
 
 namespace tlw {
 
@@ -29,6 +30,7 @@ namespace tlw {
     gf::Action m_moveYNegAction;
 
     PlayerEntity m_playerEntity;
+    MapEntity m_mapEntity;
   };
 }
 

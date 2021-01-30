@@ -37,6 +37,7 @@ add_executable(${GAME}
   code/bits/WorldScene.cc
   code/bits/PlayerEntity.cc
   code/bits/StreakEntity.cc
+  code/bits/MapEntity.cc
 )
 
 target_include_directories(${GAME}

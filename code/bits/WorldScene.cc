@@ -13,6 +13,7 @@ namespace tlw {
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
   , m_playerEntity(game.state)
+  , m_mapEntity(game.resources)
   {
     setClearColor(gf::Color::White);
 
@@ -36,6 +37,7 @@ namespace tlw {
     m_moveYNegAction.setContinuous();
     addAction(m_moveYNegAction);
 
+    addWorldEntity(m_mapEntity);
     addWorldEntity(m_playerEntity);
 
     setWorldViewSize(game.getRenderer().getSize());
