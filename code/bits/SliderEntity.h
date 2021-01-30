@@ -1,8 +1,6 @@
 #ifndef SLIDER_ENTITY_H
 #define SLIDER_ENTITY_H
 
-#include <memory>
-
 #include <gf/Activities.h>
 #include <gf/Entity.h>
 
@@ -31,7 +29,7 @@ namespace tlw {
   private:
     int m_easeDelay;
     float m_cursorPosition;
-    std::unique_ptr<gf::activity::AnyActivity> m_activity;
+    gf::activity::AnyActivity m_activity;
   };
 }
 

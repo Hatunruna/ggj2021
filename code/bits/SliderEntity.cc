@@ -32,7 +32,7 @@ namespace tlw {
   SliderEntity::SliderEntity()
   : m_easeDelay(static_cast<int>(SliderChallengeDifficulty::Medium))
   , m_cursorPosition(0.0f)
-  , m_activity(std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition)))
+  , m_activity(createActivity(m_easeDelay, m_cursorPosition))
   {
 
   }
@@ -40,7 +40,7 @@ namespace tlw {
   void SliderEntity::setDifficulty(SliderChallengeDifficulty difficulty) {
     m_easeDelay = static_cast<int>(difficulty);
     m_cursorPosition = 0.0f;
-    m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
+    m_activity = ga::AnyActivity(createActivity(m_easeDelay, m_cursorPosition));
   }
 
   bool SliderEntity::stopCursor() const {
@@ -51,18 +51,18 @@ namespace tlw {
 
   void SliderEntity::increaseSpeed() {
     --m_easeDelay;
-    m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
+    m_activity = ga::AnyActivity(createActivity(m_easeDelay, m_cursorPosition));
     gf::Log::debug("Increase speed: new delay = %d\n", m_easeDelay);
   }
 
   void SliderEntity::decreaseSpeed() {
     ++m_easeDelay;
-    m_activity = std::make_unique<ga::AnyActivity>(createActivity(m_easeDelay, m_cursorPosition));
+    m_activity = ga::AnyActivity(createActivity(m_easeDelay, m_cursorPosition));
     gf::Log::debug("Decrease speed: new delay = %d\n", m_easeDelay);
   }
 
   void SliderEntity::update(gf::Time time) {
-    m_activity->run(time);
+    m_activity.run(time);
   }
 
   void SliderEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
