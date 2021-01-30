@@ -17,8 +17,7 @@ namespace tlw {
 
   private:
     GameState& m_state;
-
-    gf::Clock m_clock;
+    float m_cooldownMove;
   };
 
 }

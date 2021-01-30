@@ -10,10 +10,12 @@ namespace tlw {
 
   PlayerEntity::PlayerEntity(GameState& state)
   : m_state(state)
+  , m_cooldownMove(0.f)
   {
   }
 
-  void PlayerEntity::update([[maybe_unused]] gf::Time time) {
+  void PlayerEntity::update(gf::Time time) {
+    m_cooldownMove += time.asSeconds();
   }
 
   void PlayerEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -26,11 +28,12 @@ namespace tlw {
 
   void PlayerEntity::move(gf::Direction dir)
   {
-    constexpr gf::Time cooldownMove = gf::milliseconds(250);
+    //cooldown move in seconds
+    constexpr float cooldownMove = 0.25f;
 
-    if (m_clock.getElapsedTime() > cooldownMove)
+    if (m_cooldownMove > cooldownMove)
     {
-      m_clock.restart();
+      m_cooldownMove = 0.f;
 
       constexpr int moveValue = 50;
       m_state.hero.pos += gf::displacement(dir) * moveValue;
