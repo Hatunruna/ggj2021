@@ -15,8 +15,11 @@ namespace tlw {
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
 
   private:
-    gf::ResourceManager& m_resources;
     GameState& m_state;
+    gf::Texture& m_woodCatTexture;
+    gf::Texture& m_woodDogTexture;
+    gf::Texture& m_floristTexture;
+    gf::Texture& m_moiraiTexture;
   };
 }
 

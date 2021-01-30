@@ -8,10 +8,16 @@
 
 namespace tlw {
   CharacterEntity::CharacterEntity(gf::ResourceManager& resources, GameState& state)
-  : m_resources(resources)
-  , m_state(state)
+  : m_state(state)
+  , m_woodCatTexture(resources.getTexture("images/wood_cat.png"))
+  , m_woodDogTexture(resources.getTexture("images/wood_dog.png"))
+  , m_floristTexture(resources.getTexture("images/florist.png"))
+  , m_moiraiTexture(resources.getTexture("images/moirai.png"))
   {
-
+    m_woodCatTexture.setSmooth(true);
+    m_woodDogTexture.setSmooth(true);
+    m_floristTexture.setSmooth(true);
+    m_moiraiTexture.setSmooth(true);
   }
 
   void CharacterEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -21,19 +27,19 @@ namespace tlw {
 
         switch (characterType) {
         case CharacterType::BadCat:
-          sprite.setTexture(m_resources.getTexture("images/wood_cat.png"));
+          sprite.setTexture(m_woodCatTexture);
           break;
 
         case CharacterType::GoodDog:
-          sprite.setTexture(m_resources.getTexture("images/wood_dog.png"));
+          sprite.setTexture(m_woodDogTexture);
           break;
 
         case CharacterType::Florist:
-          sprite.setTexture(m_resources.getTexture("images/florist.png"));
+          sprite.setTexture(m_floristTexture);
           break;
 
         case CharacterType::Moirai:
-          sprite.setTexture(m_resources.getTexture("images/moirai.png"));
+          sprite.setTexture(m_moiraiTexture);
           break;
         }
 
