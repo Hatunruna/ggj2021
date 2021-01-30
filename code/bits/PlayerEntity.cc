@@ -36,8 +36,7 @@ namespace tlw {
 
     gf::Vector2i nextPos = m_state.hero.pos + gf::displacement(dir) * moveValue;
 
-    if (m_cooldownMove > cooldownMove && m_data.tiles(nextPos) == TileState::Walkable)
-    {
+    if (m_cooldownMove > cooldownMove && m_data.tiles(nextPos) == TileState::Walkable) {
       m_cooldownMove = 0.f;
       m_state.hero.pos = nextPos;
     }

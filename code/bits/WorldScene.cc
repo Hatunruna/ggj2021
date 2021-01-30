@@ -99,8 +99,7 @@ namespace tlw {
       }
 
       //Check if we are on search position
-      if (!searched && m_game.state.currSearch == InvalidSearch)
-      {
+      if (!searched && m_game.state.currSearch == InvalidSearch) {
         for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
           Search &search = m_game.state.searchs[i];
 
