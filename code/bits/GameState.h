@@ -21,7 +21,7 @@ namespace tlw {
   };
 
   struct Hero {
-    gf::Vector2i pos = {0, 0};
+    gf::Vector2i pos = {16, 20};
   };
 
   enum class ChallengeResult {

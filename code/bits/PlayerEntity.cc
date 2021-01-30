@@ -20,10 +20,9 @@ namespace tlw {
   }
 
   void PlayerEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
-    gf::RectangleShape playerSquare(gf::Vector2f(100.f, 50.f));
+    gf::RectangleShape playerSquare(gf::Vector2f(128.f, 128.f));
     playerSquare.setColor(gf::Color::Red);
     playerSquare.setPosition(m_state.hero.pos * TileSize);
-    playerSquare.setAnchor(gf::Anchor::Center);
     target.draw(playerSquare, states);
   }
 
