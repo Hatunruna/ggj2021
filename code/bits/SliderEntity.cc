@@ -49,8 +49,8 @@ namespace tlw {
   }
 
   bool SliderEntity::isHit() const {
-    float upperBounds = 0.5f + GoalRelativeSize.width;
-    float lowerBounds = 0.5f - GoalRelativeSize.width;
+    float upperBounds = 0.5f + GoalRelativeSize.width + 2.0f * CursorRelativeSize.width;
+    float lowerBounds = 0.5f - GoalRelativeSize.width - 2.0f * CursorRelativeSize.width;
     return m_cursorPosition >= lowerBounds && m_cursorPosition <= upperBounds;
   }
 
