@@ -13,13 +13,19 @@ namespace tlw {
     BadCat,
     GoodDog,
     Florist,
+    Moirai,
+  };
+
+  enum class CharacterVisibility {
+    Visible,
+    Hidden,
   };
 
   struct Character {
     gf::Id dialog = gf::InvalidId;
 
     gf::Vector2i pos;
-    bool visible = false;
+    CharacterVisibility visibility = CharacterVisibility::Hidden;
   };
 
   struct Hero {

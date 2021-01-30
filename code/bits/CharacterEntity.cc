@@ -15,10 +15,8 @@ namespace tlw {
   }
 
   void CharacterEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
-    for (const auto& entry: m_state.characters) {
-      CharacterType characterType = entry.first;
-      const Character& character = entry.second;
-      if (character.visible) {
+    for (const auto & [ characterType, character ] : m_state.characters) {
+      if (character.visibility == CharacterVisibility::Visible) {
         gf::Sprite sprite;
 
         switch (characterType) {
@@ -32,6 +30,10 @@ namespace tlw {
 
         case CharacterType::Florist:
           sprite.setTexture(m_resources.getTexture("images/florist.png"));
+          break;
+
+        case CharacterType::Moirai:
+          sprite.setTexture(m_resources.getTexture("images/moirai.png"));
           break;
         }
 

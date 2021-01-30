@@ -3,18 +3,20 @@
 namespace tlw {
 
   GameState::GameState() {
-    Character character;
-    character.pos = gf::vec(0, 0);
-    character.visible = true;
-    characters.insert({ CharacterType::BadCat, character });
-
-    character.pos = gf::vec(1, 0);
-    character.visible = true;
-    characters.insert({ CharacterType::GoodDog, character });
-
-    character.pos = gf::vec(2, 0);
-    character.visible = true;
-    characters.insert({ CharacterType::Florist, character });
+    characters = {
+      { CharacterType::BadCat,
+        { gf::InvalidId, gf::vec(0, 0), CharacterVisibility::Visible }
+      },
+      { CharacterType::GoodDog,
+        { gf::InvalidId, gf::vec(1, 0), CharacterVisibility::Visible }
+      },
+      { CharacterType::Florist,
+        { gf::InvalidId, gf::vec(2, 0), CharacterVisibility::Visible }
+      },
+      { CharacterType::Moirai,
+        { gf::InvalidId, gf::vec(3, 0), CharacterVisibility::Visible }
+      },
+    };
   }
 
 }
