@@ -18,7 +18,7 @@ namespace tlw {
     {
         m_timer = m_clock.restart();
         setClearColor(gf::Color::Black);
-        addHudEntity(m_streakEntity); 
+        addHudEntity(m_streakEntity);
 
 
         m_buttonA.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
@@ -36,16 +36,16 @@ namespace tlw {
 
     std::vector<gf::GamepadButton> StreakChallengeScene::generateStreak() {
         std::vector<gf::GamepadButton> streak;
-        gf::Random random = gf::Random::Random(time(NULL));
+
         for (int i = 0; i < NUMBER_TOUCH ; i++) {
-            streak.push_back((gf::GamepadButton)random.computeUniformInteger(1, 4));
+            streak.push_back(static_cast<gf::GamepadButton>(m_game.random.computeUniformInteger(1, 4)));
         }
 
         return streak;
     }
 
     void StreakChallengeScene::doProcessEvent(gf::Event& event) {
-        
+
     }
 
     void StreakChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {
