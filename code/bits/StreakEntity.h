@@ -1,42 +1,47 @@
 #ifndef STREAK_ENTITY_H
 #define STREAK_ENTITY_H
 
+#include <gf/Activities.h>
 #include <gf/Entity.h>
 #include <gf/Font.h>
+#include <gf/Gamepad.h>
+#include <gf/Random.h>
 #include <gf/ResourceManager.h>
 #include <gf/Shapes.h>
-#include <gf/Gamepad.h>
 
 namespace tlw {
+  enum class StreakChallengeStatus {
+    ShowingSolution,
+    WaitingPlayerInput,
+    ShowingResultMessage,
+  };
 
   class StreakEntity : public gf::Entity {
   public:
-    StreakEntity(gf::ResourceManager& resources);
-    void displayPlayerAnswer(gf::GamepadButton button);
-    void updateStreak(std::vector< gf::GamepadButton> streak);
-    bool canPlay();
-    void reset();
-    void success();
-    void failed();
+    StreakEntity(gf::ResourceManager& resources, gf::Random& random);
 
-  private:
+    void reset(int buttonCount);
+    void addPlayerInput(gf::GamepadButton gamepadButton);
+    bool isCorrect() const;
+    StreakChallengeStatus getStatus() const;
+
     void update(gf::Time time) override;
     void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
-    std::vector<gf::GamepadButton> m_streak;
+
+  private:
+    void generateStreak(int buttonCount);
+
+  private:
+    gf::Random m_random;
+    gf::Font& m_buttonFont;
+    gf::Font& m_messageFont;
+
+    StreakChallengeStatus m_status;
+    std::vector<gf::GamepadButton> m_streakSolution;
     std::vector<gf::GamepadButton> m_streakPlayer;
-    std::vector<gf::CircleShape> m_buttons;
-    std::string gamepadValue(gf::GamepadButton button);
-    gf::Texture& m_backgroundTexture; 
-    gf::Font& m_font;
-    gf::Font& m_wordsFont;
-    float m_timer;
-    float m_radius;
-    float m_displayPosition;
+
     float m_opacity;
-    bool m_reset;
-    bool m_canPlay;
-    bool m_success;
-    bool m_failed;
+    gf::activity::AnyActivity m_activities;
   };
 }
 

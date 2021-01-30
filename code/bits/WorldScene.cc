@@ -20,7 +20,7 @@ namespace tlw {
   , m_characterEntity(game.resources, game.state)
   , m_playerEntity(game.resources, game.state, game.data)
   {
-    setClearColor(gf::Color::White);
+    setClearColor(gf::Color::Black);
 
     m_moveXPosAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftX, gf::GamepadAxisDirection::Positive);
     m_moveXPosAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::DPadRight);
@@ -105,7 +105,7 @@ namespace tlw {
 
           if (m_game.state.hero.pos == search.pos) {
             m_game.state.currSearch = i;
-            m_game.streakChallenge.reset();
+            m_game.streakChallenge.reset(5);
             m_game.pushScene(m_game.streakChallenge);
             break;
           }

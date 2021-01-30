@@ -1,23 +1,27 @@
 #include "StreakChallengeScene.h"
+
 #include "GameHub.h"
-constexpr auto NUMBER_TOUCH = 5;
+
+namespace {
+  constexpr float TimeBeforeVanish = 3.f;
+}
 
 namespace tlw {
 
   StreakChallengeScene::StreakChallengeScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
-  , m_streakEntity(game.resources)
+  , m_endTimer(0.0f)
+  , m_streakEntity(game.resources, game.random)
   , m_buttonA("A")
   , m_buttonB("B")
   , m_buttonX("X")
   , m_buttonY("Y")
-  , m_gameEnd(false)
-  , m_endTimer(0.f)
+  , currentDifficulty(5)
+  , m_resetAction("ResetAction")
+  , m_increaseDifficultyAction("IncreaseDifficulty")
+  , m_decreaseDifficultyAction("DecreaseDifficulty")
   {
-    generateStreak();
-    m_streakEntity.updateStreak(m_streak);
-
     setClearColor(gf::Color::Black);
 
     addHudEntity(m_streakEntity);
@@ -33,24 +37,22 @@ namespace tlw {
 
     m_buttonY.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
     addAction(m_buttonY);
+
+    m_resetAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Start);
+    m_resetAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Back);
+    addAction(m_resetAction);
+
+    m_increaseDifficultyAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::RightBumper);
+    addAction(m_increaseDifficultyAction);
+
+    m_decreaseDifficultyAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::LeftBumper);
+    addAction(m_decreaseDifficultyAction);
   }
 
-  void StreakChallengeScene::reset()
+  void StreakChallengeScene::reset(int buttonCount)
   {
-    m_streakEntity.reset();
-    m_streakPlayer.clear();
-    m_gameEnd = false;
-    m_endTimer = 0.f;
-    generateStreak();
-    m_streakEntity.updateStreak(m_streak);
-  }
-
-  void StreakChallengeScene::generateStreak() {
-    m_streak.clear();
-
-    for (int i = 0; i < NUMBER_TOUCH ; i++) {
-      m_streak.push_back(static_cast<gf::GamepadButton>(m_game.random.computeUniformInteger(1, 4)));
-    }
+    m_endTimer = 0.0f;
+    m_streakEntity.reset(buttonCount);
   }
 
   void StreakChallengeScene::doProcessEvent([[maybe_unused]] gf::Event& event) {
@@ -61,56 +63,33 @@ namespace tlw {
       return;
     }
 
-    if (m_streakEntity.canPlay()) {
-      if (m_streakPlayer.size() == m_streak.size()) {
-        if (m_streak == m_streakPlayer) {
-          m_streakEntity.success();
-        }
-        else {                
-          m_streakEntity.failed();
-        }
+    if (m_buttonA.isActive()) {
+      m_streakEntity.addPlayerInput(gf::GamepadButton::A);
+    } else if (m_buttonB.isActive()) {
+      m_streakEntity.addPlayerInput(gf::GamepadButton::B);
+    } else if (m_buttonX.isActive()) {
+      m_streakEntity.addPlayerInput(gf::GamepadButton::X);
+    } else if (m_buttonY.isActive()) {
+      m_streakEntity.addPlayerInput(gf::GamepadButton::Y);
+    }
 
-        m_game.state.searchs[m_game.state.currSearch].done = true;
-        m_game.state.currSearch = InvalidSearch;
-        m_gameEnd = true;
-      }
-
-      if (m_buttonA.isActive()) {
-        m_streakPlayer.push_back(gf::GamepadButton::A);
-        gf::Log::info("A Pressed \n");
-
-        m_streakEntity.displayPlayerAnswer(gf::GamepadButton::A);
-      }
-      else if (m_buttonB.isActive()) {
-        m_streakPlayer.push_back(gf::GamepadButton::B);
-        gf::Log::info("B Pressed \n");
-
-        m_streakEntity.displayPlayerAnswer(gf::GamepadButton::B);
-      }
-      else if (m_buttonX.isActive()) {
-
-        m_streakPlayer.push_back(gf::GamepadButton::X);
-        gf::Log::info("X Pressed \n");
-                
-
-        m_streakEntity.displayPlayerAnswer(gf::GamepadButton::X);
-      }
-      else if (m_buttonY.isActive()) {
-        m_streakPlayer.push_back(gf::GamepadButton::Y);
-        gf::Log::info("Y Pressed \n");
-
-        m_streakEntity.displayPlayerAnswer(gf::GamepadButton::Y);
-      }
+    if (m_resetAction.isActive()) {
+      reset(currentDifficulty);
+    }
+    if (m_increaseDifficultyAction.isActive()) {
+      reset(++currentDifficulty);
+    }
+    if (m_decreaseDifficultyAction.isActive()) {
+      reset(--currentDifficulty);
     }
   }
 
   void StreakChallengeScene::doUpdate([[maybe_unused]] gf::Time time) {
-    if (m_gameEnd) {
+    if (m_streakEntity.getStatus() == StreakChallengeStatus::ShowingResultMessage) {
       m_endTimer += time.asSeconds();
 
       //Time in seconds before vanish of the scene
-      constexpr float timeBeforeVanish = 3.f;
-      if (m_endTimer >= timeBeforeVanish) {
+      if (m_endTimer >= TimeBeforeVanish) {
         m_game.popScene();
       }
     }

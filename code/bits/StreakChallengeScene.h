@@ -23,25 +23,28 @@ namespace tlw {
   class StreakChallengeScene : public gf::Scene {
   public:
     StreakChallengeScene(GameHub& game);
-    void reset();
-  
+    void reset(int buttonCount);
+
   private:
     virtual void doProcessEvent(gf::Event& event) override;
     virtual void doHandleActions(gf::Window& window) override;
     virtual void doUpdate(gf::Time time) override;
-    void generateStreak();
 
   private:
     GameHub& m_game;
-    StreakEntity m_streakEntity;
-    std::vector<gf::GamepadButton> m_streak;
-    std::vector<gf::GamepadButton> m_streakPlayer;
+    float m_endTimer;
+
     gf::Action m_buttonA;
     gf::Action m_buttonB;
     gf::Action m_buttonX;
     gf::Action m_buttonY;
-    bool m_gameEnd;
-    float m_endTimer;
+    // TODO: debug, remove later
+    int currentDifficulty;
+    gf::Action m_resetAction;
+    gf::Action m_increaseDifficultyAction;
+    gf::Action m_decreaseDifficultyAction;
+
+    StreakEntity m_streakEntity;
   };
 
 }

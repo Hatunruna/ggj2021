@@ -49,7 +49,7 @@ namespace tlw {
         m_game.replaceScene(m_game.sliderChallenge, m_game.blackout, gf::seconds(TransitionDelay));
     }
     if (m_streakAction.isActive()) {
-      m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(2));
+      m_game.replaceScene(m_game.streakChallenge);
     }
 
     if (m_dialogAction.isActive()) {
