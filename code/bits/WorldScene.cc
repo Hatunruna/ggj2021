@@ -13,7 +13,7 @@ namespace tlw {
   , m_moveXNegAction("MoveXNegative")
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
-  , m_playerEntity(game.state)
+  , m_playerEntity(game.resources, game.state)
   , m_characterEntity(game.resources, game.state)
   , m_mapEntity(game.resources)
   {

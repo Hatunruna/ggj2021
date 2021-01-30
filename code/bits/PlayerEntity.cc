@@ -1,18 +1,19 @@
 #include "PlayerEntity.h"
 
-#include <gf/Shapes.h>
 #include <gf/RenderTarget.h>
-#include <gf/Log.h>
+#include <gf/Sprite.h>
 
 #include "GameState.h"
 #include "Constants.h"
 
 namespace tlw {
 
-  PlayerEntity::PlayerEntity(GameState& state)
-  : m_state(state)
+  PlayerEntity::PlayerEntity(gf::ResourceManager& resources, GameState& state)
+  : m_playerTexture(resources.getTexture("images/player.png"))
+  , m_state(state)
   , m_cooldownMove(0.f)
   {
+    m_playerTexture.setSmooth(true);
   }
 
   void PlayerEntity::update(gf::Time time) {
@@ -20,10 +21,9 @@ namespace tlw {
   }
 
   void PlayerEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
-    gf::RectangleShape playerSquare(TileSize);
-    playerSquare.setColor(gf::Color::Red);
-    playerSquare.setPosition(m_state.hero.pos * TileSize);
-    target.draw(playerSquare, states);
+    gf::Sprite sprite(m_playerTexture);
+    sprite.setPosition(m_state.hero.pos * TileSize);
+    target.draw(sprite, states);
   }
 
   void PlayerEntity::move(gf::Direction dir)
