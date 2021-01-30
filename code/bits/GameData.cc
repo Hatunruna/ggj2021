@@ -123,6 +123,7 @@ namespace tlw {
       { BuildingType::BenchLeft, gf::vec(23, 19) },
       { BuildingType::BenchDown, gf::vec(27, 24) },
       { BuildingType::BenchDown, gf::vec(29, 34) },
+      { BuildingType::GustavoShop, gf::vec(38, 27) },
     };
   }
 

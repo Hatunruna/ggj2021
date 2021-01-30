@@ -15,12 +15,14 @@ namespace tlw {
   , m_benchUpTexture(resources.getTexture("images/bench_up.png"))
   , m_benchDownTexture(resources.getTexture("images/bench_down.png"))
   , m_benchLeftTexture(resources.getTexture("images/bench_left.png"))
+  , m_gustavoShopTexture(resources.getTexture("images/gustavo_shop.png"))
   {
     m_floristShopTexture.setSmooth(true);
     m_woodHouseTexture.setSmooth(true);
     m_benchUpTexture.setSmooth(true);
     m_benchDownTexture.setSmooth(true);
     m_benchLeftTexture.setSmooth(true);
+    m_gustavoShopTexture.setSmooth(true);
   }
 
   void BuildingEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -46,6 +48,10 @@ namespace tlw {
 
       case BuildingType::BenchLeft:
         sprite.setTexture(m_benchLeftTexture);
+        break;
+
+      case BuildingType::GustavoShop:
+        sprite.setTexture(m_gustavoShopTexture);
         break;
       }
 

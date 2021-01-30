@@ -16,6 +16,7 @@ namespace tlw {
     Moirai,
     Dread,
     DogPack,
+    Gustavo,
   };
 
   enum class CharacterVisibility {

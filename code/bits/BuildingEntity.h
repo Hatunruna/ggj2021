@@ -20,6 +20,7 @@ namespace tlw {
     gf::Texture& m_benchUpTexture;
     gf::Texture& m_benchDownTexture;
     gf::Texture& m_benchLeftTexture;
+    gf::Texture& m_gustavoShopTexture;
   };
 }
 

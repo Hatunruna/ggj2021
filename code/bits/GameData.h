@@ -44,6 +44,7 @@ namespace tlw {
     BenchUp,
     BenchDown,
     BenchLeft,
+    GustavoShop,
   };
 
   struct Building {

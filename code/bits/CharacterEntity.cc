@@ -26,7 +26,7 @@ namespace tlw {
 
   void CharacterEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     for (const auto & [ characterType, character ] : m_state.characters) {
-      if (character.visibility == CharacterVisibility::Visible) {
+      if (character.visibility == CharacterVisibility::Visible && characterType != CharacterType::Gustavo) {
         gf::Sprite sprite;
 
         switch (characterType) {
