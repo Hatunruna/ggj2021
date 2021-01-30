@@ -5,6 +5,7 @@
 #include <gf/Log.h>
 
 #include "GameState.h"
+#include "Constants.h"
 
 namespace tlw {
 
@@ -21,7 +22,7 @@ namespace tlw {
   void PlayerEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::RectangleShape playerSquare(gf::Vector2f(100.f, 50.f));
     playerSquare.setColor(gf::Color::Red);
-    playerSquare.setPosition(m_state.hero.pos);
+    playerSquare.setPosition(m_state.hero.pos * TileSize);
     playerSquare.setAnchor(gf::Anchor::Center);
     target.draw(playerSquare, states);
   }
@@ -35,7 +36,7 @@ namespace tlw {
     {
       m_cooldownMove = 0.f;
 
-      constexpr int moveValue = 50;
+      constexpr int moveValue = 1;
       m_state.hero.pos += gf::displacement(dir) * moveValue;
     }
   }

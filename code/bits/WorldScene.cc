@@ -3,6 +3,7 @@
 #include <gf/Log.h>
 
 #include "GameHub.h"
+#include "Constants.h"
 
 namespace tlw {
   WorldScene::WorldScene(GameHub& game)
@@ -42,8 +43,7 @@ namespace tlw {
     addWorldEntity(m_playerEntity);
     addWorldEntity(m_characterEntity);
 
-    setWorldViewSize(game.getRenderer().getSize());
-    setWorldViewCenter(game.getRenderer().getSize() / 2);
+    setWorldViewSize(TileSize * gf::Vector2f(8.f, 8.f));
   }
 
   void WorldScene::doProcessEvent(gf::Event& event) {
@@ -68,7 +68,6 @@ namespace tlw {
   }
 
   void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {
-
     //Actions for moving player
     if (m_moveXPosAction.isActive()) {
       m_playerEntity.move(gf::Direction::Right);
@@ -79,5 +78,10 @@ namespace tlw {
     } else if (m_moveYNegAction.isActive()) {
       m_playerEntity.move(gf::Direction::Up);
     }
+  }
+
+  void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {
+    //TODO: do offset to point in the middle of the tile
+    setWorldViewCenter(m_game.state.hero.pos * TileSize);
   }
 }

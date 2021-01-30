@@ -21,6 +21,8 @@ namespace tlw {
 
     virtual void doHandleActions(gf::Window& window) override;
 
+    virtual void doUpdate(gf::Time time) override;
+
   private:
     GameHub& m_game;
 
