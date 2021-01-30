@@ -27,20 +27,6 @@ namespace tlw {
   void PlayerEntity::move(gf::Direction dir)
   {
     constexpr int moveValue = 50;
-
-    switch (dir)
-    {
-      case gf::Direction::Up:
-      case gf::Direction::Down: {
-        m_state.hero.pos.y += (dir == gf::Direction::Down) ? moveValue : -moveValue;
-        break;
-      }
-
-      case gf::Direction::Left:
-      case gf::Direction::Right: {
-        m_state.hero.pos.x += (dir == gf::Direction::Right) ? moveValue : -moveValue;
-        break;
-      }
-    }
+    m_state.hero.pos += gf::displacement(dir) * moveValue;
   }
 }
