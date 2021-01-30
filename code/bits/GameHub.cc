@@ -10,6 +10,7 @@ namespace tlw {
   , introduction(*this)
   , world(*this)
   , streakChallenge(*this)
+  , dialog(*this)
   {
     pushScene(start);
   }

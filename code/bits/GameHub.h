@@ -4,12 +4,13 @@
 #include <gf/GameManager.h>
 #include <gf/SegueEffects.h>
 
+#include "DialogScene.h"
 #include "GameData.h"
-#include "WorldScene.h"
 #include "GameState.h"
 #include "IntroductionScene.h"
 #include "StreakChallenge.h"
 #include "StartScene.h"
+#include "WorldScene.h"
 
 namespace tlw {
 
@@ -23,6 +24,7 @@ namespace tlw {
     IntroductionScene introduction;
     WorldScene world;
     StreakChallenge streakChallenge;
+    DialogScene dialog;
 
     gf::BlackoutSegueEffect blackout;
   };

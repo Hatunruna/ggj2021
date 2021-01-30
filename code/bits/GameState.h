@@ -3,16 +3,20 @@
 
 #include <cstddef>
 
+#include <gf/Id.h>
+
 namespace tlw {
 
-  struct HeroSkills {
-    int observation = 50;
-    int persuasion = 50;
+  struct Character {
+    gf::Id dialog = gf::InvalidId;
   };
 
   struct GameState {
     std::size_t chapter = 0;
-    HeroSkills skills;
+
+    gf::Id currentDialog = gf::InvalidId;
+    std::size_t currentLine = 0;
+
   };
 
 }

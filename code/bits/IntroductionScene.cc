@@ -1,5 +1,5 @@
+#include "IntroductionScene.h"
 
-#include "StreakChallenge.h"
 #include <gf/Color.h>
 
 #include "GameHub.h"
@@ -24,6 +24,10 @@ namespace tlw {
   }
 
   void IntroductionScene::doHandleActions([[maybe_unused]] gf::Window& window) {
+    if (!isActive()) {
+      return;
+    }
+
     if (m_skipAction.isActive()) {
       m_game.replaceScene(m_game.world, m_game.blackout, gf::seconds(2));
     }

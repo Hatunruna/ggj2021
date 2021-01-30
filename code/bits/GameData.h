@@ -1,8 +1,11 @@
 #ifndef GAME_DATA_H
 #define GAME_DATA_H
 
+#include <map>
 #include <string>
 #include <vector>
+
+#include <gf/Id.h>
 
 namespace tlw {
 
@@ -11,14 +14,27 @@ namespace tlw {
     std::string text;
   };
 
-  struct Story {
-    Story();
 
-    std::vector<Chapter> chapters;
+  enum DialogType {
+    Normal,
+    Investigation,
+  };
+
+  struct DialogLine {
+    std::string speaker;
+    std::string words;
+  };
+
+  struct Dialog {
+    DialogType type;
+    std::vector<DialogLine> lines;
   };
 
   struct GameData {
-    Story story;
+    GameData();
+
+    std::vector<Chapter> chapters;
+    std::map<gf::Id, Dialog> dialogs;
   };
 
 }
