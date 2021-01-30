@@ -12,6 +12,7 @@ namespace tlw {
   , m_moveXNegAction("MoveXNegative")
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
+  , m_playerEntity(game.state)
   {
     setClearColor(gf::Color::White);
 
@@ -57,25 +58,14 @@ namespace tlw {
   void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {
     
     //Actions for moving player
-    if (m_moveXPosAction.isActive() || m_moveXNegAction.isActive())
-    {
-      if (m_moveXPosAction.isActive()) {
-        m_playerEntity.moveX(gf::GamepadAxisDirection::Positive);
-      }
-
-      if (m_moveXNegAction.isActive()) {
-        m_playerEntity.moveX(gf::GamepadAxisDirection::Negative);
-      }
-    }
-    else
-    {
-      if (m_moveYPosAction.isActive()) {
-        m_playerEntity.moveY(gf::GamepadAxisDirection::Positive);
-      }
-
-      if (m_moveYNegAction.isActive()) {
-        m_playerEntity.moveY(gf::GamepadAxisDirection::Negative);
-      }
+    if (m_moveXPosAction.isActive()) {
+      m_playerEntity.move(gf::Direction::Right);
+    } else if (m_moveXNegAction.isActive()) {
+      m_playerEntity.move(gf::Direction::Left);
+    } else if (m_moveYPosAction.isActive()) {
+      m_playerEntity.move(gf::Direction::Down);
+    } else if (m_moveYNegAction.isActive()) {
+      m_playerEntity.move(gf::Direction::Up);
     }
   }
 }

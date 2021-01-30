@@ -2,22 +2,20 @@
 #define PLAYER_ENTITY_H
 
 #include <gf/Entity.h>
-#include <gf/Gamepad.h>
-#include <gf/Vector.h>
+#include <gf/Direction.h>
 
 namespace tlw {
+  struct GameState;
 
   class PlayerEntity : public gf::Entity {
   public:
-    PlayerEntity();
+    PlayerEntity(GameState& state);
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
-    void moveX(gf::GamepadAxisDirection dir);
-    void moveY(gf::GamepadAxisDirection dir);
+    void move(gf::Direction dir);
 
   private:
-
-    gf::Vector2i m_pos;
+    GameState& m_state;
   };
 
 }

@@ -4,11 +4,16 @@
 #include <cstddef>
 
 #include <gf/Id.h>
+#include <gf/Vector.h>
 
 namespace tlw {
 
   struct Character {
     gf::Id dialog = gf::InvalidId;
+  };
+
+  struct Hero {
+    gf::Vector2i pos = {0, 0};
   };
 
   struct GameState {
@@ -17,6 +22,7 @@ namespace tlw {
     gf::Id currentDialog = gf::InvalidId;
     std::size_t currentLine = 0;
 
+    Hero hero;
   };
 
 }
