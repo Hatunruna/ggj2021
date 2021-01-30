@@ -42,6 +42,8 @@ namespace tlw {
     std::vector<gf::GamepadButton> m_streakSolution;
     std::vector<gf::GamepadButton> m_streakPlayer;
 
+
+    float m_timer;
     float m_opacity;
     gf::activity::AnyActivity m_activities;
   };

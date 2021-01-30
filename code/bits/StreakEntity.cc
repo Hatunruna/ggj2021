@@ -52,6 +52,7 @@ namespace tlw {
   , m_status(StreakChallengeStatus::ShowingSolution)
   , m_opacity(1.0f)
   , m_activities(createActivity(m_opacity))
+  , m_timer(ShowingSolutionDelay+ShowingSolutionFadingDelay)
   {
     generateStreak(5);
     m_buttonSolutionTexture.setSmooth(true);
@@ -65,6 +66,7 @@ namespace tlw {
     m_activities.restart();
     m_streakPlayer.clear();
     m_opacity = 1.0f;
+    m_timer = ShowingSolutionDelay + ShowingSolutionFadingDelay;
   }
 
   void StreakEntity::addPlayerInput(gf::GamepadButton gamepadButton) {
@@ -87,6 +89,7 @@ namespace tlw {
 
   void StreakEntity::update(gf::Time time) {
     auto status = m_activities.run(time);
+    m_timer -= time.asSeconds();
 
     if (status == gf::ActivityStatus::Finished && m_status == StreakChallengeStatus::ShowingSolution) {
       m_status = StreakChallengeStatus::WaitingPlayerInput;
@@ -95,6 +98,7 @@ namespace tlw {
 
   void StreakEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
+    int fontSize = coords.getRelativeCharacterSize(0.075f);
 
     gf::RectangleShape background(target.getSize());
     background.setPosition(gf::vec(0.0f, 0.0f));
@@ -120,15 +124,34 @@ namespace tlw {
       textButton.setAnchor(gf::Anchor::Center);
       textButton.setColor(gf::Color::White * gf::Color::Opaque(opacity));
       target.draw(textButton, states);
+
     };
 
     float buttonRelativeXPosition = 1.0f / (m_streakSolution.size() + 1); // initialie position for the first circle
     if (m_status == StreakChallengeStatus::ShowingSolution) {
+
+
+      std::stringstream stream;
+      stream << std::fixed << std::setprecision(2) << m_timer;
+
+      gf::Text textInstruction("Memoryze the streak : " + stream.str(), m_messageFont, fontSize);
+      textInstruction.setAnchor(gf::Anchor::Center);
+      textInstruction.setColor(gf::Color::White);
+      textInstruction.setPosition(coords.getRelativePoint({ 0.5f, 0.1f }));
+      target.draw(textInstruction, states);
+
       for (const auto& gamepadButton: m_streakSolution) {
         renderButton(gamepadButton, buttonRelativeXPosition, m_buttonSolutionTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
       }
     } else {
+
+      gf::Text textInstruction("Enter the streak : ", m_messageFont, fontSize);
+      textInstruction.setAnchor(gf::Anchor::Center);
+      textInstruction.setColor(gf::Color::White);
+      textInstruction.setPosition(coords.getRelativePoint({ 0.5f, 0.1f }));
+      target.draw(textInstruction, states);
+
       for (const auto& gamepadButton: m_streakPlayer) {
         renderButton(gamepadButton, buttonRelativeXPosition, m_buttonPlayerTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
