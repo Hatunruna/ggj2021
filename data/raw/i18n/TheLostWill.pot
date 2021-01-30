@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 10:06+0100\n"
+"POT-Creation-Date: 2021-01-30 14:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgid "Monday."
 msgstr ""
 
 msgid ""
-"I have been called by Mr X to handle a very particular situation. Mr X is "
-"the mayor of the little town of Y. One of his inhabitants, Ms Z has just "
-"died. And nobody can find her last will. My mission is to find it.\n"
-"I don't know exactly where to start but I should see Mr X first, I think. He "
-"may have valuable information for me."
+"I have been called by Ms Dread to handle a very particular situation. Ms "
+"Dread is the lawyer of Ms Wood. Ms Wood has just died and nobody can find "
+"her last will. My mission is to find it.\n"
+"I don't know exactly where to start but I should see Ms Dread first. She may "
+"have valuable information for me."
 msgstr ""
 
 msgid ""
@@ -36,10 +36,67 @@ msgstr ""
 msgid "Raymond"
 msgstr ""
 
-msgid "Hello!"
+msgid ""
+"Good evening M. Adupif. I'm glad you're here. The situation is terrible. The "
+"last will of Ms Wood is lost!"
 msgstr ""
 
 msgid "Ms Dread"
+msgstr ""
+
+msgid ""
+"Ms Wood has no child. She has designated someone to be her heir in her last "
+"will. Until we find this last will, the case is open."
+msgstr ""
+
+msgid "I see. So let's start simply: do you know where she lived?"
+msgstr ""
+
+msgid "She lived in the beautiful house in the north of the main place."
+msgstr ""
+
+msgid ""
+"I will stay here until you have found something. I want to stay informed "
+"about your progress so come here regularly for reports."
+msgstr ""
+
+msgid "Nona"
+msgstr ""
+
+msgid "Who are you, young stranger?"
+msgstr ""
+
+msgid "Decima"
+msgstr ""
+
+msgid "Do not talk to him, Nona, he seems weird."
+msgstr ""
+
+msgid "I agree with Decima."
+msgstr ""
+
+msgid "Morta"
+msgstr ""
+
+msgid "Sorry, I did not want to bother you, ladies."
+msgstr ""
+
+msgid "Do you have any news for me?."
+msgstr ""
+
+msgid "Not yet, I must continue my investigation."
+msgstr ""
+
+msgid ""
+"Yes, I found some interesting things. It seems Ms Wood had animals in her "
+"house but they have disappearred. We should find them, they may be able to "
+"tell us what happened to this last will."
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Success"
 msgstr ""
 
 msgid "An investigation by Raymond Adupif"

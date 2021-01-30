@@ -3,6 +3,8 @@
 
 #include <gf/Activities.h>
 #include <gf/Entity.h>
+#include <gf/Font.h>
+#include <gf/ResourceManager.h>
 
 namespace tlw {
   enum class SliderChallengeDifficulty : int {
@@ -13,23 +15,28 @@ namespace tlw {
 
   class SliderEntity : public gf::Entity {
   public:
-    SliderEntity();
+    SliderEntity(gf::ResourceManager& resources);
 
     void setDifficulty(SliderChallengeDifficulty difficulty);
-    bool stopCursor() const;
+    bool isHit() const;
 
+    bool stopCursor();
     // TODO: To debug and test functions, remove it later
     void increaseSpeed();
     void decreaseSpeed();
+    void reset();
 
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
 
 
   private:
+    gf::Font& m_font;
+
     int m_easeDelay;
     float m_cursorPosition;
     gf::activity::AnyActivity m_activity;
+    bool m_played;
   };
 }
 
