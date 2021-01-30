@@ -8,6 +8,7 @@ namespace tlw {
   SliderChallengeScene::SliderChallengeScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
+  , m_sliderEntity(game.resources)
   , m_stopCursorAction("StopCursor")
   , m_increaseSpeedAction("IncreaseSpeed")
   , m_decreaseSpeedAction("DecreaseSpeed")

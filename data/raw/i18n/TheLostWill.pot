@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 10:06+0100\n"
+"POT-Creation-Date: 2021-01-30 13:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,12 @@ msgid "Hello!"
 msgstr ""
 
 msgid "Ms Dread"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Success"
 msgstr ""
 
 msgid "An investigation by Raymond Adupif"
