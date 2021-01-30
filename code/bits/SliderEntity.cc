@@ -32,15 +32,15 @@ namespace tlw {
   void SliderEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
 
-    gf::RectangleShape slider(coords.getRelativeSize(gf::vec(0.40f, 0.025f)));
-    slider.setAnchor(gf::Anchor::Center);
-    slider.setPosition(coords.getCenter());
+    gf::RectF sliderBox = gf::RectF::fromCenterSize(coords.getCenter(), coords.getRelativeSize(gf::vec(0.40f, 0.025f)));
+
+    gf::RectangleShape slider(sliderBox);
     slider.setColor(gf::Color::Violet);
     target.draw(slider, states);
 
     gf::RectangleShape cursor(coords.getRelativeSize(gf::vec(0.01f, 0.03f)));
     cursor.setAnchor(gf::Anchor::Center);
-    auto cursorPosition = gf::vec(coords.getCenter().width - slider.getSize().width * 0.5f, coords.getCenter().height);
+    auto cursorPosition = gf::vec(sliderBox.getTopLeft().x + sliderBox.getSize().width * m_cursorPosition, coords.getCenter().y);
     cursor.setPosition(cursorPosition);
     cursor.setColor(gf::Color::Cyan);
     target.draw(cursor, states);
