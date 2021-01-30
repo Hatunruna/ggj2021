@@ -41,6 +41,7 @@ namespace tlw {
     StreakChallengeStatus m_status;
     std::vector<gf::GamepadButton> m_streakSolution;
     std::vector<gf::GamepadButton> m_streakPlayer;
+    float m_countdown;
 
 
     float m_timer;

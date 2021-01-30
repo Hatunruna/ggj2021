@@ -4,6 +4,7 @@
 #include <gf/Log.h>
 #include <gf/RenderTarget.h>
 #include <gf/Sprite.h>
+#include <gf/StringUtils.h>
 #include <gf/Text.h>
 
 #include "I18N.h"
@@ -50,6 +51,7 @@ namespace tlw {
   , m_buttonSolutionTexture(resources.getTexture("images/button_solution.png"))
   , m_buttonPlayerTexture(resources.getTexture("images/button_player.png"))
   , m_status(StreakChallengeStatus::ShowingSolution)
+  , m_countdown(ShowingSolutionDelay + ShowingSolutionFadingDelay)
   , m_opacity(1.0f)
   , m_activities(createActivity(m_opacity))
   , m_timer(ShowingSolutionDelay+ShowingSolutionFadingDelay)
@@ -66,7 +68,7 @@ namespace tlw {
     m_activities.restart();
     m_streakPlayer.clear();
     m_opacity = 1.0f;
-    m_timer = ShowingSolutionDelay + ShowingSolutionFadingDelay;
+    m_countdown = ShowingSolutionDelay + ShowingSolutionFadingDelay;
   }
 
   void StreakEntity::addPlayerInput(gf::GamepadButton gamepadButton) {
@@ -89,7 +91,7 @@ namespace tlw {
 
   void StreakEntity::update(gf::Time time) {
     auto status = m_activities.run(time);
-    m_timer -= time.asSeconds();
+    m_countdown -= time.asSeconds();
 
     if (status == gf::ActivityStatus::Finished && m_status == StreakChallengeStatus::ShowingSolution) {
       m_status = StreakChallengeStatus::WaitingPlayerInput;
@@ -127,6 +129,15 @@ namespace tlw {
 
     };
 
+    auto renderMessage = [this, &coords, &target, &states](const std::string& messageString) {
+      gf::Text message(messageString, m_messageFont, coords.getRelativeCharacterSize(0.1f));
+      message.setColor(gf::Color::White);
+      auto messagePosition = coords.getRelativeSize(gf::vec(0.5f, 0.3f));
+      message.setPosition(messagePosition);
+      message.setAnchor(gf::Anchor::Center);
+      target.draw(message, states);
+    };
+
     float buttonRelativeXPosition = 1.0f / (m_streakSolution.size() + 1); // initialie position for the first circle
     if (m_status == StreakChallengeStatus::ShowingSolution) {
 
@@ -156,15 +167,23 @@ namespace tlw {
         renderButton(gamepadButton, buttonRelativeXPosition, m_buttonPlayerTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
       }
+    }
 
-      if (m_status == StreakChallengeStatus::ShowingResultMessage) {
-        gf::Text message((isCorrect() ? _("Success") : _("Failed")), m_messageFont, coords.getRelativeCharacterSize(0.1f));
-        message.setColor(gf::Color::White);
-        auto messagePosition = coords.getRelativeSize(gf::vec(0.5f, 0.3f));
-        message.setPosition(messagePosition);
-        message.setAnchor(gf::Anchor::Center);
-        target.draw(message, states);
-      }
+    // Render message
+    switch (m_status) {
+    case StreakChallengeStatus::ShowingSolution:
+      // m_countdown = gf::clamp(0.0f, static_cast<float>(ShowingSolutionDelay + ShowingSolutionFadingDelay)); // BUG
+      m_countdown = (m_countdown < 0.0f ? 0.0f : m_countdown);
+      renderMessage(_("Memorize: ") + gf::niceNum(m_countdown, 1.0f) + _(" seconds"));
+      break;
+
+    case StreakChallengeStatus::WaitingPlayerInput:
+      renderMessage(_("Repeat the sequence:"));
+      break;
+
+    case StreakChallengeStatus::ShowingResultMessage:
+      renderMessage((isCorrect() ? _("Success") : _("Failed")));
+      break;
     }
   }
 
