@@ -11,29 +11,32 @@ namespace tlw {
 
   class StreakEntity : public gf::Entity {
   public:
-    StreakEntity(gf::ResourceManager& resources, std::vector<gf::GamepadButton> streak);
-    void update(gf::Time time) override;
-    void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
+    StreakEntity(gf::ResourceManager& resources);
     void displayPlayerAnswer(gf::GamepadButton button);
+    void updateStreak(std::vector< gf::GamepadButton> streak);
+    bool canPlay();
+    void reset();
     void success();
     void failed();
-    bool m_canPlay;
-    bool m_success;
-    bool m_failed;
 
   private:
-    gf::Font& m_font;
-    gf::Texture& m_backgroundTexture; 
+    void update(gf::Time time) override;
+    void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
     std::vector<gf::GamepadButton> m_streak;
     std::vector<gf::GamepadButton> m_streakPlayer;
     std::vector<gf::CircleShape> m_buttons;
+    std::string gamepadValue(gf::GamepadButton button);
+    gf::Texture& m_backgroundTexture; 
+    gf::Font& m_font;
     gf::Font& m_wordsFont;
+    float m_timer;
     float m_radius;
-    gf::Clock m_clock;
-    gf::Time m_timer;
     float m_displayPosition;
     float m_opacity;
-    std::string gamepadValue(gf::GamepadButton button);
+    bool m_reset;
+    bool m_canPlay;
+    bool m_success;
+    bool m_failed;
   };
 
 

@@ -1,23 +1,23 @@
 #include "StreakChallengeScene.h"
 #include "GameHub.h"
-constexpr auto NUMBER_TOUCH = 4;;
+constexpr auto NUMBER_TOUCH = 5;;
 
 namespace tlw {
 
     StreakChallengeScene::StreakChallengeScene(GameHub& game)
         : gf::Scene(game.getRenderer().getSize())
         , m_game(game)
-        , m_streakEntity(game.resources, m_streak)
+        , m_streakEntity(game.resources)
         , m_clock()
-        , m_timer()
         , m_buttonA("A")
         , m_buttonB("B")
         , m_buttonX("X")
         , m_buttonY("Y")
+        , m_gameEnd(false)
     {
         m_streak = generateStreak();
+        m_streakEntity.updateStreak(m_streak);
 
-        m_timer = m_clock.restart();
         setClearColor(gf::Color::Black);
         addHudEntity(m_streakEntity);
 
@@ -50,26 +50,18 @@ namespace tlw {
     }
 
     void StreakChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {
-        if (m_streakEntity.m_canPlay) {
 
+        
+        if (m_streakEntity.canPlay()) {
             if (m_streakPlayer.size() == m_streak.size()) {
+                m_gameEnd = true;
                 if (m_streak == m_streakPlayer) {
-                    gf::Log::info("SUCCESS \n");
                     m_streakEntity.success();
-                    return;
                 }
-                else {
-                    for (int i = 0; i < m_streakPlayer.size(); ++i) {
-
-                        gf::Log::info("%d , %d \n", m_streak.at(i), m_streakPlayer.at(i));
-
-                    }
+                else {                
                     m_streakEntity.failed();
-                    gf::Log::info("FAILED \n");
-                    return;
                 }
             }
-
 
             if (m_buttonA.isActive()) {
                 m_streakPlayer.push_back(gf::GamepadButton::A);
@@ -84,8 +76,10 @@ namespace tlw {
                 m_streakEntity.displayPlayerAnswer(gf::GamepadButton::B);
             }
             else if (m_buttonX.isActive()) {
+
                 m_streakPlayer.push_back(gf::GamepadButton::X);
                 gf::Log::info("X Pressed \n");
+                
 
                 m_streakEntity.displayPlayerAnswer(gf::GamepadButton::X);
             }
@@ -94,6 +88,16 @@ namespace tlw {
                 gf::Log::info("Y Pressed \n");
 
                 m_streakEntity.displayPlayerAnswer(gf::GamepadButton::Y);
+            }
+        } else {
+            if (m_gameEnd) {
+                if (m_buttonX.isActive()) { // press X to start a new game
+                    m_streakEntity.reset();
+                    m_streakPlayer = {};
+                    m_streak = generateStreak();
+                    m_gameEnd = false;
+                    m_streakEntity.updateStreak(m_streak);
+                }
             }
         }
     }
