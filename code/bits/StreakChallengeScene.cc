@@ -7,7 +7,6 @@ namespace tlw {
     StreakChallengeScene::StreakChallengeScene(GameHub& game)
         : gf::Scene(game.getRenderer().getSize())
         , m_game(game)
-        , m_streak(generateStreak())
         , m_streakEntity(game.resources, m_streak)
         , m_clock()
         , m_timer()
@@ -16,6 +15,8 @@ namespace tlw {
         , m_buttonX("X")
         , m_buttonY("Y")
     {
+        m_streak = generateStreak();
+
         m_timer = m_clock.restart();
         setClearColor(gf::Color::Black);
         addHudEntity(m_streakEntity);
