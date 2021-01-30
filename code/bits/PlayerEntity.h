@@ -3,6 +3,7 @@
 
 #include <gf/Entity.h>
 #include <gf/Direction.h>
+#include <gf/Clock.h>
 
 namespace tlw {
   struct GameState;
@@ -16,6 +17,8 @@ namespace tlw {
 
   private:
     GameState& m_state;
+
+    gf::Clock m_clock;
   };
 
 }

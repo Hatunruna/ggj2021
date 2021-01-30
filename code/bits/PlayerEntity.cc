@@ -26,7 +26,14 @@ namespace tlw {
 
   void PlayerEntity::move(gf::Direction dir)
   {
-    constexpr int moveValue = 50;
-    m_state.hero.pos += gf::displacement(dir) * moveValue;
+    constexpr gf::Time cooldownMove = gf::milliseconds(250);
+
+    if (m_clock.getElapsedTime() > cooldownMove)
+    {
+      m_clock.restart();
+
+      constexpr int moveValue = 50;
+      m_state.hero.pos += gf::displacement(dir) * moveValue;
+    }
   }
 }

@@ -17,15 +17,23 @@ namespace tlw {
     setClearColor(gf::Color::White);
 
     m_moveXPosAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftX, gf::GamepadAxisDirection::Positive);
+    m_moveXPosAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::DPadRight);
+    m_moveXPosAction.setContinuous();
     addAction(m_moveXPosAction);
 
     m_moveXNegAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftX, gf::GamepadAxisDirection::Negative);
+    m_moveXNegAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::DPadLeft);
+    m_moveXNegAction.setContinuous();
     addAction(m_moveXNegAction);
 
     m_moveYPosAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftY, gf::GamepadAxisDirection::Positive);
+    m_moveYPosAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::DPadDown);
+    m_moveYPosAction.setContinuous();
     addAction(m_moveYPosAction);
 
     m_moveYNegAction.addGamepadAxisControl(gf::AnyGamepad, gf::GamepadAxis::LeftY, gf::GamepadAxisDirection::Negative);
+    m_moveYNegAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::DPadUp);
+    m_moveYNegAction.setContinuous();
     addAction(m_moveYNegAction);
 
     addWorldEntity(m_playerEntity);
