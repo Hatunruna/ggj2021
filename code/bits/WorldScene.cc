@@ -13,7 +13,11 @@ namespace tlw {
   , m_moveXNegAction("MoveXNegative")
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
+<<<<<<< HEAD
   , m_talkOrSearchAction("Talk or search")
+=======
+  , m_printPositionAction("PrintPosition")
+>>>>>>> a05bb60 (Add action to print current player position)
   , m_mapEntity(game.resources, game.data)
   , m_buildingEntity(game.resources, game.data)
   , m_characterEntity(game.resources, game.state)
@@ -44,6 +48,10 @@ namespace tlw {
     m_talkOrSearchAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
     addAction(m_talkOrSearchAction);
 
+    m_printPositionAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Start);
+    m_printPositionAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Back);
+    addAction(m_printPositionAction);
+
     addWorldEntity(m_mapEntity);
     addWorldEntity(m_buildingEntity);
     addWorldEntity(m_characterEntity);
@@ -71,6 +79,7 @@ namespace tlw {
       m_playerEntity.move(gf::Direction::Up);
     }
 
+<<<<<<< HEAD
     // gf::Log::debug("New player position: %dx%d\n", m_game.state.hero.pos.x, m_game.state.hero.pos.y);
 
     if (m_talkOrSearchAction.isActive()) {
@@ -88,6 +97,11 @@ namespace tlw {
       }
     }
 
+=======
+    if (m_printPositionAction.isActive()) {
+      gf::Log::debug("Player position: %dx%d\n", m_game.state.hero.pos.x, m_game.state.hero.pos.y);
+    }
+>>>>>>> a05bb60 (Add action to print current player position)
   }
 
   void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {

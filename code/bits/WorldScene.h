@@ -33,6 +33,8 @@ namespace tlw {
     gf::Action m_moveYPosAction;
     gf::Action m_moveYNegAction;
     gf::Action m_talkOrSearchAction;
+    // TODO: debug, to remove
+    gf::Action m_printPositionAction;
 
     MapEntity m_mapEntity;
     BuildingEntity m_buildingEntity;
