@@ -31,7 +31,6 @@ namespace tlw {
   }
 
   void MapEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
-    gf::Log::debug("nmb layers : %d\n", m_layersMaker.layers.size());
     for (auto& layer : m_layersMaker.layers) {
       target.draw(layer);
     }
