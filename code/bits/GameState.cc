@@ -11,6 +11,10 @@ namespace tlw {
     character.pos = gf::vec(1, 0);
     character.visible = true;
     characters.insert({ CharacterType::GoodDog, character });
+
+    character.pos = gf::vec(2, 0);
+    character.visible = true;
+    characters.insert({ CharacterType::Florist, character });
   }
 
 }

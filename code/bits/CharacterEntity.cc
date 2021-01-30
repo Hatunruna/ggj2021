@@ -29,6 +29,10 @@ namespace tlw {
         case CharacterType::GoodDog:
           sprite.setTexture(m_resources.getTexture("images/wood_dog.png"));
           break;
+
+        case CharacterType::Florist:
+          sprite.setTexture(m_resources.getTexture("images/florist.png"));
+          break;
         }
 
         sprite.setPosition(TileSize * character.pos);
