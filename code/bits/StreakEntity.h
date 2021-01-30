@@ -38,8 +38,6 @@ namespace tlw {
     bool m_success;
     bool m_failed;
   };
-
-
 }
 
 
