@@ -16,6 +16,9 @@ namespace tlw {
       { CharacterType::Moirai,
         { gf::InvalidId, gf::vec(32, 19), CharacterVisibility::Visible }
       },
+      { CharacterType::Dread,
+        { gf::InvalidId, gf::vec(15, 23), CharacterVisibility::Visible }
+      },
     };
   }
 

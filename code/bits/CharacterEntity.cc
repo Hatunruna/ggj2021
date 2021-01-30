@@ -13,11 +13,13 @@ namespace tlw {
   , m_woodDogTexture(resources.getTexture("images/wood_dog.png"))
   , m_floristTexture(resources.getTexture("images/florist.png"))
   , m_moiraiTexture(resources.getTexture("images/moirai.png"))
+  , m_dreadTexture(resources.getTexture("images/dread.png"))
   {
     m_woodCatTexture.setSmooth(true);
     m_woodDogTexture.setSmooth(true);
     m_floristTexture.setSmooth(true);
     m_moiraiTexture.setSmooth(true);
+    m_dreadTexture.setSmooth(true);
   }
 
   void CharacterEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -40,6 +42,10 @@ namespace tlw {
 
         case CharacterType::Moirai:
           sprite.setTexture(m_moiraiTexture);
+          break;
+
+        case CharacterType::Dread:
+          sprite.setTexture(m_dreadTexture);
           break;
         }
 

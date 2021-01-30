@@ -14,6 +14,7 @@ namespace tlw {
     GoodDog,
     Florist,
     Moirai,
+    Dread,
   };
 
   enum class CharacterVisibility {

@@ -20,6 +20,7 @@ namespace tlw {
     gf::Texture& m_woodDogTexture;
     gf::Texture& m_floristTexture;
     gf::Texture& m_moiraiTexture;
+    gf::Texture& m_dreadTexture;
   };
 }
 
