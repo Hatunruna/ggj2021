@@ -32,6 +32,7 @@ namespace tlw {
     gf::Action m_moveXNegAction;
     gf::Action m_moveYPosAction;
     gf::Action m_moveYNegAction;
+    gf::Action m_talkOrSearchAction;
 
     MapEntity m_mapEntity;
     BuildingEntity m_buildingEntity;

@@ -46,8 +46,7 @@ namespace tlw {
         m_game.state.currentDialog = gf::InvalidId;
         m_game.state.currentLine = 0;
         m_game.plot.onDialogEnd(currentId);
-
-        // TODO: pop scene
+        m_game.popScene();
       }
     }
   }

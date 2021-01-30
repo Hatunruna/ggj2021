@@ -13,6 +13,7 @@ namespace tlw {
   , m_moveXNegAction("MoveXNegative")
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
+  , m_talkOrSearchAction("Talk or search")
   , m_mapEntity(game.resources, game.data)
   , m_buildingEntity(game.resources, game.data)
   , m_characterEntity(game.resources, game.state)
@@ -40,6 +41,9 @@ namespace tlw {
     m_moveYNegAction.setContinuous();
     addAction(m_moveYNegAction);
 
+    m_talkOrSearchAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
+    addAction(m_talkOrSearchAction);
+
     addWorldEntity(m_mapEntity);
     addWorldEntity(m_buildingEntity);
     addWorldEntity(m_characterEntity);
@@ -52,6 +56,10 @@ namespace tlw {
   }
 
   void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {
+    if (!isActive()) {
+      return;
+    }
+
     //Actions for moving player
     if (m_moveXPosAction.isActive()) {
       m_playerEntity.move(gf::Direction::Right);
@@ -64,6 +72,22 @@ namespace tlw {
     }
 
     // gf::Log::debug("New player position: %dx%d\n", m_game.state.hero.pos.x, m_game.state.hero.pos.y);
+
+    if (m_talkOrSearchAction.isActive()) {
+      for (auto & [ characterType, character ] : m_game.state.characters) {
+        if (character.visibility != CharacterVisibility::Visible) {
+          continue;
+        }
+
+        if (gf::chebyshevDistance(m_game.state.hero.pos, character.pos) <= 1) {
+          if (character.dialog != gf::InvalidId) {
+            m_game.state.currentDialog = character.dialog;
+            m_game.pushScene(m_game.dialog);
+          }
+        }
+      }
+    }
+
   }
 
   void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {

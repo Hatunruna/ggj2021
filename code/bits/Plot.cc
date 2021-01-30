@@ -9,7 +9,10 @@ namespace tlw {
   : m_game(game)
   {
     // TODO: remove this
-    m_game.state.currentDialog = "Chap1Dread1"_id;
+//     m_game.state.currentDialog = "Chap1Dread1"_id;
+
+    m_game.state.characters[CharacterType::Florist].dialog = "Chap1Bouquet1"_id;
+
   }
 
   void Plot::onDialogEnd(gf::Id dialogId) {
