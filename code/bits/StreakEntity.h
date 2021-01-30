@@ -35,6 +35,8 @@ namespace tlw {
     gf::Random m_random;
     gf::Font& m_buttonFont;
     gf::Font& m_messageFont;
+    gf::Texture& m_buttonSolutionTexture;
+    gf::Texture& m_buttonPlayerTexture;
 
     StreakChallengeStatus m_status;
     std::vector<gf::GamepadButton> m_streakSolution;

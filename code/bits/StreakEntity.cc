@@ -47,11 +47,15 @@ namespace tlw {
   : m_random(random)
   , m_buttonFont(resources.getFont("Tippa.ttf"))
   , m_messageFont(resources.getFont("Aquifer.otf"))
+  , m_buttonSolutionTexture(resources.getTexture("images/button_solution.png"))
+  , m_buttonPlayerTexture(resources.getTexture("images/button_player.png"))
   , m_status(StreakChallengeStatus::ShowingSolution)
   , m_opacity(1.0f)
   , m_activities(createActivity(m_opacity))
   {
     generateStreak(5);
+    m_buttonSolutionTexture.setSmooth(true);
+    m_buttonPlayerTexture.setSmooth(true);
   }
 
   // reset all value from last game
@@ -92,19 +96,24 @@ namespace tlw {
   void StreakEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
 
-    auto renderButton = [this, &target, &states, &coords](gf::GamepadButton gamepadButton, float buttonRelativeXPosition, const gf::Color4f& buttonColor){
+    gf::RectangleShape background(target.getSize());
+    background.setPosition(gf::vec(0.0f, 0.0f));
+    background.setColor(gf::Color::Black * gf::Color::Opaque(0.7f));
+    target.draw(background, states);
+
+    auto renderButton = [this, &target, &states, &coords](gf::GamepadButton gamepadButton, float buttonRelativeXPosition, const gf::Texture& texture){
       auto position = coords.getRelativePoint({ buttonRelativeXPosition, 0.5f });
-      float radius = coords.getRelativeSize(gf::vec(0.03f, 0.0f)).width;
       int fontSize = coords.getRelativeCharacterSize(0.075f);
+      float radius = coords.getRelativeSize(gf::vec(0.06f, 0.0f)).width;
+      float radiusScale = radius / texture.getSize().height;
       float opacity = (m_status == StreakChallengeStatus::ShowingSolution ? m_opacity : 1.0f);
 
-      gf::CircleShape circle(radius);
-      circle.setPosition(position);
-      circle.setAnchor(gf::Anchor::Center);
-      circle.setOutlineThickness(radius * 0.05f);
-      circle.setColor(buttonColor * gf::Color::Opaque(opacity));
-      circle.setOutlineColor(gf::Color::White * gf::Color::Opaque(opacity));
-      target.draw(circle, states);
+      gf::Sprite sprite(texture);
+      sprite.setPosition(position);
+      sprite.setAnchor(gf::Anchor::Center);
+      sprite.setColor(gf::Color::Opaque(opacity));
+      sprite.setScale(radiusScale);
+      target.draw(sprite, states);
 
       gf::Text textButton(gamepadValue(gamepadButton), m_messageFont, fontSize);
       textButton.setPosition(position);
@@ -116,12 +125,12 @@ namespace tlw {
     float buttonRelativeXPosition = 1.0f / (m_streakSolution.size() + 1); // initialie position for the first circle
     if (m_status == StreakChallengeStatus::ShowingSolution) {
       for (const auto& gamepadButton: m_streakSolution) {
-        renderButton(gamepadButton, buttonRelativeXPosition, gf::Color::Red);
+        renderButton(gamepadButton, buttonRelativeXPosition, m_buttonSolutionTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
       }
     } else {
       for (const auto& gamepadButton: m_streakPlayer) {
-        renderButton(gamepadButton, buttonRelativeXPosition, gf::Color::Blue);
+        renderButton(gamepadButton, buttonRelativeXPosition, m_buttonPlayerTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
       }
 
