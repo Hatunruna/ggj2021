@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Lost Will\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 15:32+0100\n"
+"POT-Creation-Date: 2021-01-30 17:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,6 +64,21 @@ msgstr ""
 msgid "Can you tell me something more about Ms Wood that could help me?"
 msgstr ""
 
+msgid ""
+"If I remember well, Ms Wood had a cat and a dog. She considered them as her "
+"children."
+msgstr ""
+
+msgid "I see! I take note of this fact."
+msgstr ""
+
+msgid ""
+"I am afraid I can not tell you more than what I have already told you. Sorry."
+msgstr ""
+
+msgid "No problem, I have to find other clues."
+msgstr ""
+
 msgid "Nona"
 msgstr "Nona"
 
@@ -83,6 +98,24 @@ msgid "Morta"
 msgstr "Morta"
 
 msgid "Sorry, I did not want to bother you, ladies."
+msgstr ""
+
+msgid "Do you want to buy some flowers?"
+msgstr ""
+
+msgid "Ms Bouquet"
+msgstr ""
+
+msgid "No, thank you. Maybe another day!"
+msgstr ""
+
+msgid "Ms Gustavo"
+msgstr ""
+
+msgid "You seem to be a friend of animals! Want to buy some food for them?"
+msgstr ""
+
+msgid "Well, my cat is already too fat. Sorry."
 msgstr ""
 
 msgid "Do you have any news for me?."

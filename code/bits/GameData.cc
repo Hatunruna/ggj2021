@@ -37,12 +37,44 @@ namespace tlw {
         }
       },
       {
+        "Chap1Dread_Success"_id, {
+          DialogType::Normal, {
+            { _("Ms Dread"),  _("If I remember well, Ms Wood had a cat and a dog. She considered them as her children.") },
+            { _("Raymond"),   _("I see! I take note of this fact.") },
+          }
+        }
+      },
+      {
+        "Chap1Dread_Failure"_id, {
+          DialogType::Normal, {
+            { _("Ms Dread"),  _("I am afraid I can not tell you more than what I have already told you. Sorry.") },
+            { _("Raymond"),   _("No problem, I have to find other clues.") },
+          }
+        }
+      },
+      {
         "Chap1Elders1"_id, {
           DialogType::Normal, {
             { _("Nona"),      _("Who are you, young stranger?") },
             { _("Decima"),    _("Do not talk to him, Nona, he seems weird.") },
             { _("Morta"),     _("I agree with Decima.") },
             { _("Raymond"),   _("Sorry, I did not want to bother you, ladies.") },
+          }
+        }
+      },
+      {
+        "Chap1Bouquet1"_id, {
+          DialogType::Normal, {
+            { _("Ms Bouquet"),  _("Do you want to buy some flowers?") },
+            { _("Raymond"),     _("No, thank you. Maybe another day!") },
+          }
+        }
+      },
+      {
+        "Chap1Gustavo1"_id, {
+          DialogType::Normal, {
+            { _("Ms Gustavo"),  _("You seem to be a friend of animals! Want to buy some food for them?") },
+            { _("Raymond"),     _("Well, my cat is already too fat. Sorry.") },
           }
         }
       },
@@ -65,6 +97,7 @@ namespace tlw {
       /*
        * Chapter 2
        */
+
       /*
        * Chapter 3
        */

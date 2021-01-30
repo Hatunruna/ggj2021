@@ -35,4 +35,10 @@ namespace tlw {
     }
   }
 
+  void Plot::onStreakChallengeEnd() {
+  }
+
+  void Plot::onSliderChallengeEnd() {
+  }
+
 }

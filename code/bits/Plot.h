@@ -13,6 +13,8 @@ namespace tlw {
     Plot(GameHub& game);
 
     void onDialogEnd(gf::Id dialogId);
+    void onStreakChallengeEnd();
+    void onSliderChallengeEnd();
 
   private:
     GameHub& m_game;
