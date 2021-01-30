@@ -4,14 +4,19 @@
 #include <gf/RenderTarget.h>
 #include <gf/Shapes.h>
 
+#include "Constants.h"
+
 namespace {
   namespace ga = gf::activity;
 
   auto createActivity(float& cursorPosition) {
-    return ga::repeat(
-      ga::sequence(
-        ga::value(0.0f, 1.0f, cursorPosition, gf::seconds(4.6f), gf::Ease::expoInOut),
-        ga::value(1.0f, 0.0f, cursorPosition, gf::seconds(4.6f), gf::Ease::expoInOut)
+    return ga::sequence(
+      ga::delay(gf::seconds(tlw::TransitionDelay)),
+      ga::repeat(
+        ga::sequence(
+          ga::value(0.0f, 1.0f, cursorPosition, gf::seconds(4.6f), gf::Ease::expoInOut),
+          ga::value(1.0f, 0.0f, cursorPosition, gf::seconds(4.6f), gf::Ease::expoInOut)
+        )
       )
     );
   }
@@ -20,7 +25,8 @@ namespace {
 
 namespace tlw {
   SliderEntity::SliderEntity()
-  : m_activity(createActivity(m_cursorPosition))
+  : m_cursorPosition(0.0f)
+  , m_activity(createActivity(m_cursorPosition))
   {
 
   }

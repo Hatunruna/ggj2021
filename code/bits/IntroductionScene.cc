@@ -2,6 +2,7 @@
 
 #include <gf/Color.h>
 
+#include "Constants.h"
 #include "GameHub.h"
 
 namespace tlw {
@@ -29,7 +30,7 @@ namespace tlw {
     }
 
     if (m_skipAction.isActive()) {
-      m_game.replaceScene(m_game.world, m_game.blackout, gf::seconds(2));
+      m_game.replaceScene(m_game.world, m_game.blackout, gf::seconds(TransitionDelay));
     }
   }
 

@@ -2,6 +2,7 @@
 
 #include <gf/Color.h>
 
+#include "Constants.h"
 #include "GameHub.h"
 
 namespace tlw {
@@ -39,16 +40,16 @@ namespace tlw {
     }
 
     if (m_startAction.isActive()) {
-      //m_game.replaceScene(m_game.introduction, m_game.blackout, gf::seconds(2));
+      //m_game.replaceScene(m_game.introduction, m_game.blackout, gf::seconds(TransitionDelay));
       m_game.replaceScene(m_game.world);
     }
 
     if (m_memoryAction.isActive()) {
-      m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(2));
+      m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(TransitionDelay));
     }
 
     if (m_sliderAction.isActive()) {
-      m_game.replaceScene(m_game.sliderChallenge, m_game.blackout, gf::seconds(2));
+      m_game.replaceScene(m_game.sliderChallenge, m_game.blackout, gf::seconds(TransitionDelay));
     }
 
     if (m_dialogAction.isActive()) {
