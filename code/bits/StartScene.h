@@ -24,6 +24,7 @@ namespace tlw {
 
     // TODO remove the test actions later
     gf::Action m_memoryAction;
+    gf::Action m_sliderAction;
     gf::Action m_dialogAction;
 
     TitleEntity m_titleEntity;

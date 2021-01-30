@@ -11,19 +11,21 @@ namespace tlw {
   , m_game(game)
   , m_startAction("Start")
   , m_memoryAction("Memory")
+  , m_sliderAction("Slider")
   , m_dialogAction("Dialog")
   , m_titleEntity(game.resources)
   {
     setClearColor(gf::Color::Black);
 
     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
-    m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
     addAction(m_startAction);
-
 
     // Sequence scene
     m_memoryAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
     addAction(m_memoryAction);
+
+    m_sliderAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
+    addAction(m_sliderAction);
 
     m_dialogAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
     addAction(m_dialogAction);
@@ -43,6 +45,10 @@ namespace tlw {
 
     if (m_memoryAction.isActive()) {
       m_game.replaceScene(m_game.streakChallenge, m_game.blackout, gf::seconds(2));
+    }
+
+    if (m_sliderAction.isActive()) {
+      m_game.replaceScene(m_game.sliderChallenge, m_game.blackout, gf::seconds(2));
     }
 
     if (m_dialogAction.isActive()) {

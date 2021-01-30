@@ -28,6 +28,8 @@ add_executable(${GAME}
   code/bits/GameState.cc
   code/bits/IntroductionScene.cc
   code/bits/Plot.cc
+  code/bits/SliderChallengeScene.cc
+  code/bits/SliderEntity.cc
   code/bits/StartScene.cc
   code/bits/StoryEntity.cc
   code/bits/StreakChallenge.cc
