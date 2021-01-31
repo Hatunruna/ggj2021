@@ -24,6 +24,7 @@ namespace tlw {
     StoryEntity m_storyEntity;
 
     gf::Action m_skipAction;
+    gf::Action m_fullscreenAction;
   };
 
 }

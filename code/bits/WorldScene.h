@@ -39,6 +39,8 @@ namespace tlw {
     gf::Action m_moveYPosAction;
     gf::Action m_moveYNegAction;
     gf::Action m_talkOrSearchAction;
+    gf::Action m_fullscreenAction;
+
     // TODO: debug, to remove
     gf::Action m_printPositionAction;
 

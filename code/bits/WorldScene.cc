@@ -19,6 +19,7 @@ namespace tlw {
   , m_moveYPosAction("MoveYPositive")
   , m_moveYNegAction("MoveYNegative")
   , m_talkOrSearchAction("Talk or search")
+  , m_fullscreenAction("Fullscreen")
   , m_printPositionAction("PrintPosition")
   , m_mapEntity(game.resources, game.data)
   , m_buildingEntity(game.resources, game.data)
@@ -51,6 +52,9 @@ namespace tlw {
     m_talkOrSearchAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
     addAction(m_talkOrSearchAction);
 
+    m_fullscreenAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Guide);
+    addAction(m_fullscreenAction);
+
     m_printPositionAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Start);
     m_printPositionAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Back);
     addAction(m_printPositionAction);
@@ -68,9 +72,13 @@ namespace tlw {
   void WorldScene::doProcessEvent([[maybe_unused]] gf::Event& event) {
   }
 
-  void WorldScene::doHandleActions([[maybe_unused]] gf::Window& window) {
+  void WorldScene::doHandleActions(gf::Window& window) {
     if (!isActive()) {
       return;
+    }
+
+    if (m_fullscreenAction.isActive()) {
+      window.toggleFullscreen();
     }
 
     //Actions for moving player

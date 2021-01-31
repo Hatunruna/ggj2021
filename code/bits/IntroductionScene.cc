@@ -12,6 +12,7 @@ namespace tlw {
   , m_game(game)
   , m_storyEntity(game.resources, game.data, game.state)
   , m_skipAction("Skip")
+  , m_fullscreenAction("Fullscreen")
   {
     setClearColor(gf::Color::Black);
 
@@ -21,12 +22,19 @@ namespace tlw {
     m_skipAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
     addAction(m_skipAction);
 
+    m_fullscreenAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Guide);
+    addAction(m_fullscreenAction);
+
     addHudEntity(m_storyEntity);
   }
 
   void IntroductionScene::doHandleActions([[maybe_unused]] gf::Window& window) {
     if (!isActive()) {
       return;
+    }
+
+    if (m_fullscreenAction.isActive()) {
+      window.toggleFullscreen();
     }
 
     if (m_skipAction.isActive()) {
