@@ -159,11 +159,11 @@ namespace tlw {
       }
     } else {
 
-      gf::Text textInstruction("Enter the streak : ", m_messageFont, fontSize);
-      textInstruction.setAnchor(gf::Anchor::Center);
-      textInstruction.setColor(gf::Color::White);
-      textInstruction.setPosition(coords.getRelativePoint({ 0.5f, 0.1f }));
-      target.draw(textInstruction, states);
+//       gf::Text textInstruction("Enter the streak : ", m_messageFont, fontSize);
+//       textInstruction.setAnchor(gf::Anchor::Center);
+//       textInstruction.setColor(gf::Color::White);
+//       textInstruction.setPosition(coords.getRelativePoint({ 0.5f, 0.1f }));
+//       target.draw(textInstruction, states);
 
       for (const auto& gamepadButton: m_streakPlayer) {
         renderButton(gamepadButton, buttonRelativeXPosition, m_buttonPlayerTexture);

@@ -241,13 +241,13 @@ namespace tlw {
             {
               "Chap3MafiaCatInvestigation"_id, {
                 DialogType::Investigation, {
-                  { _("CatPack"),   _("Who are you and what are you doing here?") },
+                  { _("Riff"),   _("Who are you and what are you doing here?") },
                   { _("Raymond"),   _("Sorry to bother you, but I am a detective some inhabitants told me about your pack and I have some question for you about Ms Wood") },
-                  { _("CatPack"),   _("We aren't going to answer any of your question, detective.") },
+                  { _("Riff"),   _("We aren't going to answer any of your question, detective.") },
                   { _("Raymond"),   _("I'm looking for Ms Wood's animals, it seems that they are gone.") },
-                  { _("CatPack"),   _("Try looking for her stupid dog and his gang") },
+                  { _("Riff"),   _("Try looking for her stupid dog and his gang") },
                   { _("Raymond"),   _("A gang?") },
-                  { _("CatPack"),   _("Yeah, they are constently making mess near the restaurant") },
+                  { _("Riff"),   _("Yeah, they are constently making mess near the restaurant") },
                   { _("Raymond"),   _("Do you have any more informations that could help me?") }
                 },
                 {
@@ -258,9 +258,9 @@ namespace tlw {
             {
               "Chap3MafiaCatInvestigation_Success"_id, {
                 DialogType::Normal, {
-                  { _("CatPack"), _("Yeah, try to look after the florist, she seem a bit obsessed by Ms. Wood's house. She is always looking at her house.") },
+                  { _("Riff"), _("Yeah, try to look after the florist, she seem a bit obsessed by Ms. Wood's house. She is always looking at her house.") },
                   { _("Raymond"), _("Thanks for the help.") },
-                  { _("CatPack"), _("I hope you will remember this, detective.") }
+                  { _("Riff"), _("I hope you will remember this, detective.") }
                 },
                 {
                   _("Raymond"), _("I will follow their advice and look after the florist.")
@@ -270,19 +270,19 @@ namespace tlw {
             {
               "Chap3MafiaCatInvestigation_Failure"_id, {
                 DialogType::Normal, {
-                  { _("CatPack"), _("No, we already told you about what we know, get away from us now.") }
+                  { _("Riff"), _("No, we already told you about what we know, get away from us now.") }
                 }
               }
             },
             {
               "Chap3MafiaDogInvestigation"_id, {
                 DialogType::Investigation, {
-                  { _("DogPack"), _("Hello Mr. Adupif!") },
+                  { _("Bernardo"), _("Hello Mr. Adupif!") },
                   { _("Raymond"), _("Hmh? Hello, how do you know my name?") },
-                  { _("DogPack"), _("We know a lot of things about what happens here.") },
+                  { _("Bernardo"), _("We know a lot of things about what happens here.") },
                   { _("Raymond"), _("Then you should be able to help me, I'm looking for Ms Wood's animals do you know where they could be?") },
-                  { _("DogPack"), _("We know a lot of things about what happens here.") },
-                  { _("DogPack"), _("The cat gang is acting weirds currently, they are very suspect.") },
+                  { _("Bernardo"), _("We know a lot of things about what happens here.") },
+                  { _("Bernardo"), _("The cat gang is acting weirds currently, they are very suspect.") },
                   { _("Raymond"), _("Thanks, I will look after them, do you have more to tell me about?") }
                 }
               },
@@ -290,7 +290,7 @@ namespace tlw {
             {
               "Chap3MafiaDogInvestigation_Success"_id, {
                 DialogType::Normal, {
-                  { _("DogPack"), _("The cat gang and Mr. Gustavo seems to be really close from each other, look after him and you will find who did that to Ms. Wood.") },
+                  { _("Bernardo"), _("The cat gang and Mr. Gustavo seems to be really close from each other, look after him and you will find who did that to Ms. Wood.") },
                   { _("Raymond"), _("Thanks for the help.") },
                 },
                 {
@@ -301,7 +301,7 @@ namespace tlw {
             {
               "Chap3MafiaDogInvestigation_Failure"_id, {
                 DialogType::Normal, {
-                  { _("DogPack"), _("We have nothing more to tell you.") }
+                  { _("Bernardo"), _("We have nothing more to tell you.") }
                 }
               }
             },

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 14:58+0100\n"
+"POT-Creation-Date: 2021-01-31 16:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -274,6 +274,107 @@ msgid "No, sorry not to be able to help you more."
 msgstr ""
 
 msgid "Did you find the pets?"
+msgstr ""
+
+msgid "Riff"
+msgstr ""
+
+msgid "Who are you and what are you doing here?"
+msgstr ""
+
+msgid ""
+"Sorry to bother you, but I am a detective some inhabitants told me about "
+"your pack and I have some question for you about Ms Wood"
+msgstr ""
+
+msgid "We aren't going to answer any of your question, detective."
+msgstr ""
+
+msgid "I'm looking for Ms Wood's animals, it seems that they are gone."
+msgstr ""
+
+msgid "Try looking for her stupid dog and his gang"
+msgstr ""
+
+msgid "A gang?"
+msgstr ""
+
+msgid "Yeah, they are constently making mess near the restaurant"
+msgstr ""
+
+msgid "Do you have any more informations that could help me?"
+msgstr ""
+
+msgid "I'm sure they have more things to tell me about the situation!"
+msgstr ""
+
+msgid ""
+"Yeah, try to look after the florist, she seem a bit obsessed by Ms. Wood's "
+"house. She is always looking at her house."
+msgstr ""
+
+msgid "Thanks for the help."
+msgstr ""
+
+msgid "I hope you will remember this, detective."
+msgstr ""
+
+msgid "I will follow their advice and look after the florist."
+msgstr ""
+
+msgid "No, we already told you about what we know, get away from us now."
+msgstr ""
+
+msgid "Bernardo"
+msgstr ""
+
+msgid "Hello Mr. Adupif!"
+msgstr ""
+
+msgid "Hmh? Hello, how do you know my name?"
+msgstr ""
+
+msgid "We know a lot of things about what happens here."
+msgstr ""
+
+msgid ""
+"Then you should be able to help me, I'm looking for Ms Wood's animals do you "
+"know where they could be?"
+msgstr ""
+
+msgid "The cat gang is acting weirds currently, they are very suspect."
+msgstr ""
+
+msgid "Thanks, I will look after them, do you have more to tell me about?"
+msgstr ""
+
+msgid ""
+"The cat gang and Mr. Gustavo seems to be really close from each other, look "
+"after him and you will find who did that to Ms. Wood."
+msgstr ""
+
+msgid "I will follow their advice and look after Mr. Gustavo."
+msgstr ""
+
+msgid "We have nothing more to tell you."
+msgstr ""
+
+msgid "How is the case going Mr. Adupif?"
+msgstr ""
+
+msgid "We want to know gossip!"
+msgstr ""
+
+msgid "Please tell us what you heard!"
+msgstr ""
+
+msgid "Sorry but I'm not allowed to tell you more about this."
+msgstr ""
+
+msgid "Oh, it is a shame."
+msgstr ""
+
+msgid "I know enough. It's time for my report to Ms. Dread."
 msgstr ""
 
 msgid "You got the clue!"

@@ -37,8 +37,8 @@ namespace tlw {
   };
 
   struct Hero {
-    gf::Vector2i pos = { 16, 20 };
-    gf::Vector2i target = { 16, 20 };
+    gf::Vector2i pos = { 6, 20 };
+    gf::Vector2i target = { 6, 20 };
     gf::Vector2f middle;
   };
 
