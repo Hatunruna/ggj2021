@@ -13,6 +13,7 @@ namespace tlw {
   constexpr std::size_t InvalidSearch = -1;
 
   enum class CharacterType : int {
+    None,
     Holly,
     Stock,
     Bouquet,

@@ -8,6 +8,8 @@
 #include "CharacterEntity.h"
 #include "PlayerEntity.h"
 #include "MapEntity.h"
+#include "InfoEntity.h"
+#include "GameState.h"
 
 namespace tlw {
 
@@ -23,6 +25,10 @@ namespace tlw {
     virtual void doHandleActions(gf::Window& window) override;
 
     virtual void doUpdate(gf::Time time) override;
+
+    std::size_t getSearch();
+
+    CharacterType getDialog();
 
   private:
     GameHub& m_game;
@@ -40,6 +46,8 @@ namespace tlw {
     BuildingEntity m_buildingEntity;
     CharacterEntity m_characterEntity;
     PlayerEntity m_playerEntity;
+
+    InfoEntity m_infoEntity;
   };
 }
 

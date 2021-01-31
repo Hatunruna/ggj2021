@@ -24,6 +24,7 @@ namespace tlw {
   , m_buildingEntity(game.resources, game.data)
   , m_characterEntity(game.resources, game.state)
   , m_playerEntity(game.resources, game.state, game.data)
+  , m_infoEntity(game.resources)
   {
     setClearColor(gf::Color::Black);
 
@@ -59,6 +60,8 @@ namespace tlw {
     addWorldEntity(m_characterEntity);
     addWorldEntity(m_playerEntity);
 
+    addHudEntity(m_infoEntity);
+
     setWorldViewSize(TileSize * VisionPlayer);
   }
 
@@ -83,58 +86,23 @@ namespace tlw {
 
     if (m_talkOrSearchAction.isActive()) {
       // Check NPC
-      for (auto & [ characterType, character ] : m_game.state.characters) {
-        if (character.visibility != CharacterVisibility::Visible) {
-          continue;
-        }
-
-        if (gf::chebyshevDistance(m_game.state.hero.pos, character.pos) <= 1) {
-          if (character.dialog != gf::InvalidId) {
-            m_game.state.currentDialog = character.dialog;
-            m_game.pushScene(m_game.dialog);
-            break;
-          }
-        }
+      CharacterType characterType = getDialog();
+      if (characterType != CharacterType::None) {
+        auto & character = m_game.state.characters[characterType];
+        m_game.state.currentDialog = character.dialog;
+        m_game.pushScene(m_game.dialog);
       }
 
       // Check search
-      for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
-        auto & search = m_game.state.searchs[i];
+      std::size_t searchId = getSearch();
+      if (searchId != InvalidSearch) {
+        auto & search = m_game.state.searchs[searchId];
 
-        if (search.done) {
-          continue;
-        }
-
-        if (gf::chebyshevDistance(m_game.state.hero.pos, search.pos) <= 1) {
-          if (search.dialog != gf::InvalidId) {
-            m_game.state.currentDialog = search.dialog;
-            m_game.pushScene(m_game.dialog);
-            m_game.state.currSearch = i;
-            m_game.streakChallenge.reset(search.buttonCount);
-            break;
-          }
-        }
+        m_game.state.currentDialog = search.dialog;
+        m_game.pushScene(m_game.dialog);
+        m_game.state.currSearch = searchId;
+        m_game.streakChallenge.reset(search.buttonCount);
       }
-
-      // Check search
-
-      // //Check if we are on search position
-      // if (!searched && m_game.state.currSearch == InvalidSearch) {
-      //   for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
-      //     Search &search = m_game.state.searchs[i];
-
-      //     if (search.chapter != m_game.state.chapter || search.done) {
-      //       continue;
-      //     }
-
-      //     if (m_game.state.hero.pos == search.pos) {
-      //       m_game.state.currSearch = i;
-      //       m_game.streakChallenge.reset(5);
-      //       m_game.pushScene(m_game.streakChallenge);
-      //       break;
-      //     }
-      //   }
-      // }
     }
 
     if (m_printPositionAction.isActive()) {
@@ -144,5 +112,42 @@ namespace tlw {
 
   void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {
     setWorldViewCenter((m_game.state.hero.pos + 0.5f) * TileSize);
+
+    m_infoEntity.setSearchActive(getSearch() != InvalidSearch);
+    m_infoEntity.setDialogActive(getDialog() != CharacterType::None);
+  }
+
+  std::size_t WorldScene::getSearch() {
+    for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
+      auto & search = m_game.state.searchs[i];
+
+      if (search.done) {
+        continue;
+      }
+
+      if (gf::chebyshevDistance(m_game.state.hero.pos, search.pos) <= 1) {
+        if (search.dialog != gf::InvalidId) {
+          return i;
+        }
+      }
+    }
+
+    return InvalidSearch;
+  }
+
+  CharacterType WorldScene::getDialog() {
+    for (auto & [ characterType, character ] : m_game.state.characters) {
+      if (character.visibility != CharacterVisibility::Visible) {
+        continue;
+      }
+
+      if (gf::chebyshevDistance(m_game.state.hero.pos, character.pos) <= 1) {
+        if (character.dialog != gf::InvalidId) {
+          return characterType;
+        }
+      }
+    }
+
+    return CharacterType::None;
   }
 }
