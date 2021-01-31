@@ -100,7 +100,8 @@ namespace tlw {
         "Chap1Dread_Finished"_id, {
           DialogType::Normal, {
             { _("Ms Dread"),  _("Do you have any news for me?.") },
-            { _("Raymond"),   _("Yes, I found some interesting things. It seems Ms Wood had animals in her house but they have disappearred. We should find them, they may be able to tell us what happened to this last will.") },
+            { _("Raymond"),   _("Yes, I found some interesting things. It seems Ms Wood had animals in her house but they have disappearred.") },
+            { _("Raymond"),   _("We should find them, they may be able to tell us what happened to this last will.") },
           }
         }
       },

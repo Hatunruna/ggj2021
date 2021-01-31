@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 12:18+0100\n"
+"POT-Creation-Date: 2021-01-31 13:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,8 +137,12 @@ msgstr ""
 
 msgid ""
 "Yes, I found some interesting things. It seems Ms Wood had animals in her "
-"house but they have disappearred. We should find them, they may be able to "
-"tell us what happened to this last will."
+"house but they have disappearred."
+msgstr ""
+
+msgid ""
+"We should find them, they may be able to tell us what happened to this last "
+"will."
 msgstr ""
 
 msgid "What is that?"
@@ -197,10 +201,21 @@ msgid ""
 "hiding?"
 msgstr ""
 
+msgid "You got the clue !"
+msgstr ""
+
+msgid "You missed the clue !"
+msgstr ""
+
 msgid "Failed"
 msgstr ""
 
 msgid "Success"
+msgstr ""
+
+msgid ""
+"Hit the target to \n"
+" get a new clue: "
 msgstr ""
 
 #, c-format
