@@ -11,10 +11,10 @@ namespace tlw {
   {
     characters = {
       { CharacterType::Holly,
-        { gf::InvalidId, gf::vec(13, 18), CharacterVisibility::Visible }
+        { gf::InvalidId, gf::vec(13, 18), CharacterVisibility::Hidden }
       },
       { CharacterType::Stock,
-        { gf::InvalidId, gf::vec(15, 30), CharacterVisibility::Visible }
+        { gf::InvalidId, gf::vec(15, 30), CharacterVisibility::Hidden }
       },
       { CharacterType::Bouquet,
         { gf::InvalidId, gf::vec(32, 13), CharacterVisibility::Visible }
@@ -37,9 +37,6 @@ namespace tlw {
     };
 
     searchs = {
-      // { "Chap1Search"_id, 5, gf::vec(11, 18), 0 },
-      // { "Chap1Search"_id, 3, gf::vec(10, 18), 0 },
-      // { "Chap1Search"_id, 4, gf::vec( 9, 18), 0 },
       { "Chap1SearchWoodHouse"_id, 2, gf::vec(22, 13), 0 },
       { "Chap2SearchGarbageCan"_id, 3, gf::vec(15, 13), 1 },
     };

@@ -19,6 +19,10 @@ namespace tlw {
   , m_benchDownTexture(resources.getTexture("images/bench_down.png"))
   , m_benchLeftTexture(resources.getTexture("images/bench_left.png"))
   , m_gustavoShopTexture(resources.getTexture("images/gustavo_shop.png"))
+  , m_fountainTexture(resources.getTexture("images/fountain.png"))
+  , m_house1Texture(resources.getTexture("images/house1.png"))
+  , m_house2Texture(resources.getTexture("images/house1.png"))
+  , m_pubTexture(resources.getTexture("images/pub.png"))
   {
     m_bouquetShopTexture.setSmooth(true);
     m_bouquetNeighbor1Texture.setSmooth(true);
@@ -29,6 +33,10 @@ namespace tlw {
     m_benchDownTexture.setSmooth(true);
     m_benchLeftTexture.setSmooth(true);
     m_gustavoShopTexture.setSmooth(true);
+    m_fountainTexture.setSmooth(true);
+    m_house1Texture.setSmooth(true);
+    m_house2Texture.setSmooth(true);
+    m_pubTexture.setSmooth(true);
   }
 
   void BuildingEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -70,6 +78,22 @@ namespace tlw {
 
       case BuildingType::GustavoShop:
         sprite.setTexture(m_gustavoShopTexture);
+        break;
+
+      case BuildingType::Fountain:
+        sprite.setTexture(m_fountainTexture);
+        break;
+
+      case BuildingType::House1:
+        sprite.setTexture(m_house1Texture);
+        break;
+
+      case BuildingType::House2:
+        sprite.setTexture(m_house2Texture);
+        break;
+
+      case BuildingType::Pub:
+        sprite.setTexture(m_pubTexture);
         break;
       }
 
