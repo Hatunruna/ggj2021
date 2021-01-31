@@ -135,6 +135,13 @@ namespace tlw {
       /*
        * Chapter 2
        */
+      {
+        "Chap2Elders"_id, {
+          DialogType::Normal, {
+            { _("Raymond"),   _("The cake is a lie!") }
+          },
+        }
+      },
 
       /*
        * Chapter 3

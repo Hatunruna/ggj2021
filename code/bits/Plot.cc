@@ -8,17 +8,7 @@ namespace tlw {
   Plot::Plot(GameHub& game)
   : m_game(game)
   {
-    // TODO: remove this
-//     m_game.state.currentDialog = "Chap1Dread1"_id;
-
-    m_game.state.characters[CharacterType::Holly].visibility = CharacterVisibility::Hidden;
-    m_game.state.characters[CharacterType::Stock].visibility = CharacterVisibility::Hidden;
-
-    m_game.state.characters[CharacterType::Bouquet].dialog = "Chap1Bouquet1"_id;
-    m_game.state.characters[CharacterType::Elders].dialog = "Chap1Elders1"_id;
-    m_game.state.characters[CharacterType::Dread].dialog = "Chap1Dread1"_id;
-    m_game.state.characters[CharacterType::Gustavo].dialog = "Chap1Gustavo1"_id;
-
+    loadChapter(0);
   }
 
   void Plot::onDialogEnd(gf::Id dialogId) {
@@ -56,6 +46,7 @@ namespace tlw {
         break;
 
       case "Chap1Dread_Finished"_id:
+        loadChapter(++m_game.state.chapter);
         break;
 
       default:
@@ -101,5 +92,33 @@ namespace tlw {
 
     return false;
   }
+
+
+    void Plot::loadChapter(int chapterNumber) {
+      switch (chapterNumber) {
+      case 0:
+        // TODO: remove this
+        // m_game.state.currentDialog = "Chap1Dread1"_id;
+
+        m_game.state.characters[CharacterType::Holly].visibility = CharacterVisibility::Hidden;
+        m_game.state.characters[CharacterType::Stock].visibility = CharacterVisibility::Hidden;
+
+        m_game.state.characters[CharacterType::Bouquet].dialog = "Chap1Bouquet1"_id;
+        m_game.state.characters[CharacterType::Elders].dialog = "Chap1Elders1"_id;
+        m_game.state.characters[CharacterType::Dread].dialog = "Chap1Dread1"_id;
+        m_game.state.characters[CharacterType::Gustavo].dialog = "Chap1Gustavo1"_id;
+        break;
+
+      case 1:
+        m_game.state.characters[CharacterType::Bouquet].dialog = gf::InvalidId;
+        m_game.state.characters[CharacterType::Elders].dialog = "Chap2Elders"_id;
+        m_game.state.characters[CharacterType::Dread].dialog = gf::InvalidId;
+        m_game.state.characters[CharacterType::Gustavo].dialog = gf::InvalidId;
+        break;
+
+      default:
+        break;
+      }
+    }
 
 }

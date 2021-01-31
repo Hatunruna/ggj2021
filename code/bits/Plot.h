@@ -18,6 +18,7 @@ namespace tlw {
 
   private:
     bool checkEndChapter();
+    void loadChapter(int chapterNumber);
 
   private:
     GameHub& m_game;
