@@ -10,7 +10,7 @@
 namespace tlw {
 
   PlayerEntity::PlayerEntity(gf::ResourceManager& resources, GameState& state, const GameData& data)
-  : m_playerTexture(resources.getTexture("images/player.png"))
+  : m_playerTexture(resources.getTexture("images/raymond.png"))
   , m_state(state)
   , m_data(data)
   , m_cooldownMove(0.f)

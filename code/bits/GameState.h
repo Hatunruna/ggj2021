@@ -13,13 +13,14 @@ namespace tlw {
   constexpr int InvalidSearch = -1;
 
   enum class CharacterType : int {
-    BadCat,
-    GoodDog,
-    Florist,
-    Moirai,
+    Holly,
+    Stock,
+    Bouquet,
+    Elders,
     Dread,
-    DogPack,
     Gustavo,
+    DogPack,
+    CatPack,
   };
 
   enum class CharacterVisibility {

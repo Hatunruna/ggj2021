@@ -16,12 +16,13 @@ namespace tlw {
 
   private:
     GameState& m_state;
-    gf::Texture& m_woodCatTexture;
-    gf::Texture& m_woodDogTexture;
-    gf::Texture& m_floristTexture;
-    gf::Texture& m_moiraiTexture;
+    gf::Texture& m_hollyTexture;
+    gf::Texture& m_stockTexture;
+    gf::Texture& m_bouquetTexture;
+    gf::Texture& m_eldersTexture;
     gf::Texture& m_dreadTexture;
     gf::Texture& m_dogPackTexture;
+    gf::Texture& m_catPackTexture;
   };
 }
 

@@ -10,7 +10,7 @@
 namespace tlw {
   BuildingEntity::BuildingEntity(gf::ResourceManager& resources, GameData& data)
   : m_data(data)
-  , m_floristShopTexture(resources.getTexture("images/florist_shop.png"))
+  , m_floristShopTexture(resources.getTexture("images/bouquet_shop.png"))
   , m_woodHouseTexture(resources.getTexture("images/wood_house.png"))
   , m_benchUpTexture(resources.getTexture("images/bench_up.png"))
   , m_benchDownTexture(resources.getTexture("images/bench_down.png"))

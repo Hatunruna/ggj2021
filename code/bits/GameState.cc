@@ -4,16 +4,16 @@ namespace tlw {
 
   GameState::GameState() {
     characters = {
-      { CharacterType::BadCat,
+      { CharacterType::Holly,
         { gf::InvalidId, gf::vec(13, 18), CharacterVisibility::Visible }
       },
-      { CharacterType::GoodDog,
+      { CharacterType::Stock,
         { gf::InvalidId, gf::vec(15, 30), CharacterVisibility::Visible }
       },
-      { CharacterType::Florist,
+      { CharacterType::Bouquet,
         { gf::InvalidId, gf::vec(32, 13), CharacterVisibility::Visible }
       },
-      { CharacterType::Moirai,
+      { CharacterType::Elders,
         { gf::InvalidId, gf::vec(32, 20), CharacterVisibility::Visible }
       },
       { CharacterType::Dread,
@@ -21,6 +21,9 @@ namespace tlw {
       },
       { CharacterType::DogPack,
         { gf::InvalidId, gf::vec(22, 32), CharacterVisibility::Visible }
+      },
+      { CharacterType::CatPack,
+        { gf::InvalidId, gf::vec(35,  6), CharacterVisibility::Visible }
       },
       { CharacterType::Gustavo,
         { gf::InvalidId, gf::vec(38, 29), CharacterVisibility::Visible }

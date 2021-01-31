@@ -9,19 +9,21 @@
 namespace tlw {
   CharacterEntity::CharacterEntity(gf::ResourceManager& resources, GameState& state)
   : m_state(state)
-  , m_woodCatTexture(resources.getTexture("images/wood_cat.png"))
-  , m_woodDogTexture(resources.getTexture("images/wood_dog.png"))
-  , m_floristTexture(resources.getTexture("images/florist.png"))
-  , m_moiraiTexture(resources.getTexture("images/moirai.png"))
+  , m_hollyTexture(resources.getTexture("images/holly.png"))
+  , m_stockTexture(resources.getTexture("images/stock.png"))
+  , m_bouquetTexture(resources.getTexture("images/bouquet.png"))
+  , m_eldersTexture(resources.getTexture("images/elders.png"))
   , m_dreadTexture(resources.getTexture("images/dread.png"))
   , m_dogPackTexture(resources.getTexture("images/dog_pack.png"))
+  , m_catPackTexture(resources.getTexture("images/cat_pack.png"))
   {
-    m_woodCatTexture.setSmooth(true);
-    m_woodDogTexture.setSmooth(true);
-    m_floristTexture.setSmooth(true);
-    m_moiraiTexture.setSmooth(true);
+    m_hollyTexture.setSmooth(true);
+    m_stockTexture.setSmooth(true);
+    m_bouquetTexture.setSmooth(true);
+    m_eldersTexture.setSmooth(true);
     m_dreadTexture.setSmooth(true);
     m_dogPackTexture.setSmooth(true);
+    m_catPackTexture.setSmooth(true);
   }
 
   void CharacterEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -30,21 +32,21 @@ namespace tlw {
         gf::Sprite sprite;
 
         switch (characterType) {
-        case CharacterType::BadCat:
-          sprite.setTexture(m_woodCatTexture);
+        case CharacterType::Holly:
+          sprite.setTexture(m_hollyTexture);
           break;
 
-        case CharacterType::GoodDog:
-          sprite.setTexture(m_woodDogTexture);
+        case CharacterType::Stock:
+          sprite.setTexture(m_stockTexture);
           break;
 
-        case CharacterType::Florist:
-          sprite.setTexture(m_floristTexture);
+        case CharacterType::Bouquet:
+          sprite.setTexture(m_bouquetTexture);
           sprite.setOrigin(gf::projy(TileSize));
           break;
 
-        case CharacterType::Moirai:
-          sprite.setTexture(m_moiraiTexture);
+        case CharacterType::Elders:
+          sprite.setTexture(m_eldersTexture);
           sprite.setOrigin(gf::projy(TileSize));
           break;
 
@@ -54,6 +56,11 @@ namespace tlw {
 
         case CharacterType::DogPack:
           sprite.setTexture(m_dogPackTexture);
+          sprite.setOrigin(gf::projy(TileSize));
+          break;
+
+        case CharacterType::CatPack:
+          sprite.setTexture(m_catPackTexture);
           sprite.setOrigin(gf::projy(TileSize));
           break;
         }
