@@ -45,8 +45,8 @@ namespace tlw {
         m_game.state.nextDialogSuccess = "Chap1Dread_Success"_id;
         m_game.state.nextDialogFailure = "Chap1Dread_Failure"_id;
         m_game.state.result = ChallengeResult::None;
-        gf::Log::debug("push challenge\n");
         m_game.pushScene(m_game.streakChallenge);
+        break;
 
       default:
         break;

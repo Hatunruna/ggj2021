@@ -48,16 +48,7 @@ namespace tlw {
     }
 
     if (m_stopCursorAction.isActive()) {
-      bool hit = m_sliderEntity.stopCursor();
-      if (hit) {
-        gf::Log::debug("Target hit!\n");
-        m_game.state.result = ChallengeResult::Success;
-      } else {
-        gf::Log::debug("Target missed... Loser!\n");
-        m_game.state.result = ChallengeResult::Failure;
-      }
-
-      m_game.plot.onSliderChallengeEnd();
+      m_sliderEntity.stopCursor();
     }
 
     if (m_increaseSpeedAction.isActive()) {
@@ -84,8 +75,8 @@ namespace tlw {
       //Time in seconds before vanish of the scene
       if (m_endTimer >= SceneBeforeVanishDelay) {
         m_game.state.result = m_sliderEntity.getStatus();
-        gf::Log::debug("Pop challenge\n");
         m_game.popScene();
+        m_game.plot.onSliderChallengeEnd();
       }
     }
   }

@@ -60,6 +60,10 @@ namespace tlw {
   }
 
   ChallengeResult SliderEntity::getStatus() const {
+    if (!m_played) {
+      return ChallengeResult::None;
+    }
+
     return (isHit() ? ChallengeResult::Success : ChallengeResult::Failure);
   }
 
