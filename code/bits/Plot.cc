@@ -45,6 +45,7 @@ namespace tlw {
 
       case "Chap1Dread_Finished"_id:
         loadChapter(++m_game.state.chapter);
+        m_game.replaceScene(m_game.introduction);
         break;
 
       // Chapter 2

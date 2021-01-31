@@ -14,8 +14,8 @@ namespace tlw {
       },
       {
         _("Chapter 2."),
-        _("Blabla Ms. Freeman")
-      }
+        _("This investigation is not as simple as I thought. I should talk to the villagers to know more about Ms Wood. I feel there is much left to be discovered.")
+      },
     };
 
     dialogs = {
