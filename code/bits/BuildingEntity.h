@@ -29,6 +29,7 @@ namespace tlw {
     gf::Texture& m_house2Texture;
     gf::Texture& m_pubTexture;
     gf::Texture& m_garbageCanTexture;
+    gf::Texture& m_carTexture;
   };
 }
 

@@ -373,6 +373,7 @@ namespace tlw {
       { BuildingType::House2, gf::vec(43, 22) },
       { BuildingType::Pub, gf::vec(19, 28) },
       { BuildingType::GarbageCan, gf::vec(15, 13) },
+      { BuildingType::Car, gf::vec(44, 19) },
     };
 
     limitClues = {
