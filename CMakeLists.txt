@@ -14,7 +14,9 @@ find_package(L10N)
 find_package(gf REQUIRED COMPONENTS graphics)
 find_package(Boost REQUIRED COMPONENTS locale)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+if (UNIX)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+endif ()
 
 add_subdirectory("data/raw/i18n")
 
