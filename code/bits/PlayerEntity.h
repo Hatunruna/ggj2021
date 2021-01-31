@@ -1,6 +1,7 @@
 #ifndef PLAYER_ENTITY_H
 #define PLAYER_ENTITY_H
 
+#include <gf/Animation.h>
 #include <gf/Direction.h>
 #include <gf/Entity.h>
 #include <gf/ResourceManager.h>
@@ -18,14 +19,28 @@ namespace tlw {
 
   private:
     GameState& m_state;
-    gf::Texture& m_playerTexture;
     const GameData& m_data;
     gf::Time m_moveCooldown;
     gf::Direction m_currentDirection;
-    gf::Texture& m_RayUp;
-    gf::Texture& m_RayDown;
-    gf::Texture& m_RayLeft;
-    gf::Texture& m_RayRight;
+    bool stillRuning;
+
+    gf::Texture& m_waitUpTexture;
+    gf::Texture&  m_runUpTexture;
+    gf::Animation m_runUpAnimation;
+
+    gf::Texture& m_waitBottomTexture;
+    gf::Texture&  m_runBottomTexture;
+    gf::Animation m_runBottomAnimation;
+
+    gf::Texture& m_waitLeftTexture;
+    gf::Texture&  m_runLeftTexture;
+    gf::Animation m_runLeftAnimation;
+
+    gf::Texture& m_waitRightTexture;
+    gf::Texture& m_runRightTexture;
+    gf::Animation m_runRightAnimation;
+
+    gf::Animation* m_currentAnimation;
   };
 
 }

@@ -82,6 +82,8 @@ namespace tlw {
       m_playerEntity.move(gf::Direction::Down);
     } else if (m_moveYNegAction.isActive()) {
       m_playerEntity.move(gf::Direction::Up);
+    } else {
+      m_playerEntity.move(gf::Direction::Center);
     }
 
     if (m_talkOrSearchAction.isActive()) {
