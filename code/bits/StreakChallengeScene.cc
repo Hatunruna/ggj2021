@@ -96,7 +96,9 @@ namespace tlw {
         assert(m_game.state.currSearch < m_game.state.searchs.size());
         m_game.state.searchs.at(m_game.state.currSearch).done = true;
         m_game.state.currSearch = InvalidSearch;
+        m_game.state.result = m_streakEntity.getStatus();
         m_game.popScene();
+        m_game.plot.onStreakChallengeEnd();
       }
     }
   }

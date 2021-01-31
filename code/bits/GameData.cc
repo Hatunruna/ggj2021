@@ -105,9 +105,23 @@ namespace tlw {
         }
       },
       {
-        "Chap1Search"_id, {
+        "Chap1SearchWoodHouse"_id, {
           DialogType::Normal, {
             { _("Raymond"),   _("What is that?") }
+          },
+        }
+      },
+      {
+        "Chap1SearchWoodHouse_Success"_id, {
+          DialogType::Normal, {
+            { _("Raymond"),   _("It's some animal footprints.") }
+          },
+        }
+      },
+      {
+        "Chap1SearchWoodHouse_Failure"_id, {
+          DialogType::Normal, {
+            { _("Raymond"),   _("It's just some dirts.") }
           },
         }
       },
