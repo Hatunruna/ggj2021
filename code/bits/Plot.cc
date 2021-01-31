@@ -34,6 +34,7 @@ namespace tlw {
       case "Chap1SearchWoodHouse_Success"_id:
       case "Chap1SearchWoodHouse_Failure"_id:
         if (checkEndChapter()) {
+          m_game.state.characters.at(CharacterType::Dread).dialog = "Chap1Dread_Finished"_id;
           m_game.state.currentDialog = "RaymondEndChapter"_id;
           m_game.pushScene(m_game.dialog);
         }
