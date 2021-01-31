@@ -16,6 +16,10 @@ namespace tlw {
             _("Chapter 2."),
             _("This investigation is not as simple as I thought. I should talk to the villagers to know more about Ms Wood. I feel there is much left to be discovered.")
           },
+          {
+            _("Chapter 3."),
+            _("ahahha")
+          },
         };
 
         dialogs = {
@@ -234,6 +238,22 @@ namespace tlw {
                 }
               }
             },
+            {
+              "RaymondEndChapter2"_id, {
+                DialogType::Normal, {
+                  { _("Raymond"), _("I should do my report to Ms. Dread.") },
+                }
+              }
+            },
+            {
+              "Chap2Dread_Finished"_id, {
+                DialogType::Normal, {
+                  { _("Ms Dread"),  _("Do you have any news for me?.") },
+                  { _("Raymond"),   _("Yes, I found some interesting things. It seems Ms Wood had animals in her house but they have disappearred.") },
+                  { _("Raymond"),   _("We should find them, they may be able to tell us what happened to this last will.") },
+                }
+              }
+            },
 
             /*
             * Chapter 3
@@ -306,6 +326,13 @@ namespace tlw {
               }
             },
             {
+              "Chap3MafiaDog2"_id, {
+                DialogType::Normal, {
+                  { _("DogPack"), _("We have nothing more to tell you.") }
+                }
+              }
+            },
+            {
               "Chap3Elders"_id, {
                 DialogType::Normal, {
                   { _("Nona"), _("How is the case going Mr. Adupif?") },
@@ -350,6 +377,7 @@ namespace tlw {
 
     limitClues = {
       2,
+      3,
       3,
     };
   };

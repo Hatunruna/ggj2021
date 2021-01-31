@@ -77,6 +77,40 @@ namespace tlw {
         m_game.pushScene(m_game.sliderChallenge);
         break;
 
+
+      case "Chap2BouquetInvestigation_Success"_id:
+      case "Chap2BouquetInvestigation_Failure"_id:
+      case "Chap2SearchGarbageCan_Success"_id:
+      case "Chap2SearchGarbageCan_Failure"_id:
+        if (checkEndChapter()) {
+          m_game.state.currentDialog = "RaymondEndChapter2"_id;
+          m_game.pushScene(m_game.dialog);
+        }
+        break;
+
+      case "Chap2Dread_Finished"_id:
+        loadChapter(++m_game.state.chapter);
+        m_game.replaceScene(m_game.introduction);
+        break;
+
+      //Chapter 3
+      case "Chap3MafiaDogInvestigation"_id:
+          m_game.state.characters[CharacterType::DogPack].dialog = "Chap3MafiaDog2"_id;
+          m_game.state.nextDialogSuccess = "Chap3MafiaDogInvestigation_Success"_id;
+          m_game.state.nextDialogFailure = "Chap3MafiaDogInvestigation_Failure"_id;
+          m_game.state.result = ChallengeResult::None;
+          m_game.sliderChallenge.reset(SliderChallengeDifficulty::Medium);
+          m_game.pushScene(m_game.sliderChallenge);
+          break;
+
+      case "Chap3MafiaDogInvestigation_Success"_id:
+      case "Chap3MafiaCatInvestigation_Success"_id:
+      case "Chap3MafiaCatInvestigation_Failure"_id:
+      case "Chap3MafiaDogInvestigation_Failure"_id:
+          if (checkEndChapter()) {
+              m_game.state.currentDialog = "RaymondEndChapter2"_id;
+              m_game.pushScene(m_game.dialog);
+          }
       default:
         break;
     }
@@ -114,7 +148,12 @@ namespace tlw {
 
   bool Plot::checkEndChapter() {
     if ((m_game.state.finishedInvestigations + m_game.state.finishedSearchs) >= m_game.data.limitClues[m_game.state.chapter]) {
-      m_game.state.characters.at(CharacterType::Dread).dialog = "Chap1Dread_Finished"_id;
+      if (m_game.state.chapter == 1){
+        m_game.state.characters.at(CharacterType::Dread).dialog = "Chap1Dread_Finished"_id;
+      }
+      else if (m_game.state.chapter == 2) {
+        m_game.state.characters.at(CharacterType::Dread).dialog = "Chap2Dread_Finished"_id;
+      }  
       return true;
     }
 
@@ -142,6 +181,15 @@ namespace tlw {
         m_game.state.characters[CharacterType::Elders].dialog = "Chap2Elders"_id;
         m_game.state.characters[CharacterType::Dread].dialog = gf::InvalidId;
         m_game.state.characters[CharacterType::Gustavo].dialog = gf::InvalidId;
+        break;
+
+      case 2:
+        m_game.state.characters[CharacterType::Bouquet].dialog = gf::InvalidId;
+        m_game.state.characters[CharacterType::Elders].dialog = "Chap3Elders"_id;
+        m_game.state.characters[CharacterType::Dread].dialog = gf::InvalidId;
+        m_game.state.characters[CharacterType::Gustavo].dialog = gf::InvalidId;
+        m_game.state.characters[CharacterType::DogPack].dialog = "Chap3MafiaDogInvestigation"_id;
+        m_game.state.characters[CharacterType::CatPack].dialog = "Chap3MafiaCatInvestigation"_id;
         break;
 
       default:
