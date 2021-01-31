@@ -49,6 +49,10 @@ namespace tlw {
     BenchDown,
     BenchLeft,
     GustavoShop,
+    Fountain,
+    House1,
+    House2,
+    Pub,
   };
 
   struct Building {

@@ -254,6 +254,10 @@ namespace tlw {
       { BuildingType::BenchDown, gf::vec(27, 24) },
       { BuildingType::BenchDown, gf::vec(29, 34) },
       { BuildingType::GustavoShop, gf::vec(38, 27) },
+      { BuildingType::Fountain, gf::vec(27, 19) },
+      { BuildingType::House1, gf::vec(43, 13) },
+      { BuildingType::House2, gf::vec(43, 22) },
+      { BuildingType::Pub, gf::vec(19, 28) },
     };
 
     limitClues = {
