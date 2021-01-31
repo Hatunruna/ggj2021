@@ -117,8 +117,11 @@ namespace tlw {
     };
 
     buildings = {
-      { BuildingType::FloristShop, gf::vec(31, 9) },
+      { BuildingType::BouquetShop, gf::vec(31, 9) },
+      { BuildingType::BouquetNeighbor1, gf::vec(35, 9) },
+      { BuildingType::BouquetNeighbor2, gf::vec(39, 9) },
       { BuildingType::WoodHouse, gf::vec(22, 9) },
+      { BuildingType::WoodNeighbor, gf::vec(18, 9) },
       { BuildingType::BenchUp, gf::vec(27, 16) },
       { BuildingType::BenchLeft, gf::vec(23, 19) },
       { BuildingType::BenchDown, gf::vec(27, 24) },

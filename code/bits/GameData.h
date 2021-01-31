@@ -39,8 +39,11 @@ namespace tlw {
   };
 
   enum class BuildingType {
-    FloristShop,
+    BouquetShop,
+    BouquetNeighbor1,
+    BouquetNeighbor2,
     WoodHouse,
+    WoodNeighbor,
     BenchUp,
     BenchDown,
     BenchLeft,

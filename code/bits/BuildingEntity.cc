@@ -10,15 +10,21 @@
 namespace tlw {
   BuildingEntity::BuildingEntity(gf::ResourceManager& resources, GameData& data)
   : m_data(data)
-  , m_floristShopTexture(resources.getTexture("images/bouquet_shop.png"))
+  , m_bouquetShopTexture(resources.getTexture("images/bouquet_shop.png"))
+  , m_bouquetNeighbor1Texture(resources.getTexture("images/bouquet_neighbor1.png"))
+  , m_bouquetNeighbor2Texture(resources.getTexture("images/bouquet_neighbor2.png"))
   , m_woodHouseTexture(resources.getTexture("images/wood_house.png"))
+  , m_woodNeighborTexture(resources.getTexture("images/wood_neighbor.png"))
   , m_benchUpTexture(resources.getTexture("images/bench_up.png"))
   , m_benchDownTexture(resources.getTexture("images/bench_down.png"))
   , m_benchLeftTexture(resources.getTexture("images/bench_left.png"))
   , m_gustavoShopTexture(resources.getTexture("images/gustavo_shop.png"))
   {
-    m_floristShopTexture.setSmooth(true);
+    m_bouquetShopTexture.setSmooth(true);
+    m_bouquetNeighbor1Texture.setSmooth(true);
+    m_bouquetNeighbor2Texture.setSmooth(true);
     m_woodHouseTexture.setSmooth(true);
+    m_woodNeighborTexture.setSmooth(true);
     m_benchUpTexture.setSmooth(true);
     m_benchDownTexture.setSmooth(true);
     m_benchLeftTexture.setSmooth(true);
@@ -30,12 +36,24 @@ namespace tlw {
       gf::Sprite sprite;
 
       switch (building.type) {
-      case BuildingType::FloristShop:
-        sprite.setTexture(m_floristShopTexture);
+      case BuildingType::BouquetShop:
+        sprite.setTexture(m_bouquetShopTexture);
+        break;
+
+      case BuildingType::BouquetNeighbor1:
+        sprite.setTexture(m_bouquetNeighbor1Texture);
+        break;
+
+      case BuildingType::BouquetNeighbor2:
+        sprite.setTexture(m_bouquetNeighbor2Texture);
         break;
 
       case BuildingType::WoodHouse:
         sprite.setTexture(m_woodHouseTexture);
+        break;
+
+      case BuildingType::WoodNeighbor:
+        sprite.setTexture(m_woodNeighborTexture);
         break;
 
       case BuildingType::BenchUp:
