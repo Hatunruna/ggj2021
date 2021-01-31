@@ -35,9 +35,6 @@ namespace tlw {
     float m_endTimer;
 
     gf::Action m_buttonA;
-    gf::Action m_buttonB;
-    gf::Action m_buttonX;
-    gf::Action m_buttonY;
     // TODO: debug, remove later
     int currentDifficulty;
     gf::Action m_resetAction;

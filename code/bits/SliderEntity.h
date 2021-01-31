@@ -40,6 +40,7 @@ namespace tlw {
     float m_cursorPosition;
     gf::activity::AnyActivity m_activity;
     bool m_played;
+    gf::Texture& m_buttonTexture;
   };
 }
 

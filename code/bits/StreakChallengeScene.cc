@@ -11,9 +11,6 @@ namespace tlw {
   , m_endTimer(0.0f)
   , m_streakEntity(game.resources, game.random)
   , m_buttonA("A")
-  , m_buttonB("B")
-  , m_buttonX("X")
-  , m_buttonY("Y")
   , currentDifficulty(5)
   , m_resetAction("ResetAction")
   , m_increaseDifficultyAction("IncreaseDifficulty")
@@ -25,15 +22,6 @@ namespace tlw {
 
     m_buttonA.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
     addAction(m_buttonA);
-
-    m_buttonB.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
-    addAction(m_buttonB);
-
-    m_buttonX.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
-    addAction(m_buttonX);
-
-    m_buttonY.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
-    addAction(m_buttonY);
 
     m_resetAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Start);
     m_resetAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Back);
@@ -62,12 +50,6 @@ namespace tlw {
 
     if (m_buttonA.isActive()) {
       m_streakEntity.addPlayerInput(gf::GamepadButton::A);
-    } else if (m_buttonB.isActive()) {
-      m_streakEntity.addPlayerInput(gf::GamepadButton::B);
-    } else if (m_buttonX.isActive()) {
-      m_streakEntity.addPlayerInput(gf::GamepadButton::X);
-    } else if (m_buttonY.isActive()) {
-      m_streakEntity.addPlayerInput(gf::GamepadButton::Y);
     }
 
     if (m_resetAction.isActive()) {

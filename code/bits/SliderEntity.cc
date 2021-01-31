@@ -5,11 +5,48 @@
 #include <gf/RenderTarget.h>
 #include <gf/Shapes.h>
 #include <gf/Text.h>
+#include <gf/Gamepad.h>
+#include <gf/Sprite.h>
 
 #include "Constants.h"
 #include "I18N.h"
 
+
 namespace {
+
+// return the string represented by the GamepadButton button
+  std::string gamepadValue(gf::GamepadButton button) {
+    if (button == gf::GamepadButton::A) {
+      return "A";
+    }
+    else if (button == gf::GamepadButton::B) {
+      return "B";
+    }
+    else if (button == gf::GamepadButton::X) {
+      return "X";
+    }
+    else if (button == gf::GamepadButton::Y) {
+      return "Y";
+    }
+    return "A";
+  }
+
+  gf::Color4f getColor(gf::GamepadButton gamepadButton) {
+    if (gamepadButton == gf::GamepadButton::A) {
+      return gf::Color::Green;
+    }
+    else if (gamepadButton == gf::GamepadButton::B) {
+      return gf::Color::Red;
+    }
+    else if (gamepadButton == gf::GamepadButton::X) {
+      return gf::Color::Blue;
+    }
+    else if (gamepadButton == gf::GamepadButton::Y) {
+      return gf::Color::Yellow;
+    }
+    return gf::Color::Black;
+  }
+
   constexpr gf::Vector2f SliderRelativeSize = gf::vec(0.40f, 0.025f);
   constexpr gf::Vector2f CursorRelativeSize = gf::vec(0.01f, 0.03f);
   constexpr gf::Vector2f GoalRelativeSize = gf::vec(CursorRelativeSize.x * 3.0f, SliderRelativeSize.y);
@@ -37,6 +74,7 @@ namespace tlw {
   , m_cursorPosition(0.0f)
   , m_activity(createActivity(m_easeDelay, m_cursorPosition))
   , m_played(false)
+  , m_buttonTexture(resources.getTexture("images/button_player.png"))
   {
 
   }
@@ -104,6 +142,27 @@ namespace tlw {
       target.draw(message, states);
     };
 
+    auto renderButton = [&](gf::GamepadButton gamepadButton, gf::Vector2f buttonPosition, const gf::Texture& texture) {
+      auto position = coords.getRelativePoint(buttonPosition);
+      unsigned fontSize = coords.getRelativeCharacterSize(0.075f);
+      float radius = coords.getRelativeSize(gf::vec(0.06f, 0.0f)).width;
+      float radiusScale = radius / texture.getSize().height;
+      gf::Color4f colorButton = getColor(gamepadButton);
+
+      gf::Sprite sprite(texture);
+      sprite.setPosition(position);
+      sprite.setAnchor(gf::Anchor::Center);
+      sprite.setColor(colorButton);
+      sprite.setScale(radiusScale);
+      target.draw(sprite, states);
+
+      gf::Text textButton(gamepadValue(gamepadButton), m_font, fontSize);
+      textButton.setPosition(position);
+      textButton.setAnchor(gf::Anchor::Center);
+      textButton.setColor(gf::Color::White * gf::Color::Opaque(0.7f));
+      target.draw(textButton, states);
+    };
+
     gf::RectangleShape background(target.getSize());
     background.setPosition(gf::vec(0.0f, 0.0f));
     background.setColor(gf::Color::Black * gf::Color::Opaque(0.7f));
@@ -140,6 +199,8 @@ namespace tlw {
     }
     else {
         renderMessage(_("Hit the target to \n get a new clue: "));
+        renderButton(gf::GamepadButton::A, { 0.5,0.9 }, m_buttonTexture);
+        
     }
   }
 }
