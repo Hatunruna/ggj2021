@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 12:18+0100\n"
+"POT-Creation-Date: 2021-01-31 13:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "No, thank you. Maybe another day!"
 msgstr ""
 
-msgid "Ms Gustavo"
+msgid "Mr Gustavo"
 msgstr ""
 
 msgid "You seem to be a friend of animals! Want to buy some food for them?"
@@ -137,8 +137,12 @@ msgstr ""
 
 msgid ""
 "Yes, I found some interesting things. It seems Ms Wood had animals in her "
-"house but they have disappearred. We should find them, they may be able to "
-"tell us what happened to this last will."
+"house but they have disappearred."
+msgstr ""
+
+msgid ""
+"We should find them, they may be able to tell us what happened to this last "
+"will."
 msgstr ""
 
 msgid "What is that?"
@@ -154,14 +158,14 @@ msgid "I know enough. It's time for my report."
 msgstr ""
 
 msgid ""
-"Good evening, ladies. My name is Raymond Adupif and I have been hired by "
-"Mrs. Dread to find Mrs. Wood's will."
+"Good evening, ladies. My name is Raymond Adupif and I have been hired by Ms "
+"Dread to find Ms Wood's will."
 msgstr ""
 
 msgid ""
-"Nice to met you, Mr. Adupif. During my evening walk, I saw Mrs. Dread "
-"waiting near the pontoon. I understood that someone would come to visit our "
-"beautiful village."
+"Nice to meet you, Mr Adupif. During my evening walk, I saw Ms Dread waiting "
+"near the dock. I understood that someone would come to visit our beautiful "
+"village."
 msgstr ""
 
 msgid ""
@@ -169,19 +173,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Of course Mr. Adupif. You see the pink store next to Mrs. Wood's house? It's "
-"the store of Mrs. Bouquet, the florist."
+"Of course Mr Adupif. You see the pink store next to Ms Wood's house? It's "
+"the store of Ms Bouquet, the florist."
 msgstr ""
 
 msgid ""
-"A little further down the square is Mr. Gustavo's store. He sells a lot of "
-"pet stuffs. We often saw there Stock and Holly, Mrs. Wood's pets."
+"A little further down the square is Mr Gustavo's store. He sells a lot of "
+"pet stuffs. We often saw there Stock and Holly, Ms Wood's pets."
 msgstr ""
 
 msgid "Stock and Holly?"
 msgstr ""
 
-msgid "Yes, Stock is Ms. Wood's dog and Holly is her cat."
+msgid "Yes, Stock is Ms Wood's dog and Holly is her cat."
 msgstr ""
 
 msgid "They are so affectionate! Much more than all those stray animals."
@@ -197,10 +201,21 @@ msgid ""
 "hiding?"
 msgstr ""
 
+msgid "You got the clue!"
+msgstr ""
+
+msgid "You missed the clue!"
+msgstr ""
+
 msgid "Failed"
 msgstr ""
 
 msgid "Success"
+msgstr ""
+
+msgid ""
+"Hit the target to \n"
+" get a new clue: "
 msgstr ""
 
 #, c-format

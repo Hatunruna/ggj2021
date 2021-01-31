@@ -187,7 +187,7 @@ namespace tlw {
     target.draw(cursor, states);
 
     if (m_played) {
-      (isHit() ? renderMessage(_("You got the clue !")) : renderMessage(_("You missed the clue !")));
+      (isHit() ? renderMessage(_("You got the clue!")) : renderMessage(_("You missed the clue!")));
       gf::Text message((isHit() ? _("Success") : _("Failed")), m_font, coords.getRelativeCharacterSize(0.1f));
       message.setColor(gf::Color::White);
       auto messagePosition = slider.getPosition();
