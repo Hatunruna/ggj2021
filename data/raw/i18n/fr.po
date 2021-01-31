@@ -163,73 +163,80 @@ msgid ""
 "house but they have disappearred. We should find them, they may be able to "
 "tell us what happened to this last will."
 msgstr ""
-<<<<<<< Updated upstream
 "Oui, j'ai trouvé quelques faits intéressant. Il semblerait que Mme Wood "
 "avait des animaux dans sa maison mais que ceux-ci ont disparu. Nous devrions "
 "les retrouver, ils pourraient peut-être nous en apprendre plus  sur ce qui "
 "est arrivé au testament de Mme Wood."
-=======
-"Oui, j'ai trouvé quelques faits intéressant. Il semblerait que Mme avait des "
-"animaux dans sa maison mais que ceux si aient disparu. Nous devrions les "
-"trouver, ils pourraient peut-être nous en apprendre plus  sur ce qui est "
-"arrivé au testament de Mme Wood."
->>>>>>> Stashed changes
 
 msgid "What is that?"
 msgstr "Qu'est-ce donc là ?"
 
 msgid "It's some animal footprints."
-msgstr ""
+msgstr "Ce sont des traces d'animaux."
 
 msgid "It's just some dirts."
-msgstr ""
+msgstr "C'est juste de la terre."
 
 msgid "I know enough. It's time for my report."
-msgstr ""
+msgstr "J'en sais assez. C'est le moment de faire mon rapport."
 
 msgid ""
 "Good evening, ladies. My name is Raymond Adupif and I have been hired by "
 "Mrs. Dread to find Mrs. Wood's will."
-msgstr ""
+msgstr "Bonjour, Mesdames. Je m'appel Raymon Adupif et j'ai été engagé by Mme Dread"
+"pour retrouver le testament de Mmd Wood."
 
 msgid ""
 "Nice to met you, Mr. Adupif. During my evening walk, I saw Mrs. Dread "
 "waiting near the pontoon. I understood that someone would come to visit our "
 "beautiful village."
-msgstr ""
+msgstr "Heureuse de vous rencontrer, Mr. Adupif. Pendant ma promenade quotidienne, 
+"j'ai vu Mme Dread attendre sur le quai du port. "
+"J'ai vite comprise que nous allions avoir de la visite dans notre magnifique petit village."
 
 msgid ""
 "I see that nothing escapes you, ladies. Could you tell me about your village?"
 msgstr ""
+"Je vois que rien ne vous échappe ma chère."
+"Pouvez vous m'en dire un peu plus à propos de votre village?"
 
 msgid ""
 "Of course Mr. Adupif. You see the pink store next to Mrs. Wood's house? It's "
 "the store of Mrs. Bouquet, the florist."
-msgstr ""
+msgstr "Bien évidemment Mr. Adupif. Vous voyez la petite échoppe rose à côté de la maison"
+"de Mme Wood? C'est la boutique de Mme. Bouquet, la fleuriste."
 
 msgid ""
 "A little further down the square is Mr. Gustavo's store. He sells a lot of "
 "pet stuffs. We often saw there Stock and Holly, Mrs. Wood's pets."
-msgstr ""
+msgstr "Un peu plus loin au nord du parc se trouve le magain de Mr. Gustavo."
+"Il vend énormément de chose pour les animaux."
+"Nous y voyons très souvent Stock et Holly, les animaux de Mme. Wood."
 
 msgid "Stock and Holly?"
-msgstr ""
+msgstr "Stock et Holly?"
 
 msgid "Yes, Stock is Ms. Wood's dog and Holly is her cat."
-msgstr ""
+msgstr "Oui, Stock est le chien de Mme. Wood et Holly est son chat."
 
 msgid "They are so affectionate! Much more than all those stray animals."
-msgstr ""
+msgstr "Ils sont vraiment adorables! Bien plus que tout ces animaux sauvages."
 
 msgid ""
 "These elderly ladies need to know everything about the neighbourhood. Maybe "
 "they know where Holly and Stock might be?"
 msgstr ""
+"Ces vieilles dames semblent connaitre un rayon sur le voisinage."
+"Peut-être qu'elles savent où peuvent se trouver Holly et Stock?"
+
 
 msgid ""
 "I have one last question for you. Do you know where Holly and Stock might be "
 "hiding?"
 msgstr ""
+"J'ai une dernière petite question pour vous."
+"Savez-vous où peuvent se trouver Holly et Stock?"
+
 
 msgid "Failed"
 msgstr "Échec"
@@ -237,14 +244,13 @@ msgstr "Échec"
 msgid "Success"
 msgstr "Succès"
 
-<<<<<<< Updated upstream
 #, c-format
 msgid "Memorize: %d seconds."
 msgstr "Retenez: %d secondes."
 
 msgid "Repeat the sequence:"
 msgstr "Reproduisez la suite."
-=======
+
 msgid " seconds"
 msgstr " secondes"
 
@@ -262,7 +268,6 @@ msgstr "Vous avez obtenue l'indice!"
 
 msgid "Hit the target to \n get a new clue: "
 msgstr "Touchez la cible pour \n obtenir un nouvel indice!"
->>>>>>> Stashed changes
 
 msgid "An investigation by Raymond Adupif"
 msgstr "Une enquête de Raymond Adupif"
