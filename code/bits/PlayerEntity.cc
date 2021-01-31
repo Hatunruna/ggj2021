@@ -35,8 +35,15 @@ namespace tlw {
     constexpr int moveValue = 1;
 
     gf::Vector2i nextPos = m_state.hero.pos + gf::displacement(dir) * moveValue;
+    bool invisibleNPC = false;
+    for (const auto& [characterType, character]: m_state.characters) {
+      if (character.pos == nextPos && character.visibility == CharacterVisibility::Hidden) {
+        invisibleNPC = true;
+        break;
+      }
+    }
 
-    if (m_cooldownMove > cooldownMove && m_data.tiles(nextPos) == TileState::Walkable) {
+    if (m_cooldownMove > cooldownMove && (m_data.tiles(nextPos) == TileState::Walkable || invisibleNPC)) {
       m_cooldownMove = 0.f;
       m_state.hero.pos = nextPos;
     }
