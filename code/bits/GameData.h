@@ -16,9 +16,10 @@ namespace tlw {
     std::string text;
   };
 
-  enum DialogType {
+  enum class DialogType {
     Normal,
     Investigation,
+    Search,
   };
 
   struct DialogLine {

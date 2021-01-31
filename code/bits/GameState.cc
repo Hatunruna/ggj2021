@@ -1,5 +1,7 @@
 #include "GameState.h"
 
+using namespace gf::literals;
+
 namespace tlw {
 
   GameState::GameState() {
@@ -31,9 +33,10 @@ namespace tlw {
     };
 
     searchs = {
-      {gf::vec(11, 18), 0},
-      {gf::vec(10, 18), 0},
-      {gf::vec(9, 18), 0},
+      { "Chap1Search"_id, gf::vec(11, 18), 0 },
+      { "Chap1Search"_id, gf::vec(10, 18), 0 },
+      { "Chap1Search"_id, gf::vec( 9, 18), 0 },
+      { "Chap1Search"_id, gf::vec(22, 13), 0 },
     };
   }
 }

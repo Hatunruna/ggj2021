@@ -83,6 +83,7 @@ namespace tlw {
 
     if (m_talkOrSearchAction.isActive()) {
       bool searched = false;
+      // Check NPC
       for (auto & [ characterType, character ] : m_game.state.characters) {
         if (character.visibility != CharacterVisibility::Visible) {
           continue;
@@ -92,29 +93,47 @@ namespace tlw {
           if (character.dialog != gf::InvalidId) {
             m_game.state.currentDialog = character.dialog;
             m_game.pushScene(m_game.dialog);
+            // searched = true;
+            break;
+          }
+        }
+      }
+
+      // Check search
+      for (auto& search : m_game.state.searchs) {
+        if (search.done) {
+          continue;
+        }
+
+        if (gf::chebyshevDistance(m_game.state.hero.pos, search.pos) <= 1) {
+          if (search.dialog != gf::InvalidId) {
+            m_game.state.currentDialog = search.dialog;
+            m_game.pushScene(m_game.dialog);
             searched = true;
             break;
           }
         }
       }
 
-      //Check if we are on search position
-      if (!searched && m_game.state.currSearch == InvalidSearch) {
-        for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
-          Search &search = m_game.state.searchs[i];
+      // Check search
 
-          if (search.chapter != m_game.state.chapter || search.done) {
-            continue;
-          }
+      // //Check if we are on search position
+      // if (!searched && m_game.state.currSearch == InvalidSearch) {
+      //   for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
+      //     Search &search = m_game.state.searchs[i];
 
-          if (m_game.state.hero.pos == search.pos) {
-            m_game.state.currSearch = i;
-            m_game.streakChallenge.reset(5);
-            m_game.pushScene(m_game.streakChallenge);
-            break;
-          }
-        }
-      }
+      //     if (search.chapter != m_game.state.chapter || search.done) {
+      //       continue;
+      //     }
+
+      //     if (m_game.state.hero.pos == search.pos) {
+      //       m_game.state.currSearch = i;
+      //       m_game.streakChallenge.reset(5);
+      //       m_game.pushScene(m_game.streakChallenge);
+      //       break;
+      //     }
+      //   }
+      // }
     }
 
     if (m_printPositionAction.isActive()) {

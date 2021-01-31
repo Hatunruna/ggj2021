@@ -104,6 +104,13 @@ namespace tlw {
           }
         }
       },
+      {
+        "Chap1Search"_id, {
+          DialogType::Normal, {
+            { _("Raymond"),   _("What is that?") }
+          },
+        }
+      },
       /*
        * Chapter 2
        */

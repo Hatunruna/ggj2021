@@ -41,6 +41,13 @@ namespace tlw {
       case "Chap1Dread_Finished"_id:
         break;
 
+      case "Chap1Search"_id:
+        m_game.state.nextDialogSuccess = "Chap1Dread_Success"_id;
+        m_game.state.nextDialogFailure = "Chap1Dread_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        gf::Log::debug("push challenge\n");
+        m_game.pushScene(m_game.streakChallenge);
+
       default:
         break;
     }
@@ -55,11 +62,12 @@ namespace tlw {
     if (m_game.state.result == ChallengeResult::Success) {
       m_game.state.currentDialog = m_game.state.nextDialogSuccess;
     } else {
-      assert(m_game.state.result != ChallengeResult::Failure);
+      assert(m_game.state.result == ChallengeResult::Failure);
       m_game.state.currentDialog = m_game.state.nextDialogFailure;
     }
 
-    m_game.popScene();
+    // m_game.popScene();
+    gf::Log::debug("push end dialog\n");
     m_game.pushScene(m_game.dialog);
   }
 
