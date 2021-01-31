@@ -163,10 +163,17 @@ msgid ""
 "house but they have disappearred. We should find them, they may be able to "
 "tell us what happened to this last will."
 msgstr ""
+<<<<<<< Updated upstream
 "Oui, j'ai trouvé quelques faits intéressant. Il semblerait que Mme Wood "
 "avait des animaux dans sa maison mais que ceux-ci ont disparu. Nous devrions "
 "les retrouver, ils pourraient peut-être nous en apprendre plus  sur ce qui "
 "est arrivé au testament de Mme Wood."
+=======
+"Oui, j'ai trouvé quelques faits intéressant. Il semblerait que Mme avait des "
+"animaux dans sa maison mais que ceux si aient disparu. Nous devrions les "
+"trouver, ils pourraient peut-être nous en apprendre plus  sur ce qui est "
+"arrivé au testament de Mme Wood."
+>>>>>>> Stashed changes
 
 msgid "What is that?"
 msgstr "Qu'est-ce donc là ?"
@@ -186,12 +193,32 @@ msgstr "Échec"
 msgid "Success"
 msgstr "Succès"
 
+<<<<<<< Updated upstream
 #, c-format
 msgid "Memorize: %d seconds."
 msgstr "Retenez: %d secondes."
 
 msgid "Repeat the sequence:"
 msgstr "Reproduisez la suite."
+=======
+msgid " seconds"
+msgstr " secondes"
+
+msgid "Memorize: "
+msgstr "Retenez:"
+
+msgid "Repeat the sequence:"
+msgstr "Répètez la séquence:"
+
+msgid "You missed the clue!"
+msgstr "Vous avez raté l'indice!"
+
+msgid "You got the clue!"
+msgstr "Vous avez obtenue l'indice!"
+
+msgid "Hit the target to \n get a new clue: "
+msgstr "Touchez la cible pour \n obtenir un nouvel indice!"
+>>>>>>> Stashed changes
 
 msgid "An investigation by Raymond Adupif"
 msgstr "Une enquête de Raymond Adupif"

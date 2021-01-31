@@ -40,6 +40,25 @@ namespace {
       ga::value(1.0f, 0.0f, opacity, gf::seconds(ShowingSolutionFadingDelay), gf::Ease::expoIn)
     );
   }
+
+
+  gf::Color4f getColor(gf::GamepadButton gamepadButton) {
+
+    if (gamepadButton == gf::GamepadButton::A) {
+      return gf::Color::Green;
+    }
+    else if (gamepadButton == gf::GamepadButton::B) {
+      return gf::Color::Red;
+    }
+    else if (gamepadButton == gf::GamepadButton::X) {
+      return gf::Color::Blue;
+    }
+    else if (gamepadButton == gf::GamepadButton::Y) {
+      return gf::Color::Yellow;
+    }
+
+    return gf::Color::Black;
+  }
 }
 
 namespace tlw {
@@ -106,11 +125,12 @@ namespace tlw {
       float radius = coords.getRelativeSize(gf::vec(0.06f, 0.0f)).width;
       float radiusScale = radius / texture.getSize().height;
       float opacity = (m_countdown >= 0.0f ? m_opacity : 1.0f);
+      gf::Color4f colorButton = getColor(gamepadButton);
 
       gf::Sprite sprite(texture);
       sprite.setPosition(position);
       sprite.setAnchor(gf::Anchor::Center);
-      sprite.setColor(gf::Color::Opaque(opacity));
+      sprite.setColor(colorButton);
       sprite.setScale(radiusScale);
       target.draw(sprite, states);
 
@@ -134,7 +154,7 @@ namespace tlw {
     float buttonRelativeXPosition = 1.0f / (m_streakSolution.size() + 1); // initialie position for the first circle
     if (m_countdown >= 0.0f) {
       for (const auto& gamepadButton: m_streakSolution) {
-        renderButton(gamepadButton, buttonRelativeXPosition, m_buttonSolutionTexture);
+        renderButton(gamepadButton, buttonRelativeXPosition, m_buttonPlayerTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
       }
     } else {

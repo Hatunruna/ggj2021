@@ -95,10 +95,23 @@ namespace tlw {
   void SliderEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
 
-    gf::RectF sliderBox = gf::RectF::fromCenterSize(coords.getCenter(), coords.getRelativeSize(SliderRelativeSize));
+    auto renderMessage = [&](const std::string& messageString) {
+      gf::Text message(messageString, m_font, coords.getRelativeCharacterSize(0.05f));
+      message.setColor(gf::Color::White);
+      auto messagePosition = coords.getRelativeSize(gf::vec(0.5f, 0.2f));
+      message.setPosition(messagePosition);
+      message.setAnchor(gf::Anchor::Center);
+      target.draw(message, states);
+    };
 
+    gf::RectangleShape background(target.getSize());
+    background.setPosition(gf::vec(0.0f, 0.0f));
+    background.setColor(gf::Color::Black * gf::Color::Opaque(0.7f));
+    target.draw(background, states);
+
+    gf::RectF sliderBox = gf::RectF::fromCenterSize(coords.getCenter(), coords.getRelativeSize(SliderRelativeSize));
     gf::RectangleShape slider(sliderBox);
-    slider.setColor(gf::Color::Violet);
+    slider.setColor(gf::Color::Red);
     target.draw(slider, states);
 
     gf::RectangleShape goals(coords.getRelativeSize(GoalRelativeSize));
@@ -111,10 +124,11 @@ namespace tlw {
     cursor.setAnchor(gf::Anchor::Center);
     auto cursorPosition = gf::vec(sliderBox.getTopLeft().x + sliderBox.getSize().width * m_cursorPosition, coords.getCenter().y);
     cursor.setPosition(cursorPosition);
-    cursor.setColor(gf::Color::Cyan);
+    cursor.setColor(gf::Color::Yellow * gf::Color::Opaque(0.7f));
     target.draw(cursor, states);
 
     if (m_played) {
+      (isHit() ? renderMessage(_("You got the clue !")) : renderMessage(_("You missed the clue !")));
       gf::Text message((isHit() ? _("Success") : _("Failed")), m_font, coords.getRelativeCharacterSize(0.1f));
       message.setColor(gf::Color::White);
       auto messagePosition = slider.getPosition();
@@ -123,6 +137,9 @@ namespace tlw {
       message.setPosition(messagePosition);
       message.setAnchor(gf::Anchor::Center);
       target.draw(message, states);
+    }
+    else {
+        renderMessage(_("Hit the target to \n get a new clue: "));
     }
   }
 }
