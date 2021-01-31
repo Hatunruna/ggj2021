@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Lost Will\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 13:17+0100\n"
+"POT-Creation-Date: 2021-01-31 13:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -277,6 +277,46 @@ msgid ""
 msgstr ""
 
 msgid "Wrappings, food scraps, newspapers... Nothing useful."
+msgstr ""
+
+msgid ""
+"Hello Ms. Bouquet? I am Raymond Adupif and I was hired by Mrs. Dread to find "
+"Mrs. Wood's will."
+msgstr ""
+
+#, fuzzy
+msgid "Bouquet"
+msgstr "Madame Bouquet"
+
+msgid "Hello Ms. Adupif! How can I help you?"
+msgstr ""
+
+msgid ""
+"I'm looking for Ms. Wood's animals, do you have any informations about them?"
+msgstr ""
+
+msgid ""
+"Unfortunately no. It is not often that I come across pets in my store, you "
+"know."
+msgstr ""
+
+msgid ""
+"His store is in the center of the village. Maybe she can tell me more about "
+"the neighborhood?"
+msgstr ""
+
+msgid ""
+"I see. However, do you have any idea where Ms. Wood's animals might be "
+"hiding?"
+msgstr ""
+
+msgid "I know that there are some cats in the alley behind my shop."
+msgstr ""
+
+msgid "No, sorry to be able to help you more."
+msgstr ""
+
+msgid "Did you find the pets?"
 msgstr ""
 
 #, fuzzy

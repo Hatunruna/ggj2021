@@ -197,6 +197,43 @@ namespace tlw {
           }
         }
       },
+      {
+        "Chap2BouquetInvestigation"_id, {
+          DialogType::Investigation, {
+            { _("Raymond"),   _("Hello Ms. Bouquet? I am Raymond Adupif and I was hired by Mrs. Dread to find Mrs. Wood's will.") },
+            { _("Bouquet"),   _("Hello Ms. Adupif! How can I help you?") },
+            { _("Raymond"),   _("I'm looking for Ms. Wood's animals, do you have any informations about them?") },
+            { _("Bouquet"),   _("Unfortunately no. It is not often that I come across pets in my store, you know.") },
+          },
+          {
+            _("Raymond"),   _("His store is in the center of the village. Maybe she can tell me more about the neighborhood?")
+          },
+          {
+            _("Raymond"),   _("I see. However, do you have any idea where Ms. Wood's animals might be hiding?")
+          }
+        }
+      },
+      {
+        "Chap2BouquetInvestigation_Success"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("I know that there are some cats in the alley behind my shop.") },
+          }
+        }
+      },
+      {
+        "Chap2BouquetInvestigation_Failure"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("No, sorry to be able to help you more.") },
+          }
+        }
+      },
+      {
+        "Chap2Bouquet"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("Did you find the pets?") },
+          }
+        }
+      },
 
       /*
        * Chapter 3

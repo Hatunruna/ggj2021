@@ -55,6 +55,9 @@ namespace tlw {
         m_game.state.result = ChallengeResult::None;
         m_game.sliderChallenge.reset(SliderChallengeDifficulty::Medium);
         m_game.pushScene(m_game.sliderChallenge);
+
+        // Add other dialogs for other NPC
+        m_game.state.characters[CharacterType::Bouquet].dialog =  "Chap2BouquetInvestigation"_id;
         break;
 
       case "Chap2SearchGarbageCan"_id:
@@ -62,6 +65,15 @@ namespace tlw {
         m_game.state.nextDialogFailure = "Chap2SearchGarbageCan_Failure"_id;
         m_game.state.result = ChallengeResult::None;
         m_game.pushScene(m_game.streakChallenge);
+        break;
+
+      case "Chap2BouquetInvestigation"_id:
+        m_game.state.characters[CharacterType::Bouquet].dialog = "Chap2Bouquet"_id;
+        m_game.state.nextDialogSuccess = "Chap2BouquetInvestigation_Success"_id;
+        m_game.state.nextDialogFailure = "Chap2BouquetInvestigation_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        m_game.sliderChallenge.reset(SliderChallengeDifficulty::Medium);
+        m_game.pushScene(m_game.sliderChallenge);
         break;
 
       default:
