@@ -31,6 +31,23 @@ namespace tlw {
         m_game.pushScene(m_game.sliderChallenge);
         break;
 
+      case "Chap1SearchWoodHouse"_id:
+        m_game.state.nextDialogSuccess = "Chap1SearchWoodHouse_Success"_id;
+        m_game.state.nextDialogFailure = "Chap1SearchWoodHouse_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        m_game.pushScene(m_game.streakChallenge);
+        break;
+
+      case "Chap1Dread_Success"_id:
+      case "Chap1Dread_Failure"_id:
+      case "Chap1SearchWoodHouse_Success"_id:
+      case "Chap1SearchWoodHouse_Failure"_id:
+        if (checkEndChapter()) {
+          m_game.state.currentDialog = "RaymondEndChapter"_id;
+          m_game.pushScene(m_game.dialog);
+        }
+        break;
+
       case "Chap1Elders1"_id:
         m_game.state.characters[CharacterType::Elders].dialog = "Chap1Elders2"_id;
         break;
@@ -39,13 +56,6 @@ namespace tlw {
         break;
 
       case "Chap1Dread_Finished"_id:
-        break;
-
-      case "Chap1SearchWoodHouse"_id:
-        m_game.state.nextDialogSuccess = "Chap1SearchWoodHouse_Success"_id;
-        m_game.state.nextDialogFailure = "Chap1SearchWoodHouse_Failure"_id;
-        m_game.state.result = ChallengeResult::None;
-        m_game.pushScene(m_game.streakChallenge);
         break;
 
       default:
@@ -63,6 +73,8 @@ namespace tlw {
       m_game.state.currentDialog = m_game.state.nextDialogFailure;
     }
 
+    ++m_game.state.finishedSearchs;
+
     m_game.pushScene(m_game.dialog);
   }
 
@@ -76,7 +88,18 @@ namespace tlw {
       m_game.state.currentDialog = m_game.state.nextDialogFailure;
     }
 
+    ++m_game.state.finishedInvestigations;
+
     m_game.pushScene(m_game.dialog);
+  }
+
+  bool Plot::checkEndChapter() {
+    if ((m_game.state.finishedInvestigations + m_game.state.finishedSearchs) >= m_game.data.limitClues[m_game.state.chapter]) {
+      m_game.state.characters.at(CharacterType::Dread).dialog = "Chap1Dread_Finished"_id;
+      return true;
+    }
+
+    return false;
   }
 
 }

@@ -17,6 +17,9 @@ namespace tlw {
     void onSliderChallengeEnd();
 
   private:
+    bool checkEndChapter();
+
+  private:
     GameHub& m_game;
   };
 

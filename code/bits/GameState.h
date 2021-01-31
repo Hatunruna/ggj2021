@@ -71,6 +71,8 @@ namespace tlw {
 
     std::vector<Search> searchs;
     std::size_t currSearch = InvalidSearch;
+    int finishedInvestigations;
+    int finishedSearchs;
   };
 
 }

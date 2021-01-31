@@ -63,6 +63,7 @@ namespace tlw {
     std::map<gf::Id, Dialog> dialogs;
     gf::Array2D<TileState, int> tiles;
     std::vector<Building> buildings;
+    std::vector<int> limitClues; // Number of clues (INVESTIGATION or SEARCH) to pass to next chapter
   };
 
 }

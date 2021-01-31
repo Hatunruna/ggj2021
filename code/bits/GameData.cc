@@ -125,6 +125,13 @@ namespace tlw {
           },
         }
       },
+      {
+        "RaymondEndChapter"_id, {
+          DialogType::Normal, {
+            { _("Raymond"),   _("I know enough. It's time for my report.") }
+          },
+        }
+      },
       /*
        * Chapter 2
        */
@@ -148,6 +155,10 @@ namespace tlw {
       { BuildingType::BenchDown, gf::vec(27, 24) },
       { BuildingType::BenchDown, gf::vec(29, 34) },
       { BuildingType::GustavoShop, gf::vec(38, 27) },
+    };
+
+    limitClues = {
+      2,
     };
   }
 

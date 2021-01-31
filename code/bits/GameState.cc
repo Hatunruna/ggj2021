@@ -38,5 +38,8 @@ namespace tlw {
       // { "Chap1Search"_id, 4, gf::vec( 9, 18), 0 },
       { "Chap1SearchWoodHouse"_id, 2, gf::vec(22, 13), 0 },
     };
+
+    finishedInvestigations = 0;
+    finishedSearchs = 0;
   }
 }

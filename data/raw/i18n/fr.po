@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Lost Will\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 10:47+0100\n"
+"POT-Creation-Date: 2021-01-31 11:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,6 +175,9 @@ msgid "It's some animal footprints."
 msgstr ""
 
 msgid "It's just some dirts."
+msgstr ""
+
+msgid "I know enough. It's time for my report."
 msgstr ""
 
 msgid "Failed"
