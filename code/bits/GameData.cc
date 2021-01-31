@@ -137,9 +137,22 @@ namespace tlw {
        */
       {
         "Chap2Elders"_id, {
-          DialogType::Normal, {
-            { _("Raymond"),   _("The cake is a lie!") }
+          DialogType::Investigation, {
+            { _("Raymond"),   _("Good evening, ladies. My name is Raymond Adupif and I have been hired by Mrs. Dread to find Mrs. Wood's will.") },
+            { _("Nona"),      _("Nice to met you, Mr. Adupif. During my evening walk, I saw Mrs. Dread waiting near the pontoon. I understood that someone would come to visit our beautiful village.") },
+            { _("Raymond"),   _("I see that nothing escapes you, ladies. Could you tell me about your village?") },
+            { _("Morta"),     _("Of course Mr. Adupif. You see the pink store next to Mrs. Wood's house? It's the store of Mrs. Bouquet, the florist.") },
+            { _("Decima"),    _("A little further down the square is Mr. Gustavo's store. He sells a lot of pet stuffs. We often saw there Stock and Holly, Mrs. Wood's pets.") },
+            { _("Raymond"),   _("Stock and Holly?") },
+            { _("Nona"),      _("Yes, Stock is Ms. Wood's dog and Holly is her cat.") },
+            { _("Decima"),    _("They are so affectionate! Much more than all those stray animals.") },
           },
+          {
+            _("Raymond"),   _("These elderly ladies need to know everything about the neighbourhood. Maybe they know where Holly and Stock might be?")
+          },
+          {
+            _("Raymond"),   _("I have one last question for you. Do you know where Holly and Stock might be hiding?")
+          }
         }
       },
 
