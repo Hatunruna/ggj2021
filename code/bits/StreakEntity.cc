@@ -100,9 +100,9 @@ namespace tlw {
     background.setColor(gf::Color::Black * gf::Color::Opaque(0.7f));
     target.draw(background, states);
 
-    auto renderButton = [this, &target, &states, &coords](gf::GamepadButton gamepadButton, float buttonRelativeXPosition, const gf::Texture& texture){
+    auto renderButton = [&](gf::GamepadButton gamepadButton, float buttonRelativeXPosition, const gf::Texture& texture){
       auto position = coords.getRelativePoint({ buttonRelativeXPosition, 0.5f });
-      int fontSize = coords.getRelativeCharacterSize(0.075f);
+      unsigned fontSize = coords.getRelativeCharacterSize(0.075f);
       float radius = coords.getRelativeSize(gf::vec(0.06f, 0.0f)).width;
       float radiusScale = radius / texture.getSize().height;
       float opacity = (m_countdown >= 0.0f ? m_opacity : 1.0f);
@@ -122,7 +122,7 @@ namespace tlw {
 
     };
 
-    auto renderMessage = [this, &coords, &target, &states](const std::string& messageString) {
+    auto renderMessage = [&](const std::string& messageString) {
       gf::Text message(messageString, m_messageFont, coords.getRelativeCharacterSize(0.1f));
       message.setColor(gf::Color::White);
       auto messagePosition = coords.getRelativeSize(gf::vec(0.5f, 0.3f));

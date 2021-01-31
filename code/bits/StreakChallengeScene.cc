@@ -86,12 +86,15 @@ namespace tlw {
       return;
     }
 
+    assert(m_game.state.currSearch != InvalidSearch);
+
     if (m_streakEntity.getStatus() != ChallengeResult::None) {
       m_endTimer += time.asSeconds();
 
       //Time in seconds before vanish of the scene
       if (m_endTimer >= SceneBeforeVanishDelay) {
-        m_game.state.searchs[m_game.state.currSearch].done = true;
+        assert(m_game.state.currSearch < m_game.state.searchs.size());
+        m_game.state.searchs.at(m_game.state.currSearch).done = true;
         m_game.state.currSearch = InvalidSearch;
         m_game.popScene();
       }

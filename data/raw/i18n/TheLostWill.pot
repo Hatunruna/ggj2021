@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 23:55+0100\n"
+"POT-Creation-Date: 2021-01-31 08:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,10 +141,22 @@ msgid ""
 "tell us what happened to this last will."
 msgstr ""
 
+msgid "What is that?"
+msgstr ""
+
 msgid "Failed"
 msgstr ""
 
 msgid "Success"
+msgstr ""
+
+msgid " seconds"
+msgstr ""
+
+msgid "Memorize: "
+msgstr ""
+
+msgid "Repeat the sequence:"
 msgstr ""
 
 msgid "An investigation by Raymond Adupif"

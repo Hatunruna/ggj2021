@@ -82,7 +82,6 @@ namespace tlw {
     }
 
     if (m_talkOrSearchAction.isActive()) {
-      bool searched = false;
       // Check NPC
       for (auto & [ characterType, character ] : m_game.state.characters) {
         if (character.visibility != CharacterVisibility::Visible) {
@@ -93,14 +92,15 @@ namespace tlw {
           if (character.dialog != gf::InvalidId) {
             m_game.state.currentDialog = character.dialog;
             m_game.pushScene(m_game.dialog);
-            // searched = true;
             break;
           }
         }
       }
 
       // Check search
-      for (auto& search : m_game.state.searchs) {
+      for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
+        auto & search = m_game.state.searchs[i];
+
         if (search.done) {
           continue;
         }
@@ -109,7 +109,7 @@ namespace tlw {
           if (search.dialog != gf::InvalidId) {
             m_game.state.currentDialog = search.dialog;
             m_game.pushScene(m_game.dialog);
-            searched = true;
+            m_game.state.currSearch = i;
             break;
           }
         }

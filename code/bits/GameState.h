@@ -10,7 +10,7 @@
 
 namespace tlw {
 
-  constexpr int InvalidSearch = -1;
+  constexpr std::size_t InvalidSearch = -1;
 
   enum class CharacterType : int {
     Holly,
@@ -69,7 +69,7 @@ namespace tlw {
     std::map<CharacterType, Character> characters;
 
     std::vector<Search> searchs;
-    int currSearch = InvalidSearch;
+    std::size_t currSearch = InvalidSearch;
   };
 
 }
