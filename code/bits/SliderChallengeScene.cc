@@ -19,9 +19,6 @@ namespace tlw {
     setClearColor(gf::Color::Black);
 
     m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::A);
-    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
-    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
-    m_stopCursorAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
     addAction(m_stopCursorAction);
 
     m_increaseSpeedAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::RightBumper);
