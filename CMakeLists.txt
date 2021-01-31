@@ -14,6 +14,8 @@ find_package(L10N)
 find_package(gf REQUIRED COMPONENTS graphics)
 find_package(Boost REQUIRED COMPONENTS locale)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+
 add_subdirectory("data/raw/i18n")
 
 set(GAME_DATADIR "${CMAKE_INSTALL_PREFIX}/share/games/${GAME}")

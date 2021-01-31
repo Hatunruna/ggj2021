@@ -33,10 +33,10 @@ namespace tlw {
     };
 
     searchs = {
-      { "Chap1Search"_id, gf::vec(11, 18), 0 },
-      { "Chap1Search"_id, gf::vec(10, 18), 0 },
-      { "Chap1Search"_id, gf::vec( 9, 18), 0 },
-      { "Chap1Search"_id, gf::vec(22, 13), 0 },
+      { "Chap1Search"_id, 5, gf::vec(11, 18), 0 },
+      { "Chap1Search"_id, 3, gf::vec(10, 18), 0 },
+      { "Chap1Search"_id, 4, gf::vec( 9, 18), 0 },
+      { "Chap1Search"_id, 2, gf::vec(22, 13), 0 },
     };
   }
 }

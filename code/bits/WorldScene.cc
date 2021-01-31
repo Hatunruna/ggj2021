@@ -110,6 +110,7 @@ namespace tlw {
             m_game.state.currentDialog = search.dialog;
             m_game.pushScene(m_game.dialog);
             m_game.state.currSearch = i;
+            m_game.streakChallenge.reset(search.buttonCount);
             break;
           }
         }

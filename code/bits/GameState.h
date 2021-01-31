@@ -47,7 +47,7 @@ namespace tlw {
 
   struct Search {
     gf::Id dialog = gf::InvalidId;
-
+    int buttonCount;
     gf::Vector2i pos;
     std::size_t chapter;
     bool done = false;
