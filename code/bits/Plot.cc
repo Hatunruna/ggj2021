@@ -11,8 +11,8 @@ namespace tlw {
     // TODO: remove this
 //     m_game.state.currentDialog = "Chap1Dread1"_id;
 
-    // m_game.state.characters[CharacterType::Holly].visibility = CharacterVisibility::Hidden;
-    // m_game.state.characters[CharacterType::Stock].visibility = CharacterVisibility::Hidden;
+    m_game.state.characters[CharacterType::Holly].visibility = CharacterVisibility::Hidden;
+    m_game.state.characters[CharacterType::Stock].visibility = CharacterVisibility::Hidden;
 
     m_game.state.characters[CharacterType::Bouquet].dialog = "Chap1Bouquet1"_id;
     m_game.state.characters[CharacterType::Elders].dialog = "Chap1Elders1"_id;
