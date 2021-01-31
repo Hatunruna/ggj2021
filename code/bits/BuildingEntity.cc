@@ -23,6 +23,7 @@ namespace tlw {
   , m_house1Texture(resources.getTexture("images/house1.png"))
   , m_house2Texture(resources.getTexture("images/house1.png"))
   , m_pubTexture(resources.getTexture("images/pub.png"))
+  , m_garbageCanTexture(resources.getTexture("images/garbage_can.png"))
   {
     m_bouquetShopTexture.setSmooth(true);
     m_bouquetNeighbor1Texture.setSmooth(true);
@@ -37,6 +38,7 @@ namespace tlw {
     m_house1Texture.setSmooth(true);
     m_house2Texture.setSmooth(true);
     m_pubTexture.setSmooth(true);
+    m_garbageCanTexture.setSmooth(true);
   }
 
   void BuildingEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -94,6 +96,10 @@ namespace tlw {
 
       case BuildingType::Pub:
         sprite.setTexture(m_pubTexture);
+        break;
+
+      case BuildingType::GarbageCan:
+        sprite.setTexture(m_garbageCanTexture);
         break;
       }
 

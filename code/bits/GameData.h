@@ -53,6 +53,7 @@ namespace tlw {
     House1,
     House2,
     Pub,
+    GarbageCan,
   };
 
   struct Building {

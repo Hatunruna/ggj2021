@@ -345,6 +345,7 @@ namespace tlw {
       { BuildingType::House1, gf::vec(43, 13) },
       { BuildingType::House2, gf::vec(43, 22) },
       { BuildingType::Pub, gf::vec(19, 28) },
+      { BuildingType::GarbageCan, gf::vec(15, 13) },
     };
 
     limitClues = {
