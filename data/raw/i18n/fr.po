@@ -257,31 +257,31 @@ msgstr ""
 "d'étrange le soir où Mme Wood est morte ?"
 
 msgid "That night? No, nothing in particular."
-msgstr ""
+msgstr "Cette nuit là ? Non, rien de particulier."
 
 msgid "Nothing to report on my side too. "
-msgstr ""
+msgstr "Rien à signaler non plus de mon côté."
 
 msgid ""
 "I remember hearing the stray dog of the neighborhood fighting and knocking "
 "over the garbage cans near Ms Wood's house."
-msgstr ""
+msgstr "Je me souviens avoir entendu le chien errant du quartier qui s'est battu et qui a renversé les poubelles près de la maison de Mme Wood."
 
 msgid "We have told you everything we have to say. Leave us alone now."
-msgstr ""
+msgstr "Nous vous avons dit tout ce que nous avions à dire. Laissez nous tranquille maintenant."
 
 msgid ""
 "The garbage cans have been overturned and there are signs of a struggle. I'm "
 "going to look around, maybe I'll find a clue."
-msgstr ""
+msgstr "Les poubelles ont été retournées et il y a des signes de lutte. Je vais regarder les alentours, peut-être que je vais trouver un indice."
 
 msgid ""
 "Wrappings, food scraps, newspapers... And a dog collar! Maybe it's the one "
 "from Stock?"
-msgstr ""
+msgstr "Des emballages, des restes de nourriture, des journaux... Et un collier de chien ! Peut-être est-ce celui de Stock ?"
 
 msgid "Wrappings, food scraps, newspapers... Nothing useful."
-msgstr ""
+msgstr "Des emballages, des restes de nourriture, des journaux... Rien d'utile."
 
 msgid ""
 "Hello Ms Bouquet? I am Raymond Adupif and I was hired by Ms Dread to find Ms "
