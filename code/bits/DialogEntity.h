@@ -18,6 +18,7 @@ namespace tlw {
   private:
     gf::Font& m_speakerFont;
     gf::Font& m_wordsFont;
+    gf::Texture& m_playerDialogTexture;
     const GameData& m_data;
     GameState& m_state;
   };

@@ -49,6 +49,12 @@ namespace tlw {
               case 14:
               case 15:
               case 16:
+              case 39:
+              case 40:
+              case 41:
+              case 42:
+              case 43:
+              case 44:
               {
                 tile = TileState::Walkable;
                 break;

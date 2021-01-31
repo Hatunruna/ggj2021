@@ -4,6 +4,7 @@
 
 #include <gf/Coordinates.h>
 #include <gf/RenderTarget.h>
+#include <gf/Sprite.h>
 #include <gf/Shapes.h>
 #include <gf/Text.h>
 
@@ -46,9 +47,11 @@ namespace tlw {
   DialogEntity::DialogEntity(gf::ResourceManager& resources, const GameData& data, GameState& state)
   : m_speakerFont(resources.getFont("Tippa.ttf"))
   , m_wordsFont(resources.getFont("Aquifer.otf"))
+  , m_playerDialogTexture(resources.getTexture("images/raymond_dialog.png"))
   , m_data(data)
   , m_state(state)
   {
+    m_playerDialogTexture.setSmooth(true);
   }
 
   void DialogEntity::update([[maybe_unused]] gf::Time time) {
@@ -93,6 +96,17 @@ namespace tlw {
       words.setPosition(coords.getRelativePoint({ 0.2, 0.8 }));
       words.setAnchor(gf::Anchor::TopLeft);
       target.draw(words, states);
+
+      if (line.speaker == "Raymond") {
+        float spriteHeight = coords.getRelativeSize(gf::vec(0.0f, 0.70f)).height;
+        float spriteScale = spriteHeight / m_playerDialogTexture.getSize().height;
+
+        gf::Sprite sprite(m_playerDialogTexture, gf::RectF::fromPositionSize({ 0.0f, 0.0f }, { 1.0f, 0.6f }));
+        sprite.setPosition(coords.getRelativePoint({ 0.95f, 0.65f }));
+        sprite.setAnchor(gf::Anchor::BottomRight);
+        sprite.setScale(spriteScale);
+        target.draw(sprite, states);
+      }
     };
 
     switch (computeDialogPart(currentDialog, m_state.currentLine)) {
