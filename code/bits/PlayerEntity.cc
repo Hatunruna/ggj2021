@@ -3,17 +3,25 @@
 #include <gf/RenderTarget.h>
 #include <gf/Sprite.h>
 
+#include <gf/Log.h>
+
 #include "GameState.h"
 #include "GameData.h"
 #include "Constants.h"
 
 namespace tlw {
 
+  namespace {
+
+    constexpr gf::Time MoveCooldown = gf::seconds(0.25f);
+
+  }
+
   PlayerEntity::PlayerEntity(gf::ResourceManager& resources, GameState& state, const GameData& data)
   : m_playerTexture(resources.getTexture("images/raymond.png"))
   , m_state(state)
   , m_data(data)
-  , m_cooldownMove(0.f)
+  , m_moveCooldown(MoveCooldown)
   , m_RayUp(resources.getTexture("images/raymondUp.png"))
   , m_RayDown(resources.getTexture("images/raymondDown.png"))
   , m_RayLeft(resources.getTexture("images/raymondLeft.png"))
@@ -23,7 +31,19 @@ namespace tlw {
   }
 
   void PlayerEntity::update(gf::Time time) {
-    m_cooldownMove += time.asSeconds();
+    m_moveCooldown += time;
+
+    if (m_state.hero.pos == m_state.hero.target) {
+      m_state.hero.middle = m_state.hero.pos * TileSize;
+      return;
+    }
+
+    if (m_moveCooldown > MoveCooldown) {
+      m_state.hero.pos = m_state.hero.target;
+      m_state.hero.middle = m_state.hero.pos * TileSize;
+    } else {
+      m_state.hero.middle = gf::lerp(m_state.hero.pos * TileSize, m_state.hero.target * TileSize, m_moveCooldown.asSeconds() / MoveCooldown.asSeconds());
+    }
   }
 
   void PlayerEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -47,30 +67,36 @@ namespace tlw {
           sprite = m_RayLeft;
           break;
       }
-    
-    sprite.setPosition(m_state.hero.pos * TileSize);
+
+    sprite.setPosition(m_state.hero.middle);
     target.draw(sprite, states);
   }
 
   void PlayerEntity::move(gf::Direction dir)
   {
-    //cooldown move in seconds
-    constexpr float cooldownMove = 0.25f;
-    constexpr int moveValue = 1;
     m_currentDirection = dir;
 
-    gf::Vector2i nextPos = m_state.hero.pos + gf::displacement(dir) * moveValue;
-    bool invisibleNPC = false;
+    if (m_moveCooldown < MoveCooldown) {
+//       gf::Log::debug("Cooldown not yet finished!\n");
+      return;
+    }
+
+    gf::Vector2i nextPos = m_state.hero.pos + gf::displacement(dir);
+
     for (const auto& [characterType, character]: m_state.characters) {
-      if (character.pos == nextPos && character.visibility == CharacterVisibility::Hidden) {
-        invisibleNPC = true;
-        break;
+      if (character.pos == nextPos && character.visibility == CharacterVisibility::Visible) {
+//         gf::Log::debug("Collision with a character!\n");
+        return;
       }
     }
 
-    if (m_cooldownMove > cooldownMove && (m_data.tiles(nextPos) == TileState::Walkable || invisibleNPC)) {
-      m_cooldownMove = 0.f;
-      m_state.hero.pos = nextPos;
+    if (m_data.tiles(nextPos) != TileState::Walkable) {
+//       gf::Log::debug("Collision with a tile!\n");
+      return;
     }
+
+//     gf::Log::debug("New target!\n");
+    m_state.hero.target = nextPos;
+    m_moveCooldown = gf::seconds(0);
   }
 }

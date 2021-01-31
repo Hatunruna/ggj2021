@@ -111,7 +111,7 @@ namespace tlw {
   }
 
   void WorldScene::doUpdate([[maybe_unused]] gf::Time time) {
-    setWorldViewCenter((m_game.state.hero.pos + 0.5f) * TileSize);
+    setWorldViewCenter(m_game.state.hero.middle + 0.5f * TileSize);
 
     m_infoEntity.setSearchActive(getSearch() != InvalidSearch);
     m_infoEntity.setDialogActive(getDialog() != CharacterType::None);

@@ -20,7 +20,7 @@ namespace tlw {
     GameState& m_state;
     gf::Texture& m_playerTexture;
     const GameData& m_data;
-    float m_cooldownMove;
+    gf::Time m_moveCooldown;
     gf::Direction m_currentDirection;
     gf::Texture& m_RayUp;
     gf::Texture& m_RayDown;
