@@ -154,7 +154,7 @@ namespace tlw {
     // Render message
     if (m_countdown >= 0.0f) {
       m_countdown = (m_countdown < 0.0f ? 0.0f : m_countdown);
-      renderMessage(_("Memorize: ") + gf::niceNum(m_countdown, 1.0f) + _(" seconds"));
+      renderMessage(gf::formatString(_("Memorize: %d seconds.").c_str(), static_cast<int>(m_countdown)));
     } else if (m_countdown < 0.0f && m_streakPlayer.size() < m_streakSolution.size()) {
       renderMessage(_("Repeat the sequence:"));
     } else {

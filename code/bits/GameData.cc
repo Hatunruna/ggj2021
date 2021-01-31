@@ -9,7 +9,7 @@ namespace tlw {
   GameData::GameData() {
     chapters = {
       {
-        _("Monday."),
+        _("Chapter 1."),
         _("I have been called by Ms Dread to handle a very particular situation. Ms Dread is the lawyer of Ms Wood. Ms Wood has just died and nobody can find her last will. My mission is to find it.\nI don't know exactly where to start but I should see Ms Dread first. She may have valuable information for me.")
       }
     };
