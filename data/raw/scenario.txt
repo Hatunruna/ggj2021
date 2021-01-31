@@ -1,0 +1,64 @@
+Le notaire appelle Raymond pour retrouver le testament de Mme Wood
+
+# Partie 1
+
+- Raymond va voir la maison de Mme Wood et fait une RECHERCHE [facile] : empreintes bizarres près d'une fenêtre
+- Raymond va discuter avec M. Dread (la vieille n'a pas d'enfants, où se trouve la maison, revenez me voir quand vous avez du nouveau) et fait un INTERROGATOIRE [facile] : la vielle avait un chat et un chien qu'il faut aussi retrouver
+- CONCLUSION (2/2): il faut retrouver les animaux, peut-être que les vieilles les ont vu
+
+# Partie 2 (PNJ humains)
+
+- Raymond va voir les vieilles, elles introduisent les PNJ:
+	- une des vieilles se balladent tous les soirs au port et a vu le notaire
+	- la fleuriste habite à côté de Mme Wood
+	- les animaux sont peut-être allé voir le vendeur de croquette 
+	- il y a des bandes d'animaux qui trainent
+et fait un INTERROGATOIRE [facile] : les animaux (chiens) ont renversé les poubelles vers la maison la nuit de sa mort
+- Raymond va voir les poubelles près de la maison et fait une RECHERCHE [moyenne] : il trouve un collier de chien
+- Raymond va voir la fleuriste et fait un INTERROGATOIRE [moyen] : il y a une bande de chats dans la ruelle
+- Raymond va voir le vendeur de croquettes  et fait un INTERROGATOIRE [moyen] : il y a une bande de chiens dans le parc
+- CONCLUSION (3/4): les animaux savent sans doute ce qu'il s'est passé, il est nécessaire d'aller les voir
+
+# Partie 3 (PNJ animaux,)
+
+- Raymond va voir le chef des chats mafieux: (balancent les chiens et le chien) et fait un INTERROGATOIRE [moyenne] : la fleuriste regarde souvent en direction de la maison de la vieille dame
+- Raymond va voir le chef des chiens errants (accusent les chats et le chat) et fait un INTERROGATOIRE [moyenne] : le vendeur de croquette va donner du thon au chat le soir
+- Raymond va dans la ruelle sombre et fait une RECHERCHE [moyenne] : commande pour un faux testament
+- Raymond va dans le parc pour enfants et fait une RECHERCHE [moyenne] : photo avec le chien qui joue avec la vieille et le chat qui dort
+- CONCLUSION (3/4) : on sait où trouver le chat et le chien
+- si Raymond va voir les vieilles et les interroge sur la nuit de la mort, la place était calme
+
+# Partie 4 (chient et chat)
+
+- Raymond va voir le chien et fait un INTERROGATOIRE [difficile] : il déteste le chat et il était le préféré de la vieille dame, il dormait le soir de sa mort
+- Raymond va voir le chat et fait un INTERROGATOIRE [difficile] : il était le préféré de la vieille dame, la nuit de sa mort il était sur le port en train de manger un poisson
+- Raymond va voir les vieilles dame, elles disent que le chat est adorable, mais que le chien est plus réservé (hippie), elles balancent sur la fleuriste (engrais secret), et le vendeur de croquette (dettes)
+- Raymond va vers la fleuriste et fait une RECHERCHE [difficile] : journal d'essais d'expérimentation
+- Raymond va vers le vendeur de croquette et faite une RECHERCHE [difficile] : livre de comptes truqués
+
+- CONCLUSION (3/4):
+Raymond doit choisir le suspect parmi plusieurs suspects potentiels:
+    - le chat
+    - le chien
+    - la fleuriste
+    - le vendeur de croquette
+
+
+
+# Listes des persos
+
+- Mme Wood
+- son chien Stock
+- son chat Holly
+- Mme Dread, notaire
+- Mme Bouquet, fleuriste
+- M. Gustavo, vendeur de croquette
+- les trois vieilles Nona, Decima et Morta
+- Riff le chef des chats mafieux
+- Bernardo le chef des chiens errants
+
+# Background
+
+Mme Wood est morte, le chat a volé le testament (parce que l'héritage allait au chien), le chien a essayé de l'en empêcher mais le chat a appelé ses copains mafieux qui ont poursuivi le chien. Le chien a renversé les poubelles et est allé se réfugier chez les chiens errants.
+
+
