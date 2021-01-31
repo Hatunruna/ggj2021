@@ -50,7 +50,7 @@ namespace tlw {
   , m_messageFont(resources.getFont("Aquifer.otf"))
   , m_buttonSolutionTexture(resources.getTexture("images/button_solution.png"))
   , m_buttonPlayerTexture(resources.getTexture("images/button_player.png"))
-  , m_status(StreakChallengeStatus::ShowingSolution)
+  , m_status(ChallengeResult::None)
   , m_countdown(ShowingSolutionDelay + ShowingSolutionFadingDelay)
   , m_opacity(1.0f)
   , m_activities(createActivity(m_opacity))
@@ -64,7 +64,7 @@ namespace tlw {
   // reset all value from last game
   void StreakEntity::reset(int buttonCount) {
     generateStreak(buttonCount);
-    m_status = StreakChallengeStatus::ShowingSolution;
+    m_status = ChallengeResult::None;
     m_activities.restart();
     m_streakPlayer.clear();
     m_opacity = 1.0f;
@@ -72,30 +72,23 @@ namespace tlw {
   }
 
   void StreakEntity::addPlayerInput(gf::GamepadButton gamepadButton) {
-    if (m_status == StreakChallengeStatus::WaitingPlayerInput) {
+    if (m_countdown < 0.0f && m_streakPlayer.size() < m_streakSolution.size()) {
       m_streakPlayer.push_back(gamepadButton);
-
-      if (m_streakPlayer.size() == m_streakSolution.size()) {
-        m_status = StreakChallengeStatus::ShowingResultMessage;
-      }
     }
   }
 
   bool StreakEntity::isCorrect() const {
+    bool equals = m_streakPlayer == m_streakSolution;
     return m_streakPlayer == m_streakSolution;
   }
 
-  StreakChallengeStatus StreakEntity::getStatus() const {
+  ChallengeResult StreakEntity::getStatus() const {
     return m_status;
   }
 
   void StreakEntity::update(gf::Time time) {
     auto status = m_activities.run(time);
     m_countdown -= time.asSeconds();
-
-    if (status == gf::ActivityStatus::Finished && m_status == StreakChallengeStatus::ShowingSolution) {
-      m_status = StreakChallengeStatus::WaitingPlayerInput;
-    }
   }
 
   void StreakEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
@@ -112,7 +105,7 @@ namespace tlw {
       int fontSize = coords.getRelativeCharacterSize(0.075f);
       float radius = coords.getRelativeSize(gf::vec(0.06f, 0.0f)).width;
       float radiusScale = radius / texture.getSize().height;
-      float opacity = (m_status == StreakChallengeStatus::ShowingSolution ? m_opacity : 1.0f);
+      float opacity = (m_countdown >= 0.0f ? m_opacity : 1.0f);
 
       gf::Sprite sprite(texture);
       sprite.setPosition(position);
@@ -139,18 +132,7 @@ namespace tlw {
     };
 
     float buttonRelativeXPosition = 1.0f / (m_streakSolution.size() + 1); // initialie position for the first circle
-    if (m_status == StreakChallengeStatus::ShowingSolution) {
-
-
-      std::stringstream stream;
-      stream << std::fixed << std::setprecision(2) << m_timer;
-
-      gf::Text textInstruction("Memoryze the streak : " + stream.str(), m_messageFont, fontSize);
-      textInstruction.setAnchor(gf::Anchor::Center);
-      textInstruction.setColor(gf::Color::White);
-      textInstruction.setPosition(coords.getRelativePoint({ 0.5f, 0.1f }));
-      target.draw(textInstruction, states);
-
+    if (m_countdown >= 0.0f) {
       for (const auto& gamepadButton: m_streakSolution) {
         renderButton(gamepadButton, buttonRelativeXPosition, m_buttonSolutionTexture);
         buttonRelativeXPosition += 1.0f / (m_streakSolution.size() + 1);
@@ -170,20 +152,15 @@ namespace tlw {
     }
 
     // Render message
-    switch (m_status) {
-    case StreakChallengeStatus::ShowingSolution:
-      // m_countdown = gf::clamp(0.0f, static_cast<float>(ShowingSolutionDelay + ShowingSolutionFadingDelay)); // BUG
+    if (m_countdown >= 0.0f) {
       m_countdown = (m_countdown < 0.0f ? 0.0f : m_countdown);
       renderMessage(_("Memorize: ") + gf::niceNum(m_countdown, 1.0f) + _(" seconds"));
-      break;
-
-    case StreakChallengeStatus::WaitingPlayerInput:
+    } else if (m_countdown < 0.0f && m_streakPlayer.size() < m_streakSolution.size()) {
       renderMessage(_("Repeat the sequence:"));
-      break;
-
-    case StreakChallengeStatus::ShowingResultMessage:
-      renderMessage((isCorrect() ? _("Success") : _("Failed")));
-      break;
+    } else {
+      bool success = isCorrect();
+      m_status = (success ? ChallengeResult::Success : ChallengeResult::Failure);
+      renderMessage((success ? _("Success") : _("Failed")));
     }
   }
 

@@ -18,10 +18,12 @@ namespace tlw {
 
   private:
     void doHandleActions([[maybe_unused]] gf::Window& window) override;
+    virtual void doUpdate(gf::Time time) override;
 
   private:
     GameHub& m_game;
     SliderEntity m_sliderEntity;
+    float m_endTimer;
 
     gf::Action m_stopCursorAction;
     // TODO: To debug and test actions, remove it later

@@ -59,6 +59,10 @@ namespace tlw {
     return isHit();
   }
 
+  ChallengeResult SliderEntity::getStatus() const {
+    return (isHit() ? ChallengeResult::Success : ChallengeResult::Failure);
+  }
+
   void SliderEntity::increaseSpeed() {
     m_played = false;
     --m_easeDelay;

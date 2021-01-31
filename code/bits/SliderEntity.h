@@ -6,6 +6,8 @@
 #include <gf/Font.h>
 #include <gf/ResourceManager.h>
 
+#include "GameState.h"
+
 namespace tlw {
   enum class SliderChallengeDifficulty : int {
     Easy = 6,
@@ -19,6 +21,7 @@ namespace tlw {
 
     void setDifficulty(SliderChallengeDifficulty difficulty);
     bool isHit() const;
+    ChallengeResult getStatus() const;
 
     bool stopCursor();
     // TODO: To debug and test functions, remove it later

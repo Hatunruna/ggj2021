@@ -2,6 +2,7 @@
 
 #include <gf/Log.h>
 
+#include "Constants.h"
 #include "GameHub.h"
 
 namespace tlw {
@@ -9,6 +10,7 @@ namespace tlw {
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , m_sliderEntity(game.resources)
+  , m_endTimer(0.0f)
   , m_stopCursorAction("StopCursor")
   , m_increaseSpeedAction("IncreaseSpeed")
   , m_decreaseSpeedAction("DecreaseSpeed")
@@ -37,6 +39,7 @@ namespace tlw {
 
   void SliderChallengeScene::reset(SliderChallengeDifficulty difficulty) {
     m_sliderEntity.setDifficulty(difficulty);
+    m_endTimer = 0.0f;
   }
 
   void SliderChallengeScene::doHandleActions([[maybe_unused]] gf::Window& window) {
@@ -70,4 +73,20 @@ namespace tlw {
     }
   }
 
+  void SliderChallengeScene::doUpdate([[maybe_unused]] gf::Time time) {
+    if (!isActive()) {
+      return;
+    }
+
+    if (m_sliderEntity.getStatus() != ChallengeResult::None) {
+      m_endTimer += time.asSeconds();
+
+      //Time in seconds before vanish of the scene
+      if (m_endTimer >= SceneBeforeVanishDelay) {
+        m_game.state.searchs[m_game.state.currSearch].done = true;
+        m_game.state.currSearch = InvalidSearch;
+        m_game.popScene();
+      }
+    }
+  }
 }

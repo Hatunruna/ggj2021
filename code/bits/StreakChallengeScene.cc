@@ -1,10 +1,7 @@
 #include "StreakChallengeScene.h"
 
+#include "Constants.h"
 #include "GameHub.h"
-
-namespace {
-  constexpr float TimeBeforeVanish = 3.f;
-}
 
 namespace tlw {
 
@@ -85,11 +82,15 @@ namespace tlw {
   }
 
   void StreakChallengeScene::doUpdate([[maybe_unused]] gf::Time time) {
-    if (m_streakEntity.getStatus() == StreakChallengeStatus::ShowingResultMessage) {
+    if (!isActive()) {
+      return;
+    }
+
+    if (m_streakEntity.getStatus() != ChallengeResult::None) {
       m_endTimer += time.asSeconds();
 
       //Time in seconds before vanish of the scene
-      if (m_endTimer >= TimeBeforeVanish) {
+      if (m_endTimer >= SceneBeforeVanishDelay) {
         m_game.state.searchs[m_game.state.currSearch].done = true;
         m_game.state.currSearch = InvalidSearch;
         m_game.popScene();
