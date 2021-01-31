@@ -61,7 +61,7 @@ namespace tlw {
 
         case CharacterType::CatPack:
           sprite.setTexture(m_catPackTexture);
-          sprite.setOrigin(gf::projy(TileSize));
+          sprite.setOrigin(TileSize * gf::vec(2, 1));
           break;
         }
 

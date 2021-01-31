@@ -29,7 +29,7 @@ namespace tlw {
         { gf::InvalidId, gf::vec(22, 32), CharacterVisibility::Visible }
       },
       { CharacterType::CatPack,
-        { gf::InvalidId, gf::vec(34,  6), CharacterVisibility::Visible }
+        { gf::InvalidId, gf::vec(36,  6), CharacterVisibility::Visible }
       },
       { CharacterType::Gustavo,
         { gf::InvalidId, gf::vec(38, 29), CharacterVisibility::Visible }
