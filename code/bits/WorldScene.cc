@@ -121,7 +121,7 @@ namespace tlw {
     for (std::size_t i = 0; i < m_game.state.searchs.size(); ++i) {
       auto & search = m_game.state.searchs[i];
 
-      if (search.done) {
+      if (search.done || search.chapter != m_game.state.chapter) {
         continue;
       }
 

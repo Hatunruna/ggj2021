@@ -11,6 +11,10 @@ namespace tlw {
       {
         _("Chapter 1."),
         _("I have been called by Ms Dread to handle a very particular situation. Ms Dread is the lawyer of Ms Wood. Ms Wood has just died and nobody can find her last will. My mission is to find it.\nI don't know exactly where to start but I should see Ms Dread first. She may have valuable information for me.")
+      },
+      {
+        _("Chapter 2."),
+        _("Blabla Ms. Freeman")
       }
     };
 
@@ -172,6 +176,27 @@ namespace tlw {
           }
         }
       },
+      {
+        "Chap2SearchGarbageCan"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("The garbage cans have been overturned and there are signs of a struggle. I'm going to look around, maybe I'll find a clue.") },
+          }
+        }
+      },
+      {
+        "Chap2SearchGarbageCan_Success"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("Wrappings, food scraps, newspapers... And a dog collar! Maybe it's the one from Stock?") },
+          }
+        }
+      },
+      {
+        "Chap2SearchGarbageCan_Failure"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("Wrappings, food scraps, newspapers... Nothing useful.") },
+          }
+        }
+      },
 
       /*
        * Chapter 3
@@ -196,6 +221,7 @@ namespace tlw {
 
     limitClues = {
       2,
+      3,
     };
   }
 

@@ -8,7 +8,7 @@ namespace tlw {
   Plot::Plot(GameHub& game)
   : m_game(game)
   {
-    loadChapter(1);
+    loadChapter(m_game.state.chapter);
   }
 
   void Plot::onDialogEnd(gf::Id dialogId) {
@@ -55,6 +55,13 @@ namespace tlw {
         m_game.state.result = ChallengeResult::None;
         m_game.sliderChallenge.reset(SliderChallengeDifficulty::Medium);
         m_game.pushScene(m_game.sliderChallenge);
+        break;
+
+      case "Chap2SearchGarbageCan"_id:
+        m_game.state.nextDialogSuccess = "Chap2SearchGarbageCan_Success"_id;
+        m_game.state.nextDialogFailure = "Chap2SearchGarbageCan_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        m_game.pushScene(m_game.streakChallenge);
         break;
 
       default:

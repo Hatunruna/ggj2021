@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 12:45+0100\n"
+"POT-Creation-Date: 2021-01-31 13:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,12 @@ msgid ""
 "her last will. My mission is to find it.\n"
 "I don't know exactly where to start but I should see Ms Dread first. She may "
 "have valuable information for me."
+msgstr ""
+
+msgid "Chapter 2."
+msgstr ""
+
+msgid "Blabla Ms. Freeman"
 msgstr ""
 
 msgid ""
@@ -213,6 +219,19 @@ msgid ""
 msgstr ""
 
 msgid "We have told you everything we have to say. Leave us alone now."
+msgstr ""
+
+msgid ""
+"The garbage cans have been overturned and there are signs of a struggle. I'm "
+"going to look around, maybe I'll find a clue."
+msgstr ""
+
+msgid ""
+"Wrappings, food scraps, newspapers... And a dog collar! Maybe it's the one "
+"from Stock?"
+msgstr ""
+
+msgid "Wrappings, food scraps, newspapers... Nothing useful."
 msgstr ""
 
 msgid "You got the clue !"
