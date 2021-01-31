@@ -83,8 +83,6 @@ namespace tlw {
 
       //Time in seconds before vanish of the scene
       if (m_endTimer >= SceneBeforeVanishDelay) {
-        m_game.state.searchs[m_game.state.currSearch].done = true;
-        m_game.state.currSearch = InvalidSearch;
         m_game.state.result = m_sliderEntity.getStatus();
         gf::Log::debug("Pop challenge\n");
         m_game.popScene();
