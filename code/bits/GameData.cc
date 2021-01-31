@@ -83,7 +83,7 @@ namespace tlw {
       {
         "Chap1Gustavo1"_id, {
           DialogType::Normal, {
-            { _("Ms Gustavo"),  _("You seem to be a friend of animals! Want to buy some food for them?") },
+            { _("Mr Gustavo"),  _("You seem to be a friend of animals! Want to buy some food for them?") },
             { _("Raymond"),     _("Well, my cat is already too fat. Sorry.") },
           }
         }
@@ -139,13 +139,13 @@ namespace tlw {
       {
         "Chap2Elders"_id, {
           DialogType::Investigation, {
-            { _("Raymond"),   _("Good evening, ladies. My name is Raymond Adupif and I have been hired by Mrs. Dread to find Mrs. Wood's will.") },
-            { _("Nona"),      _("Nice to met you, Mr. Adupif. During my evening walk, I saw Mrs. Dread waiting near the pontoon. I understood that someone would come to visit our beautiful village.") },
+            { _("Raymond"),   _("Good evening, ladies. My name is Raymond Adupif and I have been hired by Ms Dread to find Ms Wood's will.") },
+            { _("Nona"),      _("Nice to meet you, Mr Adupif. During my evening walk, I saw Ms Dread waiting near the dock. I understood that someone would come to visit our beautiful village.") },
             { _("Raymond"),   _("I see that nothing escapes you, ladies. Could you tell me about your village?") },
-            { _("Morta"),     _("Of course Mr. Adupif. You see the pink store next to Mrs. Wood's house? It's the store of Mrs. Bouquet, the florist.") },
-            { _("Decima"),    _("A little further down the square is Mr. Gustavo's store. He sells a lot of pet stuffs. We often saw there Stock and Holly, Mrs. Wood's pets.") },
+            { _("Morta"),     _("Of course Mr Adupif. You see the pink store next to Ms Wood's house? It's the store of Ms Bouquet, the florist.") },
+            { _("Decima"),    _("A little further down the square is Mr Gustavo's store. He sells a lot of pet stuffs. We often saw there Stock and Holly, Ms Wood's pets.") },
             { _("Raymond"),   _("Stock and Holly?") },
-            { _("Nona"),      _("Yes, Stock is Ms. Wood's dog and Holly is her cat.") },
+            { _("Nona"),      _("Yes, Stock is Ms Wood's dog and Holly is her cat.") },
             { _("Decima"),    _("They are so affectionate! Much more than all those stray animals.") },
           },
           {
