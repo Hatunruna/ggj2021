@@ -169,8 +169,9 @@ namespace tlw {
     target.draw(background, states);
 
     gf::RectF sliderBox = gf::RectF::fromCenterSize(coords.getCenter(), coords.getRelativeSize(SliderRelativeSize));
-    gf::RectangleShape slider(sliderBox);
-    slider.setColor(gf::Color::Red);
+    gf::RoundedRectangleShape slider(sliderBox);
+    slider.setRadius(sliderBox.getHeight() / 4);
+    slider.setColor(gf::Color::Gray());
     target.draw(slider, states);
 
     gf::RectangleShape goals(coords.getRelativeSize(GoalRelativeSize));
@@ -200,7 +201,7 @@ namespace tlw {
     else {
         renderMessage(_("Hit the target to \n get a new clue: "));
         renderButton(gf::GamepadButton::A, { 0.5,0.9 }, m_buttonTexture);
-        
+
     }
   }
 }
