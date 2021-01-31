@@ -26,7 +26,7 @@ namespace tlw {
         "Chap1Dread1"_id, {
           DialogType::Investigation, {
             { _("Raymond"),   _("Good evening Ms Dread. I am Raymond Adupif, at your service. Can you tell me more about the situation?") },
-            { _("Ms Dread"),  _("Good evening M. Adupif. I'm glad you're here. The situation is terrible. The last will of Ms Wood is lost!") },
+            { _("Ms Dread"),  _("Good evening Mr Adupif. I'm glad you're here. The situation is terrible. The last will of Ms Wood is lost!") },
             { _("Ms Dread"),  _("Ms Wood has no child. She has designated someone to be her heir in her last will. Until we find this last will, the case is open.") },
             { _("Raymond"),   _("I see. So let's start simply: do you know where she lived?") },
             { _("Ms Dread"),  _("She lived in the beautiful house in the north of the main place.") },
@@ -156,7 +156,7 @@ namespace tlw {
             _("Raymond"),   _("These elderly ladies need to know everything about the neighborhood. Maybe they know where Holly and Stock might be?")
           },
           {
-            _("Raymond"),   _("I have one last question for you. Did you notice anything strange on the night of Mrs. Wood's death?")
+            _("Raymond"),   _("I have one last question for you. Did you notice anything strange on the night of Ms Wood's death?")
           }
         }
       },
@@ -165,7 +165,7 @@ namespace tlw {
           DialogType::Normal, {
             { _("Nona"), _("That night? No, nothing in particular.") },
             { _("Morta"), _("Nothing to report on my side too. ") },
-            { _("Decima"), _("I remember hearing the stray dog of the neighborhood fighting and knocking over the garbage cans near Mrs. Wood's house.") },
+            { _("Decima"), _("I remember hearing the stray dog of the neighborhood fighting and knocking over the garbage cans near Ms Wood's house.") },
           }
         }
       },
@@ -200,13 +200,13 @@ namespace tlw {
       {
         "Chap2BouquetInvestigation"_id, {
           DialogType::Investigation, {
-            { _("Raymond"),   _("Hello Ms. Bouquet? I am Raymond Adupif and I was hired by Mrs. Dread to find Mrs. Wood's will.") },
-            { _("Bouquet"),   _("Hello Ms. Adupif! How can I help you?") },
-            { _("Raymond"),   _("I'm looking for Ms. Wood's animals, do you have any informations about them?") },
+            { _("Raymond"),   _("Hello Ms Bouquet? I am Raymond Adupif and I was hired by Ms Dread to find Ms Wood's will.") },
+            { _("Bouquet"),   _("Hello Mr Adupif! How can I help you?") },
+            { _("Raymond"),   _("I'm looking for M. Wood's animals, do you have any informations about them?") },
             { _("Bouquet"),   _("Unfortunately no. It is not often that I come across pets in my store, you know.") },
           },
           {
-            _("Raymond"),   _("His store is in the center of the village. Maybe she can tell me more about the neighborhood?")
+            _("Raymond"),   _("Her store is in the center of the village. Maybe she can tell me more about the neighborhood?")
           },
           {
             _("Raymond"),   _("I see. However, do you have any idea where Ms. Wood's animals might be hiding?")
@@ -223,7 +223,7 @@ namespace tlw {
       {
         "Chap2BouquetInvestigation_Failure"_id, {
           DialogType::Normal, {
-            { _("Raymond"), _("No, sorry to be able to help you more.") },
+            { _("Raymond"), _("No, sorry not to be able to help you more.") },
           }
         }
       },

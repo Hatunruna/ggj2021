@@ -5,7 +5,7 @@ using namespace gf::literals;
 namespace tlw {
 
   GameState::GameState()
-  : chapter(1)
+  : chapter(0)
   , finishedInvestigations(0)
   , finishedSearchs(0)
   {
