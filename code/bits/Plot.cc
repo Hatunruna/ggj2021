@@ -8,7 +8,7 @@ namespace tlw {
   Plot::Plot(GameHub& game)
   : m_game(game)
   {
-    loadChapter(0);
+    loadChapter(m_game.state.chapter);
   }
 
   void Plot::onDialogEnd(gf::Id dialogId) {
@@ -18,6 +18,7 @@ namespace tlw {
         m_game.state.nextDialogSuccess = "Chap1Dread_Success"_id;
         m_game.state.nextDialogFailure = "Chap1Dread_Failure"_id;
         m_game.state.result = ChallengeResult::None;
+        m_game.sliderChallenge.reset(SliderChallengeDifficulty::Easy);
         m_game.pushScene(m_game.sliderChallenge);
         break;
 
@@ -42,11 +43,38 @@ namespace tlw {
         m_game.state.characters[CharacterType::Elders].dialog = "Chap1Elders2"_id;
         break;
 
-      case "Chap1Dread_NotFinished"_id:
-        break;
-
       case "Chap1Dread_Finished"_id:
         loadChapter(++m_game.state.chapter);
+        m_game.replaceScene(m_game.introduction);
+        break;
+
+      // Chapter 2
+      case "Chap2Elders"_id:
+        m_game.state.characters[CharacterType::Elders].dialog = "Chap2Elders_Failure"_id;
+        m_game.state.nextDialogSuccess = "Chap2Elders_Success"_id;
+        m_game.state.nextDialogFailure = "Chap2Elders_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        m_game.sliderChallenge.reset(SliderChallengeDifficulty::Medium);
+        m_game.pushScene(m_game.sliderChallenge);
+
+        // Add other dialogs for other NPC
+        m_game.state.characters[CharacterType::Bouquet].dialog =  "Chap2BouquetInvestigation"_id;
+        break;
+
+      case "Chap2SearchGarbageCan"_id:
+        m_game.state.nextDialogSuccess = "Chap2SearchGarbageCan_Success"_id;
+        m_game.state.nextDialogFailure = "Chap2SearchGarbageCan_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        m_game.pushScene(m_game.streakChallenge);
+        break;
+
+      case "Chap2BouquetInvestigation"_id:
+        m_game.state.characters[CharacterType::Bouquet].dialog = "Chap2Bouquet"_id;
+        m_game.state.nextDialogSuccess = "Chap2BouquetInvestigation_Success"_id;
+        m_game.state.nextDialogFailure = "Chap2BouquetInvestigation_Failure"_id;
+        m_game.state.result = ChallengeResult::None;
+        m_game.sliderChallenge.reset(SliderChallengeDifficulty::Medium);
+        m_game.pushScene(m_game.sliderChallenge);
         break;
 
       default:

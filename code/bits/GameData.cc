@@ -11,7 +11,11 @@ namespace tlw {
       {
         _("Chapter 1."),
         _("I have been called by Ms Dread to handle a very particular situation. Ms Dread is the lawyer of Ms Wood. Ms Wood has just died and nobody can find her last will. My mission is to find it.\nI don't know exactly where to start but I should see Ms Dread first. She may have valuable information for me.")
-      }
+      },
+      {
+        _("Chapter 2."),
+        _("This investigation is not as simple as I thought. I should talk to the villagers to know more about Ms Wood. I feel there is much left to be discovered.")
+      },
     };
 
     dialogs = {
@@ -149,10 +153,84 @@ namespace tlw {
             { _("Decima"),    _("They are so affectionate! Much more than all those stray animals.") },
           },
           {
-            _("Raymond"),   _("These elderly ladies need to know everything about the neighbourhood. Maybe they know where Holly and Stock might be?")
+            _("Raymond"),   _("These elderly ladies need to know everything about the neighborhood. Maybe they know where Holly and Stock might be?")
           },
           {
-            _("Raymond"),   _("I have one last question for you. Do you know where Holly and Stock might be hiding?")
+            _("Raymond"),   _("I have one last question for you. Did you notice anything strange on the night of Mrs. Wood's death?")
+          }
+        }
+      },
+      {
+        "Chap2Elders_Success"_id, {
+          DialogType::Normal, {
+            { _("Nona"), _("That night? No, nothing in particular.") },
+            { _("Morta"), _("Nothing to report on my side too. ") },
+            { _("Decima"), _("I remember hearing the stray dog of the neighborhood fighting and knocking over the garbage cans near Mrs. Wood's house.") },
+          }
+        }
+      },
+      {
+        "Chap2Elders_Failure"_id, {
+          DialogType::Normal, {
+            { _("Nona"), _("We have told you everything we have to say. Leave us alone now.") },
+          }
+        }
+      },
+      {
+        "Chap2SearchGarbageCan"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("The garbage cans have been overturned and there are signs of a struggle. I'm going to look around, maybe I'll find a clue.") },
+          }
+        }
+      },
+      {
+        "Chap2SearchGarbageCan_Success"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("Wrappings, food scraps, newspapers... And a dog collar! Maybe it's the one from Stock?") },
+          }
+        }
+      },
+      {
+        "Chap2SearchGarbageCan_Failure"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("Wrappings, food scraps, newspapers... Nothing useful.") },
+          }
+        }
+      },
+      {
+        "Chap2BouquetInvestigation"_id, {
+          DialogType::Investigation, {
+            { _("Raymond"),   _("Hello Ms. Bouquet? I am Raymond Adupif and I was hired by Mrs. Dread to find Mrs. Wood's will.") },
+            { _("Bouquet"),   _("Hello Ms. Adupif! How can I help you?") },
+            { _("Raymond"),   _("I'm looking for Ms. Wood's animals, do you have any informations about them?") },
+            { _("Bouquet"),   _("Unfortunately no. It is not often that I come across pets in my store, you know.") },
+          },
+          {
+            _("Raymond"),   _("His store is in the center of the village. Maybe she can tell me more about the neighborhood?")
+          },
+          {
+            _("Raymond"),   _("I see. However, do you have any idea where Ms. Wood's animals might be hiding?")
+          }
+        }
+      },
+      {
+        "Chap2BouquetInvestigation_Success"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("I know that there are some cats in the alley behind my shop.") },
+          }
+        }
+      },
+      {
+        "Chap2BouquetInvestigation_Failure"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("No, sorry to be able to help you more.") },
+          }
+        }
+      },
+      {
+        "Chap2Bouquet"_id, {
+          DialogType::Normal, {
+            { _("Raymond"), _("Did you find the pets?") },
           }
         }
       },
@@ -180,6 +258,7 @@ namespace tlw {
 
     limitClues = {
       2,
+      3,
     };
   }
 

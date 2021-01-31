@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 13:54+0100\n"
+"POT-Creation-Date: 2021-01-31 14:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,15 @@ msgid ""
 "her last will. My mission is to find it.\n"
 "I don't know exactly where to start but I should see Ms Dread first. She may "
 "have valuable information for me."
+msgstr ""
+
+msgid "Chapter 2."
+msgstr ""
+
+msgid ""
+"This investigation is not as simple as I thought. I should talk to the "
+"villagers to know more about Ms Wood. I feel there is much left to be "
+"discovered."
 msgstr ""
 
 msgid ""
@@ -192,13 +201,79 @@ msgid "They are so affectionate! Much more than all those stray animals."
 msgstr ""
 
 msgid ""
-"These elderly ladies need to know everything about the neighbourhood. Maybe "
+"These elderly ladies need to know everything about the neighborhood. Maybe "
 "they know where Holly and Stock might be?"
 msgstr ""
 
 msgid ""
-"I have one last question for you. Do you know where Holly and Stock might be "
+"I have one last question for you. Did you notice anything strange on the "
+"night of Mrs. Wood's death?"
+msgstr ""
+
+msgid "That night? No, nothing in particular."
+msgstr ""
+
+msgid "Nothing to report on my side too. "
+msgstr ""
+
+msgid ""
+"I remember hearing the stray dog of the neighborhood fighting and knocking "
+"over the garbage cans near Mrs. Wood's house."
+msgstr ""
+
+msgid "We have told you everything we have to say. Leave us alone now."
+msgstr ""
+
+msgid ""
+"The garbage cans have been overturned and there are signs of a struggle. I'm "
+"going to look around, maybe I'll find a clue."
+msgstr ""
+
+msgid ""
+"Wrappings, food scraps, newspapers... And a dog collar! Maybe it's the one "
+"from Stock?"
+msgstr ""
+
+msgid "Wrappings, food scraps, newspapers... Nothing useful."
+msgstr ""
+
+msgid ""
+"Hello Ms. Bouquet? I am Raymond Adupif and I was hired by Mrs. Dread to find "
+"Mrs. Wood's will."
+msgstr ""
+
+msgid "Bouquet"
+msgstr ""
+
+msgid "Hello Ms. Adupif! How can I help you?"
+msgstr ""
+
+msgid ""
+"I'm looking for Ms. Wood's animals, do you have any informations about them?"
+msgstr ""
+
+msgid ""
+"Unfortunately no. It is not often that I come across pets in my store, you "
+"know."
+msgstr ""
+
+msgid ""
+"His store is in the center of the village. Maybe she can tell me more about "
+"the neighborhood?"
+msgstr ""
+
+msgid ""
+"I see. However, do you have any idea where Ms. Wood's animals might be "
 "hiding?"
+msgstr ""
+
+msgid "I know that there are some cats in the alley behind my shop."
+msgstr ""
+
+msgid "No, sorry to be able to help you more."
+msgstr ""
+
+msgid "Did you find the pets?"
 msgstr ""
 
 msgid "You got the clue!"
