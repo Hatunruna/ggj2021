@@ -149,10 +149,26 @@ namespace tlw {
             { _("Decima"),    _("They are so affectionate! Much more than all those stray animals.") },
           },
           {
-            _("Raymond"),   _("These elderly ladies need to know everything about the neighbourhood. Maybe they know where Holly and Stock might be?")
+            _("Raymond"),   _("These elderly ladies need to know everything about the neighborhood. Maybe they know where Holly and Stock might be?")
           },
           {
-            _("Raymond"),   _("I have one last question for you. Do you know where Holly and Stock might be hiding?")
+            _("Raymond"),   _("I have one last question for you. Did you notice anything strange on the night of Mrs. Wood's death?")
+          }
+        }
+      },
+      {
+        "Chap2Elders_Success"_id, {
+          DialogType::Normal, {
+            { _("Nona"), _("That night? No, nothing in particular.") },
+            { _("Morta"), _("Nothing to report on my side too. ") },
+            { _("Decima"), _("I remember hearing the stray dog of the neighborhood fighting and knocking over the garbage cans near Mrs. Wood's house.") },
+          }
+        }
+      },
+      {
+        "Chap2Elders_Failure"_id, {
+          DialogType::Normal, {
+            { _("Nona"), _("We have told you everything we have to say. Leave us alone now.") },
           }
         }
       },

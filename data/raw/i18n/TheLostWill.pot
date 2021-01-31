@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 13:54+0100\n"
+"POT-Creation-Date: 2021-01-31 12:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,13 +192,33 @@ msgid "They are so affectionate! Much more than all those stray animals."
 msgstr ""
 
 msgid ""
-"These elderly ladies need to know everything about the neighbourhood. Maybe "
+"These elderly ladies need to know everything about the neighborhood. Maybe "
 "they know where Holly and Stock might be?"
 msgstr ""
 
 msgid ""
-"I have one last question for you. Do you know where Holly and Stock might be "
-"hiding?"
+"I have one last question for you. Did you notice anything strange on the "
+"night of Mrs. Wood's death?"
+msgstr ""
+
+msgid "That night? No, nothing in particular."
+msgstr ""
+
+msgid "Nothing to report on my side too. "
+msgstr ""
+
+msgid ""
+"I remember hearing the stray dog of the neighborhood fighting and knocking "
+"over the garbage cans near Mrs. Wood's house."
+msgstr ""
+
+msgid "We have told you everything we have to say. Leave us alone now."
+msgstr ""
+
+msgid "You got the clue !"
+msgstr ""
+
+msgid "You missed the clue !"
 msgstr ""
 
 msgid "You got the clue!"
