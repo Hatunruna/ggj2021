@@ -14,6 +14,10 @@ namespace tlw {
   , m_state(state)
   , m_data(data)
   , m_cooldownMove(0.f)
+  , m_RayUp(resources.getTexture("images/raymondUp.png"))
+  , m_RayDown(resources.getTexture("images/raymondDown.png"))
+  , m_RayLeft(resources.getTexture("images/raymondLeft.png"))
+  , m_RayRight(resources.getTexture("images/raymondRight.png"))
   {
     m_playerTexture.setSmooth(true);
   }
@@ -23,7 +27,27 @@ namespace tlw {
   }
 
   void PlayerEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
-    gf::Sprite sprite(m_playerTexture);
+      gf::Sprite sprite;
+      switch (m_currentDirection)
+      {
+      case gf::Direction::Up:
+          sprite = m_RayUp;
+          break;
+      case gf::Direction::Down:
+          sprite = m_RayDown;
+          break;
+      case gf::Direction::Left:
+          sprite = m_RayLeft;
+          break;
+      case gf::Direction::Right:
+          sprite = m_RayRight;
+          break;
+
+      default:
+          sprite = m_RayLeft;
+          break;
+      }
+    
     sprite.setPosition(m_state.hero.pos * TileSize);
     target.draw(sprite, states);
   }
@@ -33,6 +57,7 @@ namespace tlw {
     //cooldown move in seconds
     constexpr float cooldownMove = 0.25f;
     constexpr int moveValue = 1;
+    m_currentDirection = dir;
 
     gf::Vector2i nextPos = m_state.hero.pos + gf::displacement(dir) * moveValue;
     bool invisibleNPC = false;

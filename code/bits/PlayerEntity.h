@@ -21,6 +21,11 @@ namespace tlw {
     gf::Texture& m_playerTexture;
     const GameData& m_data;
     float m_cooldownMove;
+    gf::Direction m_currentDirection;
+    gf::Texture& m_RayUp;
+    gf::Texture& m_RayDown;
+    gf::Texture& m_RayLeft;
+    gf::Texture& m_RayRight;
   };
 
 }
