@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Lost Will\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 13:51+0100\n"
+"POT-Creation-Date: 2021-01-31 14:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,9 +32,8 @@ msgstr ""
 "d'abord aller parler à Mme Dread. Elle a peut-être des informations "
 "importantes pour moi."
 
-#, fuzzy
 msgid "Chapter 2."
-msgstr "Chapitre 1."
+msgstr "Chapitre 2."
 
 msgid "Blabla Ms. Freeman"
 msgstr ""
@@ -198,14 +197,13 @@ msgstr ""
 "Bonsoir, mesdames. Je m'appelle Raymond Adupif et j'ai été engagé by Mme "
 "Dread pour retrouver le testament de Mme Wood."
 
-#, fuzzy
 msgid ""
 "Nice to meet you, Mr Adupif. During my evening walk, I saw Ms Dread waiting "
 "near the dock. I understood that someone would come to visit our beautiful "
 "village."
 msgstr ""
-"Heureuse de vous rencontrer, Mr. Adupif. Pendant ma promenade quotidienne,"
-"j'ai vu Mme Dread attendre sur le quai du port. J'ai vite comprise que nous "
+"Heureuse de vous rencontrer, M. Adupif. Pendant ma promenade du soir, j'ai "
+"vu Mme Dread attendre près du quai du port. J'ai vite comprise que nous "
 "allions avoir de la visite dans notre magnifique petit village."
 
 msgid ""
@@ -249,8 +247,8 @@ msgid ""
 "I have one last question for you. Did you notice anything strange on the "
 "night of Mrs. Wood's death?"
 msgstr ""
-"J'ai une dernière question pour vous. Savez-vous où peuvent se trouver Holly "
-"et Stock ?"
+"J'ai une dernière question pour vous. Avez-vous remarquez quelque chose "
+"d'étrange le soir où Mme Wood est morte ?"
 
 msgid "That night? No, nothing in particular."
 msgstr ""
@@ -284,9 +282,8 @@ msgid ""
 "Mrs. Wood's will."
 msgstr ""
 
-#, fuzzy
 msgid "Bouquet"
-msgstr "Madame Bouquet"
+msgstr "Mme Bouquet"
 
 msgid "Hello Ms. Adupif! How can I help you?"
 msgstr ""
@@ -318,14 +315,6 @@ msgstr ""
 
 msgid "Did you find the pets?"
 msgstr ""
-
-#, fuzzy
-msgid "You got the clue !"
-msgstr "Vous avez obtenue l'indice!"
-
-#, fuzzy
-msgid "You missed the clue !"
-msgstr "Vous avez raté l'indice!"
 
 msgid "You got the clue!"
 msgstr "Vous avez obtenu l'indice !"
