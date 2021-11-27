@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Lost Will\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 16:17+0100\n"
+"POT-Creation-Date: 2021-02-11 20:34+0100\n"
 "PO-Revision-Date: 2021-02-05 22:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,6 +44,13 @@ msgstr ""
 "Cette enquête n'est pas aussi simple que je le pensais. Je devrais parler "
 "aux villageois pour en savoir plus sur Mme Wood. Je sens qu'il y a encore "
 "beaucoup de choses à découvrir."
+
+#, fuzzy
+msgid "Chapter 3."
+msgstr "Chapitre 1."
+
+msgid "ahahha"
+msgstr ""
 
 msgid ""
 "Good evening Ms Dread. I am Raymond Adupif, at your service. Can you tell me "
@@ -342,6 +349,10 @@ msgstr "Non, désolé de ne pas pouvoir vous aider plus que ça."
 msgid "Did you find the pets?"
 msgstr "Avez-vous trouvé les animaux ?"
 
+#, fuzzy
+msgid "I should do my report to Ms. Dread."
+msgstr "J'en sais assez. C'est le moment de faire mon rapport à Mme Dread."
+
 msgid "Riff"
 msgstr "Riff"
 
@@ -441,6 +452,9 @@ msgstr "Je vais suivre leur conseil et surveiller M Gustavo."
 
 msgid "We have nothing more to tell you."
 msgstr "Nous n'avons plus rien à vous dire."
+
+msgid "DogPack"
+msgstr ""
 
 msgid "How is the case going Mr. Adupif?"
 msgstr "Comment se porte votre affaire M Adupif?"

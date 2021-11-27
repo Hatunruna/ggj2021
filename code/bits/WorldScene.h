@@ -9,6 +9,7 @@
 #include "PlayerEntity.h"
 #include "MapEntity.h"
 #include "InfoEntity.h"
+#include "LightEntity.h"
 #include "GameState.h"
 
 namespace tlw {
@@ -50,6 +51,8 @@ namespace tlw {
     PlayerEntity m_playerEntity;
 
     InfoEntity m_infoEntity;
+
+    LightEntity m_lightEntity;
   };
 }
 

@@ -26,6 +26,7 @@ namespace tlw {
   , m_characterEntity(game.resources, game.state)
   , m_playerEntity(game.resources, game.state, game.data)
   , m_infoEntity(game.resources)
+  , m_lightEntity(game.getRenderer().getSize(), game.data)
   {
     setClearColor(gf::Color::Black);
 
@@ -63,6 +64,7 @@ namespace tlw {
     addWorldEntity(m_buildingEntity);
     addWorldEntity(m_characterEntity);
     addWorldEntity(m_playerEntity);
+    addWorldEntity(m_lightEntity);
 
     addHudEntity(m_infoEntity);
 

@@ -36,19 +36,19 @@ namespace tlw {
   {
     m_waitUpTexture.setSmooth(true);
     m_runUpTexture.setSmooth(true);
-    m_runUpAnimation.addTileset(m_runUpTexture, gf::vec(1.0f / 9.0f, 1.0f), gf::vec(9, 1), 9, gf::seconds(1.0f / 25.0f));
+    m_runUpAnimation.addTileset(m_runUpTexture, gf::vec(9, 1), gf::seconds(1.0f / 25.0f), 9);
 
     m_waitBottomTexture.setSmooth(true);
     m_runBottomTexture.setSmooth(true);
-    m_runBottomAnimation.addTileset(m_runBottomTexture, gf::vec(1.0f / 9.0f, 1.0f), gf::vec(9, 1), 9, gf::seconds(1.0f / 25.0f));
+    m_runBottomAnimation.addTileset(m_runBottomTexture, gf::vec(9, 1), gf::seconds(1.0f / 25.0f), 9);
 
     m_waitLeftTexture.setSmooth(true);
     m_runLeftTexture.setSmooth(true);
-    m_runLeftAnimation.addTileset(m_runLeftTexture, gf::vec(1.0f / 6.0f, 1.0f), gf::vec(6, 1), 6, gf::seconds(1.0f / 25.0f));
+    m_runLeftAnimation.addTileset(m_runLeftTexture, gf::vec(6, 1), gf::seconds(1.0f / 25.0f), 6);
 
     m_waitRightTexture.setSmooth(true);
     m_runRightTexture.setSmooth(true);
-    m_runRightAnimation.addTileset(m_runRightTexture, gf::vec(1.0f / 6.0f, 1.0f), gf::vec(6, 1), 6, gf::seconds(1.0f / 25.0f));
+    m_runRightAnimation.addTileset(m_runRightTexture, gf::vec(6, 1), gf::seconds(1.0f / 25.0f), 6);
   }
 
   void PlayerEntity::update(gf::Time time) {

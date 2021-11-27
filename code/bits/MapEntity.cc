@@ -36,8 +36,7 @@ namespace tlw {
         for (int x = 0; x < mapSizeX; ++x) {
           for (int y = 0; y < mapSizeY; ++y) {
             TileState tile;
-            switch (tileLayer.getTile({x, y}))
-            {
+            switch (tileLayer.getTile({x, y})) {
               case 1:
               case 7:
               case 8:
@@ -55,23 +54,23 @@ namespace tlw {
               case 42:
               case 43:
               case 44:
-              {
                 tile = TileState::Walkable;
                 break;
-              }
+
+              case 17:
+                tile = TileState::Light;
+                break;
 
               default:
-              {
                 tile = TileState::NoWalkable;
                 break;
-              }
             }
 
             currTiles({x, y}) = tile;
           }
         }
 
-        data.tiles = currTiles;
+        data.tiles = std::move(currTiles);
       }
     }
   }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 16:17+0100\n"
+"POT-Creation-Date: 2021-11-27 12:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,12 @@ msgid ""
 "This investigation is not as simple as I thought. I should talk to the "
 "villagers to know more about Ms Wood. I feel there is much left to be "
 "discovered."
+msgstr ""
+
+msgid "Chapter 3."
+msgstr ""
+
+msgid "ahahha"
 msgstr ""
 
 msgid ""
@@ -276,6 +282,9 @@ msgstr ""
 msgid "Did you find the pets?"
 msgstr ""
 
+msgid "I should do my report to Ms. Dread."
+msgstr ""
+
 msgid "Riff"
 msgstr ""
 
@@ -357,6 +366,9 @@ msgid "I will follow their advice and look after Mr. Gustavo."
 msgstr ""
 
 msgid "We have nothing more to tell you."
+msgstr ""
+
+msgid "DogPack"
 msgstr ""
 
 msgid "How is the case going Mr. Adupif?"

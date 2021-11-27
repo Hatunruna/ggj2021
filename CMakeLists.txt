@@ -33,6 +33,7 @@ add_executable(${GAME}
   code/bits/GameHub.cc
   code/bits/GameState.cc
   code/bits/IntroductionScene.cc
+  code/bits/LightEntity.cc
   code/bits/Plot.cc
   code/bits/SliderChallengeScene.cc
   code/bits/SliderEntity.cc

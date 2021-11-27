@@ -37,6 +37,7 @@ namespace tlw {
   enum class TileState {
     Walkable,
     NoWalkable,
+    Light,
   };
 
   enum class BuildingType {
